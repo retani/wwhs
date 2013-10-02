@@ -33,7 +33,7 @@ group :doc do
 end
 
 # amazon s3
-gem 'aws-sdk'
+#gem 'aws-sdk'
 
 #paperclip
 gem "paperclip", "~> 3.5.0"
