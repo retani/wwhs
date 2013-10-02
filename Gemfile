@@ -42,6 +42,8 @@ gem 'friendly_id', '~> 4.0.1'
 
 ruby '1.9.3'
 
+gem 'rails_12factor'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
