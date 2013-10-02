@@ -40,7 +40,7 @@ gem "paperclip", "~> 3.5.0"
 
 gem 'friendly_id', '~> 4.0.1'
 
-ruby '1.9.3'
+ruby '2.0.0'
 
 gem 'rails_12factor'
 
