@@ -1,4 +1,17 @@
 Wwhs::Application.routes.draw do
+
+	scope "admin" do
+		get "/", :controller => :admin, :action => :index
+		resources :username_cookies # watch out: singular helper methods are generated with cooky
+		resources :media_links
+		resources :images
+		resources :pages, :except => [:show]
+		#match 'reward_codes/generate_form' => 'reward_codes#generate_form'
+		#match 'reward_codes/generate' => 'reward_codes#generate'
+		#match 'reward_codes/index_print' => 'reward_codes#index_print'
+		#resources :reward_codes
+	end
+	
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

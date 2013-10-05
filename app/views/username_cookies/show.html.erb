@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cookiehash:</b>
+  <%= @username_cookie.cookiehash %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%= @username_cookie.username %>
+</p>
+
+
+<%= link_to 'Edit', edit_username_cooky_path(@username_cookie) %> |
+<%= link_to 'Back', username_cookies_path %>
