@@ -1,0 +1,20 @@
+<div class="wrapper">
+<div class="center">
+	<div class="register">
+		<% if @registration_success %>
+			<div class="notice">
+				Sie wurden registriert. Vielen Dank.
+			</div>
+		<% end %>
+		<% if @registration_error %>
+			<div class="notice">
+				Es gab einen Fehler! Bitte versuchen Sie es noch einmal, oder schreiben Sie eine manuelle Email an info@wirwuerdenhiersein.ch
+			</div>		
+		<% end %>		
+		<% if @display_registration_form %>		
+			<p>Wenn Sie bereits ein Ticket gekauft haben, registrieren Sie sich bitte hier, um rechtzeitig alle nötigen Informationen zum Spiel zu erhalten.</p>
+			<%= render("users/email_registration_form")%>
+		<% end %>		
+	</div>
+</div>
+</div>

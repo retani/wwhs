@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130903101017) do
+ActiveRecord::Schema.define(:version => 20131009121340) do
 
   create_table "challenges", :force => true do |t|
     t.string   "name"
@@ -103,6 +103,13 @@ ActiveRecord::Schema.define(:version => 20130903101017) do
   create_table "username_scores", :force => true do |t|
     t.string   "username"
     t.integer  "score"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
