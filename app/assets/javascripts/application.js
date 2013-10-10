@@ -15,10 +15,15 @@
 //= require_tree .
 
 $( document ).ready(function() {
-    $( "input[type=submit], a, button" )
-      .button()
-      .click(function( event ) {
-        event.preventDefault();
-      });
-
+	$(".fadeout").delay(3000).fadeOut(3000);
 });  
+
+/*
+$(function() {
+	$( "input[type=submit], a, button" )
+		.button()
+		.click(function( event ) {
+			event.preventDefault();
+		});
+});
+*/
