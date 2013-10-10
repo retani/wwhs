@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require jmpress.custom
 
+/*
+$(document).ready(function() {
+	$("#menu li").each(function(index, elem) {
+		$(elem).click(function() {
+			console.log($(this).attr("data-target"));
+			$('#jmpress').jmpress('goTo', $(this).attr("data-target"));
+		});
+	});
+});
+
+*/

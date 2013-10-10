@@ -61,9 +61,15 @@ body {
 	transition:         opacity 1s;
 }
 
+#overview
+{
+	background: none;
+	z-index: -1;
+}
+
 /* fade out inactive slides */
 .step:not(.active) {
-	opacity: 0.3;
+	/*opacity: 0.3;*/
 }
 
 /* hint on the first slide */
