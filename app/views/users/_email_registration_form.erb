@@ -12,7 +12,7 @@
   <% end %>
 
 	<!--%= label_tag "email", "Email" %><br /-->
-	<%= f.text_field :email, placeholder: "Ihre Email"  %>
+	<%= f.text_field :email, placeholder: "Ihre Email", id: "cemail",  type: "email", name: "email", required: "required"  %>
 
     <%= f.submit "Registrieren" %>
 <% end %>
