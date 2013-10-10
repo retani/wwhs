@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
 
-	# before_filter :authenticate, except: [:create_public, :destroy]
+	before_filter :authenticate
 
 	def test
 		@images = Image.all

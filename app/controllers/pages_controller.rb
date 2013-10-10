@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   
-  # before_filter :authenticate, except: [:show]
+  before_filter :authenticate, except: [:show]
 
   def index
     @pages = Page.all
