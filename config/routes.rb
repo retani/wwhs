@@ -1,12 +1,14 @@
 Wwhs::Application.routes.draw do
 
+	resources :pages, :only => ['show']
+
 	scope "admin" do
 		get "/", :controller => :admin, :action => :index
 		resources :username_cookies # watch out: singular helper methods are generated with cooky
 		resources :media_links
 		resources :images
 		resources :users
-		resources :pages, :except => [:show]
+		resources :pages
 		#match 'reward_codes/generate_form' => 'reward_codes#generate_form'
 		#match 'reward_codes/generate' => 'reward_codes#generate'
 		#match 'reward_codes/index_print' => 'reward_codes#index_print'

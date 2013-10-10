@@ -1,1 +1,9 @@
-jmpress canvas
+<div>Div 1</div>
+
+<% Page.all.each do |page| %>
+
+<div>
+<%= render :partial => 'pages/show', :locals => {:page => page} %>
+</div>
+
+<% end %>
