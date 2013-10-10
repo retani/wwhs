@@ -2,6 +2,7 @@ class MediaLinksController < ApplicationController
   # GET /media_links
   # GET /media_links.json
 	before_filter :authenticate
+  layout 'admin'
 
   def index
     @media_links = MediaLink.all

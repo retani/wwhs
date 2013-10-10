@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
 	before_filter :authenticate
+  layout 'admin'
 
   def index
     @users = User.all

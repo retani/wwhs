@@ -4,6 +4,9 @@ class SplashController < ApplicationController
     @registration_success = false;
     @registration_error = false;
     @display_registration_form = true
+    
+    render :layout => 'splash'
+
   end
   
   def register
@@ -24,7 +27,7 @@ class SplashController < ApplicationController
     end
     
     #redirect_to :controller => "splash", :action => "index", :post => "OK?"	
-    render :index
+    render :index, :layout => 'splash'
       
   end
 

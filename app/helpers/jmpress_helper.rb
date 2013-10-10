@@ -1,0 +1,2 @@
+module JmpressHelper
+end

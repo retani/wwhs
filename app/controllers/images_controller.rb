@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
 
 	before_filter :authenticate
+  layout 'admin' 
 
 	def test
 		@images = Image.all

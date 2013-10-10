@@ -17,6 +17,8 @@ Wwhs::Application.routes.draw do
 	match 'splash/register' => 'splash#register'
 	match 'splash/unregister' => 'splash#unregister'
 	
+	match 'j' => 'jmpress#index'
+	
 	root to: 'splash#index'
 	
   # The priority is based upon order of creation: first created -> highest priority.

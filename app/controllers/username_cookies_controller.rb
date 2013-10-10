@@ -3,6 +3,7 @@ class UsernameCookiesController < ApplicationController
   # GET /username_cookies.json
 
   before_filter :authenticate
+  layout 'admin'
 
   def index
     @username_cookies = UsernameCookie.all

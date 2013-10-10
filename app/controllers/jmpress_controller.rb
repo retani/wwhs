@@ -1,0 +1,2 @@
+class JmpressController < ApplicationController
+end

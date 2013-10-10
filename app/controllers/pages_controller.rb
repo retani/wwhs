@@ -3,14 +3,10 @@ class PagesController < ApplicationController
   # GET /pages.json
   
   before_filter :authenticate, except: [:show]
+  layout 'admin' 
 
   def index
     @pages = Page.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @pages }
-    end
   end
 
   # GET /pages/1
