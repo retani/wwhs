@@ -4,7 +4,7 @@
 
 body {
     background-image:url("/assets/wirwuerdenhiersein.jpg");
-    background-position:50% 0%;
+    background-position:90% 0%;
     background-size:contain;
 }
 
@@ -21,7 +21,7 @@ body {
 .wrapper {
     height: 100%;
     width:75%;
-    max-width:555px;
+    max-width:500px;
     display:table;
     margin:auto;
 }
@@ -33,15 +33,15 @@ body {
 }
 .register {
 	position:relative;
-	background-color:rgba(255, 255, 255, .9);
+	background-color:rgba(255, 255, 255, .6);
 	border-radius:2px;
 	border:1px rgba(88,88,88,0.7) solid;
 	padding:35px;
 	font-size:16px;
 	line-height:22px;
--webkit-box-shadow: 3px 3px 28px rgba(50, 50, 50, 0.76);
--moz-box-shadow:    3px 3px 28px rgba(50, 50, 50, 0.76);
-box-shadow:         3px 3px 28px rgba(50, 50, 50, 0.76);	
+	-webkit-box-shadow: 3px 3px 28px rgba(50, 50, 50, 0.76);
+	-moz-box-shadow:    3px 3px 28px rgba(50, 50, 50, 0.76);
+	box-shadow:         3px 3px 28px rgba(50, 50, 50, 0.76);	
 }
 
 .register form {
