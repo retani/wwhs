@@ -10,7 +10,10 @@ class SplashController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-	    UserMailer.welcome_email(@user).deliver
+	    begin
+	      UserMailer.welcome_email(@user).deliver
+	    rescue
+	    end
         @registration_success = true;
         @registration_error = false;
     	@display_registration_form = false
