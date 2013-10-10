@@ -1,9 +1,36 @@
-<div>Div 1</div>
+<div id="canvas">
+	<div id="home" class="step">
+		<p>Hello! My name is jmpress.js...</p>
+	</div>
+	<div class="step" data-x="1000">
+		<p>and this is a really simple demo.</p>
+	</div>
+	<div class="step" data-x="2000" data-y="2000">
+		<p>You might think it is boring...</p>
+	</div>
+	<div class="step" data-x="3000" data-rotate="100">
+		<p>but that is the point. This is a simple example.</p>
+	</div>
+	<div class="step" data-x="3000" data-rotate="100">
+		<p>but that is the point. This is a simple example.</p>
+	</div>
 
-<% Page.all.each do |page| %>
+	<% Page.all.each do |page| %>
 
-<div>
-<%= render :partial => 'pages/show', :locals => {:page => page} %>
+	<div class="step" data-x="3000" data-rotate="100">
+		<%= render :partial => 'pages/show', :locals => {:page => page} %>
+	</div>
+
+	<% end %>
+	
 </div>
 
-<% end %>
+<div class="hint">
+    <p>Use arrow keys to navigate</p>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$('#canvas').jmpress();
+});
+</script>
