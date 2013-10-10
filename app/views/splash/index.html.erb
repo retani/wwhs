@@ -1,6 +1,6 @@
 <div class="wrapper">
 <div class="center">
-	<div class="register">
+	<div class="register <%= "fadeout" if @registration_success %>">
 		<% if @registration_success %>
 			<div class="notice">
 				Sie wurden registriert. Vielen Dank.

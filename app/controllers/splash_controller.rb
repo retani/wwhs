@@ -11,7 +11,7 @@ class SplashController < ApplicationController
 
     if @user.save
 	    begin
-	      UserMailer.welcome_email(@user).deliver
+	      #UserMailer.welcome_email(@user).deliver
 	    rescue
 	    end
         @registration_success = true;
