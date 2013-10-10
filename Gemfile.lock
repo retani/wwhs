@@ -60,6 +60,8 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (4.0.5)
       railties (>= 3.1.0)
+    jquery-validation-rails (1.11.1)
+      thor (~> 0.14)
     json (1.8.0)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -134,6 +136,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails
+  jquery-validation-rails
   paperclip (~> 3.5.0)
   pg
   rails (= 3.2.11)
