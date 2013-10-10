@@ -11,3 +11,9 @@
  *= require_self
  *= 
  */
+
+body {
+    background-image:url("/assets/concrete.jpg");
+    background-position:90% 0%;
+    background-size: cover;
+}
