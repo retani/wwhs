@@ -5,9 +5,7 @@
 
 	<% x = 1000 %>
 	<% Page.all.each do |page| %>
-	<div class="step" data-x="<%= x %>">
-		<%= render :partial => 'pages/show', :locals => {:page => page} %>
-	</div>
+		<div class="step" data-x="<%= x %>" data-src="<%= url_for controller: 'pages', action: 'show', id: page %>"></div>
 	<% x += 1000 %>
 	<% end %>
 	
