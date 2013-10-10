@@ -18,7 +18,7 @@
 //= require jquery.validate.localization/messages_de
 
 $( document ).ready(function() {
-	$(".fadeout").delay(3000).fadeOut(3000);
+	$(".fadeout").delay(1500).fadeOut(4000);
 });  
 
 /*
