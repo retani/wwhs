@@ -1,14 +1,11 @@
 <div id="canvas">
-	<div id="home" class="step">
-		<p>Hello!</p>
-	</div>
-
+	<div id="overview" class="step" data-x="3000" data-y="1500" data-scale="7">
+    </div>
 	<% x = 1000 %>
 	<% Page.all.each do |page| %>
-		<div class="step" data-x="<%= x %>" data-src="<%= url_for controller: 'pages', action: 'show', id: page %>"></div>
-	<% x += 1000 %>
+		<div id="<%= page.slug %>" class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>" data-src="<%= url_for controller: 'pages', action: 'show', id: page %>"></div>
+	<% x += 700 %>
 	<% end %>
-	
 </div>
 
 <div class="hint">
@@ -18,5 +15,6 @@
 <script type="text/javascript">
 $(function() {
 	$('#canvas').jmpress();
+	
 });
 </script>
