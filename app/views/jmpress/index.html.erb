@@ -3,7 +3,10 @@
     </div>
 	<% x = 1000 %>
 	<% Page.all.each do |page| %>
-		<div id="<%= page.slug %>" class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>" data-src="<%= url_for controller: 'pages', action: 'show', id: page %>"></div>
+		<div id="<%= page.slug %>" class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>">
+		<!-- data-src="<%= url_for controller: 'pages', action: 'show', id: page %>" -->
+		<%= render :partial => 'pages/show', :locals => {:page => page} %>
+		</div>
 	<% x += 700 %>
 	<% end %>
 </div>

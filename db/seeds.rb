@@ -34,8 +34,8 @@ Page.create([{ title: "startpunkt", content: '
 
 Page.create([{ title: "hinweise", content: "
 
+	<h2>Praktische Hinweise Übernachtungsgäste</h2>
 	<p>
-	Praktische Hinweise Übernachtungsgäste:
 	Start: Vorabend der Morgenwanderung um 22:00 bei der Zivilschutzanlage, Hirzelstrasse 11, 8004 Zürich. 
 	Ausrüstung: Wir bitten Sie nach Möglichkeit einen eigenen Schlafsack mitzubringen. Wolldecken und Kissen sind vorhanden. Für die Morgenwanderung werden gutes Schuhwerk sowie warme und wetterfeste Kleidung empfohlen. 
 	Tageskarte der ZVV Zone 110 ist inklusive. 
@@ -101,8 +101,8 @@ Page.create([{ title: "society", content: "
 
 Page.create([{ title: "manifest", content: "
 
+	<h2>Das Manifest</h2>
 	<p>
-	Das Manifest
 	Zürich hat nicht nur eine Gegenwart, sondern viele.
 	Zürich hat nicht nur eine Geschichte, sondern viele.
 	Wir können die Zukunft jeder Uchronie beeinflussen, indem wir ihre Gegenwart verändern. 
