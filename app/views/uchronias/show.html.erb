@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Image:</b>
+  <%= @uchronia.image_id %>
+</p>
+
+<p>
+  <b>Media embed:</b>
+  <%= @uchronia.media_embed %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @uchronia.title %>
+</p>
+
+<p>
+  <b>Pod:</b>
+  <%= @uchronia.pod %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @uchronia.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_uchronia_path(@uchronia) %> |
+<%= link_to 'Back', uchronias_path %>

@@ -1,10 +1,15 @@
 <div id="menu">
 	<ul>
 		<li>
-			<a href="#/overview">Home</a>
+			<a href="#/overview">overview</a>
 		</li>
+		
+	<% Page.all.each do |page| %>
 		<li>
-			<a href="#/rotated">info</a>
+			<a href="#/<%= page.slug %>"><%=page.title%></a>
 		</li>
+	<% end %>
+		
+		
 	</ul>
 </div>

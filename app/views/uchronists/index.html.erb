@@ -1,0 +1,29 @@
+<h1>Listing uchronists</h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Media embed</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @uchronists.each do |uchronist| %>
+  <tr>
+    <td><%= uchronist.image_id %></td>
+    <td><%= uchronist.media_embed %></td>
+    <td><%= uchronist.name %></td>
+    <td><%= uchronist.description %></td>
+    <td><%= link_to 'Show', uchronist %></td>
+    <td><%= link_to 'Edit', edit_uchronist_path(uchronist) %></td>
+    <td><%= link_to 'Destroy', uchronist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Uchronist', new_uchronist_path %>
