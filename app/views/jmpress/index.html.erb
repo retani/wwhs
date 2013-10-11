@@ -1,24 +1,11 @@
 <div id="canvas">
-	<div id="home" class="step">
-		<p>Hello! My name is jmpress.js...</p>
-	</div>
-	<div class="step" data-x="1000">
-		<p>and this is a really simple demo.</p>
-	</div>
-	<div class="step" data-x="2000" data-y="2000">
-		<p>You might think it is boring...</p>
-	</div>
-	<div class="step" data-x="3000" data-rotate="100">
-		<p>but that is the point. This is a simple example.</p>
-	</div>
-	<div class="step" data-x="3000" data-rotate="100">
-		<p>but that is the point. This is a simple example.</p>
-	</div>	
-	<div id="rotated" class="step" data-x="3000" data-rotate="100">
-		<p>but that is the point. This is a simple example.</p>
-	</div>
 	<div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
-    </div>	
+    </div>
+	<% x = 2000 %>
+	<% Page.all.each do |page| %>
+		<div id="<%= page.slug %>" class="step" data-x="<%= x %>" data-y="<%= rand(3000)%>" data-rotate="<%= rand(360)%>" data-src="<%= url_for controller: 'pages', action: 'show', id: page %>"></div>
+	<% x += 1000 %>
+	<% end %>
 </div>
 
 <div class="hint">

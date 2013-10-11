@@ -6,12 +6,14 @@ Wwhs::Application.routes.draw do
 		resources :media_links
 		resources :images
 		resources :users
-		resources :pages, :except => [:show]
+		resources :pages
 		#match 'reward_codes/generate_form' => 'reward_codes#generate_form'
 		#match 'reward_codes/generate' => 'reward_codes#generate'
 		#match 'reward_codes/index_print' => 'reward_codes#index_print'
 		#resources :reward_codes
 	end
+
+	resources :pages, :only => ['show']
 	
 	match 'splash' => 'splash#index'	
 	match 'splash/register' => 'splash#register'
