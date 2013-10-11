@@ -1,4 +1,5 @@
 <div id="canvas">
+
 	<div id="overview" class="step" data-x="3000" data-y="1500" data-scale="7">
     </div>
     
@@ -10,12 +11,20 @@
 		</div>
 	<% x += 700 %>
 	<% end %>
-
-	<% Uchronia.all.each do |i,u| %>
-		<div id="<%= page.slug %>" class="step uchronia" data-x="<%= 5-(i % 5) %>" data-y="<%= i % 5 %>" data-rotate="90">
-		<!-- data-src="<%= url_for controller: 'pages', action: 'show', id: page %>" -->
-		<%= render :partial => 'uchronia/show', :locals => {:uchronia => u} %>
-		</div>
+	
+	<% xindex = 0 %>
+	<% yindex = 0 %>
+	<% Uchronist.all.each_with_index do |index,uchronist| %>
+			<div class="step uchronist" data-x="<%=  xindex %>" data-y="<%= yindex %>" data-rotate="<%= 90 %>">
+			<%= render :partial => 'uchronists/show_public', :locals => {:uchronist => uchronist} %>
+			</div>
+	<% end %>
+	
+	<% Uchronia.all.each do |index, uchronia| %>
+			<div class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>">
+			<%= render :partial => 'uchronias/show_public', :locals => {:uchronia => uchronia} %>
+			</div>
+			<% x += 700 %>
 	<% end %>
 
 </div>

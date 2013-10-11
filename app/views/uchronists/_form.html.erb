@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :image_id %><br />
-    <%= f.text_field :image_id %>
+    <%= f.select :image_id, Image.order("title").collect {|i| [i.title, i.id]}.insert(0, ["-", nil]) %>
   </div>
   <div class="field">
     <%= f.label :media_embed %><br />
-    <%= f.text_field :media_embed %>
+    <%= f.text_area :media_embed %>
   </div>
   <div class="field">
     <%= f.label :name %><br />
@@ -27,6 +27,13 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+  
+  <div class="field">
+    <%= f.label :hidden %><br />
+    <%= f.check_box :hidden %>
+  </div>
+
+  
   <div class="actions">
     <%= f.submit %>
   </div>

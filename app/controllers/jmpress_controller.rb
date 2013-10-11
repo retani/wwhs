@@ -1,6 +1,6 @@
 class JmpressController < ApplicationController
 
-  def index
+  def index  
   end
 
 end

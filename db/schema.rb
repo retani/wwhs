@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131011135932) do
+ActiveRecord::Schema.define(:version => 20131011141215) do
 
   create_table "challenges", :force => true do |t|
     t.string   "name"
@@ -94,8 +94,9 @@ ActiveRecord::Schema.define(:version => 20131011135932) do
     t.string   "title"
     t.text     "pod"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "hidden",      :default => false
   end
 
   create_table "uchronists", :force => true do |t|
@@ -103,8 +104,9 @@ ActiveRecord::Schema.define(:version => 20131011135932) do
     t.text     "media_embed"
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "hidden",      :default => false
   end
 
   create_table "username_cookies", :force => true do |t|
