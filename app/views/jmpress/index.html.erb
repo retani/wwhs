@@ -9,7 +9,23 @@
 		</div>
 	<% x += 700 %>
 	<% end %>
+
+<% Uchronist.all.each do |uchronist| %>
+		<div class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>">
+		<%= render :partial => 'uchronists/show_public', :locals => {:uchronist => uchronist} %>
+		</div>
+		<% x += 700 %>
+<% end %>
+
+<% Uchronia.all.each do |uchronia| %>
+		<div class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>">
+		<%= render :partial => 'uchronias/show_public', :locals => {:uchronia => uchronia} %>
+		</div>
+		<% x += 700 %>
+<% end %>
+
 </div>
+
 
 <div class="hint">
     <p>Use arrow keys to navigate</p>

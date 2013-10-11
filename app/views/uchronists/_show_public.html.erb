@@ -1,0 +1,11 @@
+<h1>Uchronist <%= uchronist.name %></h1>
+
+<% if uchronist.image %>
+	<%= image_tag uchronist.image.image.url(:thumb) %>
+<% end %> 
+
+<% if uchronist.media_embed %>
+	<%= uchronist.media_embed.html_safe %>
+<% end %>
+
+<p><%= uchronist.description %></p>
