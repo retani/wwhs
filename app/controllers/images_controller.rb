@@ -3,27 +3,6 @@ class ImagesController < ApplicationController
 	before_filter :authenticate
   layout 'admin' 
 
-	def test
-		@images = Image.all
-		render :partial => 'images/thumb_list'
-	end
-
-  def create_public
-    @image = Image.new(params[:image])
-		
-		if params[:design]	
-			@image.upload_hash = params[:design][:upload_hash]
-	    if @image.save
-				render :partial => 'images/design_form_element'
-			end	
-		elsif params[:challenge_id]
-			@image.challenge_id = params[:challenge_id]
-	    if @image.save
-				render :partial => 'images/thumb'
-			end
-		end
-	end
-
   # GET /images
   # GET /images.json
   def index
