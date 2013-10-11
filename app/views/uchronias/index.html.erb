@@ -1,0 +1,31 @@
+<h1>Listing uchronias</h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Media embed</th>
+    <th>Title</th>
+    <th>Pod</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @uchronias.each do |uchronia| %>
+  <tr>
+    <td><%= uchronia.image_id %></td>
+    <td><%= uchronia.media_embed %></td>
+    <td><%= uchronia.title %></td>
+    <td><%= uchronia.pod %></td>
+    <td><%= uchronia.description %></td>
+    <td><%= link_to 'Show', uchronia %></td>
+    <td><%= link_to 'Edit', edit_uchronia_path(uchronia) %></td>
+    <td><%= link_to 'Destroy', uchronia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Uchronia', new_uchronia_path %>

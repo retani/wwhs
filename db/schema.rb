@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131009121340) do
+ActiveRecord::Schema.define(:version => 20131011135932) do
 
   create_table "images", :force => true do |t|
     t.string   "title"
@@ -32,6 +32,25 @@ ActiveRecord::Schema.define(:version => 20131009121340) do
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
+
+  create_table "uchronias", :force => true do |t|
+    t.integer  "image_id"
+    t.text     "media_embed"
+    t.string   "title"
+    t.text     "pod"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "uchronists", :force => true do |t|
+    t.integer  "image_id"
+    t.text     "media_embed"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

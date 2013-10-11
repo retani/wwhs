@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Image:</b>
+  <%= @uchronist.image_id %>
+</p>
+
+<p>
+  <b>Media embed:</b>
+  <%= @uchronist.media_embed %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @uchronist.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @uchronist.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_uchronist_path(@uchronist) %> |
+<%= link_to 'Back', uchronists_path %>
