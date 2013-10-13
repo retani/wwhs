@@ -11,12 +11,15 @@
 		</div>
 	<% x += 700 %>
 	<% end %>
-	
+
+	<div id="overview-uchronists" class="step overview" data-x="2500" data-y="1900" data-scale="3" data-rotate="90">
+    </div>
+
 	<% xindex = 0 %>
 	<% yindex = 1 %>
 	<% Uchronist.all.each_with_index do |uchronist, index| %>
-		<% yindex = ( xindex == 3 ? yindex+1 : yindex) %>
-		<% xindex = ( xindex == 3 ? 1 : xindex+1) %>
+		<% yindex = ( xindex == 5 ? yindex+1 : yindex) %>
+		<% xindex = ( xindex == 5 ? 1 : xindex+1) %>
 		<div class="step uchronist" data-x="<%=  2000 + (300* yindex) %>" data-y="<%= 1000 + (300 * xindex) %>" data-rotate="<%= 90 %>" data-scale="0.5">
 		<%= render :partial => 'uchronists/show_public', :locals => {:uchronist => uchronist} %>
 		</div>

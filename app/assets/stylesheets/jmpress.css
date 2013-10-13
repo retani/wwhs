@@ -40,10 +40,6 @@ body {
 }
 
 .step.page {
-
-}
-
-.step.uchronist {
 	background-color: white;
 
 	display: block;
@@ -67,6 +63,13 @@ body {
 	transition:         opacity 1s;
 }
 
+.step.uchronist {
+}
+
+.step.uchronist img {
+	width:100%;
+}
+
 .step.overview {
 
 }
@@ -76,6 +79,11 @@ body {
 	background: none;
 	border:none;
 	z-index: -1;
+}
+
+#overview-uchronists {
+	background-image:url("/assets/wireframe.png");
+	background-size:100%;
 }
 
 /* fade out inactive slides */
