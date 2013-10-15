@@ -5,7 +5,7 @@
     
 	<% x = 1 %>
 	<% Page.all.each_with_index do |page,index| %>
-		<div id="<%= page.slug %>" class="step page" data-x="<%= 1500 + 500*index+(700*index/(index.to_f+1)) %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>" data-scale="<%= 3/(index.to_f+1) %>">
+		<div id="<%= page.slug %>" class="step page" data-x="<%= 1500 + 500*index+(1000*index/(index.to_f+1)) %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>" data-scale="<%= 3/(index.to_f+1) %>">
 		<!-- data-src="<%= url_for controller: 'pages', action: 'show', id: page %>" -->
 		<%= render :partial => 'pages/show', :locals => {:page => page} %>
 		</div>
