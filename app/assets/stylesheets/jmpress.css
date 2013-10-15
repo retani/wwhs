@@ -89,6 +89,7 @@ body {
 /* fade out inactive slides */
 .step:not(.active) {
 	/*opacity: 0.3;*/
+	cursor:pointer;
 }
 
 /* hint on the first slide */
