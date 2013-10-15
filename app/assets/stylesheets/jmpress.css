@@ -31,11 +31,15 @@ body {
 	}
 
 /** STEP STYLES **/
+
 .step {
 	width: 500px;
     height: 400px;
 	font-size: 1em;
 	min-height: 500px;
+}
+
+.step.page {
 	background-color: white;
 
 	display: block;
@@ -59,11 +63,27 @@ body {
 	transition:         opacity 1s;
 }
 
+.step.uchronist {
+}
+
+.step.uchronist img {
+	width:100%;
+}
+
+.step.overview {
+
+}
+
 #overview
 {
 	background: none;
 	border:none;
 	z-index: -1;
+}
+
+#overview-uchronists {
+	background-image:url("/assets/wireframe.png");
+	background-size:100%;
 }
 
 /* fade out inactive slides */

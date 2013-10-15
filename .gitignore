@@ -16,3 +16,6 @@
 
 #.DS_Store
 db/.DS_Store
+
+# ignore structure.sql
+db/structure.sql

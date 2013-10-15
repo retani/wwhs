@@ -1,31 +1,38 @@
 <div id="canvas">
-	<div id="overview" class="step" data-x="3000" data-y="1500" data-scale="7">
+
+	<div id="overview" class="step overview" data-x="3000" data-y="1500" data-scale="7">
     </div>
-	<% x = 1000 %>
-	<% Page.all.each do |page| %>
-		<div id="<%= page.slug %>" class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>">
+    
+	<% x = 1 %>
+	<% Page.all.each_with_index do |page,index| %>
+		<div id="<%= page.slug %>" class="step page" data-x="<%= 1500 + 500*index+(700*index/(index.to_f+1)) %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>" data-scale="<%= 3/(index.to_f+1) %>">
 		<!-- data-src="<%= url_for controller: 'pages', action: 'show', id: page %>" -->
 		<%= render :partial => 'pages/show', :locals => {:page => page} %>
 		</div>
-	<% x += 700 %>
+	<% x=x+1 %>
 	<% end %>
 
-<% Uchronist.all.each do |uchronist| %>
-		<div class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>">
+	<div id="overview-uchronists" class="step overview" data-x="2500" data-y="1900" data-scale="3" data-rotate="90">
+    </div>
+
+	<% xindex = 0 %>
+	<% yindex = 1 %>
+	<% Uchronist.all.each_with_index do |uchronist, index| %>
+		<% yindex = ( xindex == 5 ? yindex+1 : yindex) %>
+		<% xindex = ( xindex == 5 ? 1 : xindex+1) %>
+		<div class="step uchronist" data-x="<%=  2000 + (300* yindex) %>" data-y="<%= 1000 + (300 * xindex) %>" data-rotate="<%= 90 %>" data-scale="0.5">
 		<%= render :partial => 'uchronists/show_public', :locals => {:uchronist => uchronist} %>
 		</div>
-		<% x += 700 %>
-<% end %>
-
-<% Uchronia.all.each do |uchronia| %>
-		<div class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>">
-		<%= render :partial => 'uchronias/show_public', :locals => {:uchronia => uchronia} %>
-		</div>
-		<% x += 700 %>
-<% end %>
+	<% end %>
+	
+	<% Uchronia.all.each do |index, uchronia| %>
+			<div class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>">
+			<%= render :partial => 'uchronias/show_public', :locals => {:uchronia => uchronia} %>
+			</div>
+			<% x += 700 %>
+	<% end %>
 
 </div>
-
 
 <div class="hint">
     <p>Use arrow keys to navigate</p>
