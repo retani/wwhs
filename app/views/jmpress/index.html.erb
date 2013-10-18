@@ -2,63 +2,22 @@
 
 	<div id="overview" class="step overview" data-x="0" data-y="0" data-scale="7"></div>
 
-	<%= render :partial => 'pages/show_on_canvas', :locals => {
-		:page => Page.find('trailer'),
-		:x => -590,
-		:y => 150,
-		} 
-	%>
-
-	<%= render :partial => 'pages/show_on_canvas', :locals => {
-		:page => Page.find('termine'),
-		:x => 0,
-		:y => 0,
-		} 
-	%>
-
-	<%= render :partial => 'pages/show_on_canvas', :locals => {
-		:page => Page.find('hinweise'),
-		:x => 530,
-		:y => 420,
-		} 
-	%>
-
-	<%= render :partial => 'pages/show_on_canvas', :locals => {
-		:page => Page.find('startpunkt'),
-		:x => 1060,
-		:y => 660,
-		} 
-	%>
-
-	<%= render :partial => 'pages/show_on_canvas', :locals => {
-		:page => Page.find('society'),
-		:x => -510,
-		:y => -270,
-		} 
-	%>
-
-	<%= render :partial => 'pages/show_on_canvas', :locals => {
-		:page => Page.find('manifest'),
-		:x => -1030,
-		:y => -435,
-		} 
-	%>	
-
-	<%= render :partial => 'pages/show_on_canvas', :locals => {
-		:page => Page.find('regeln'),
-		:x => 520,
-		:y => -250,
-		} 
-	%>
-	<% xindex = 0 %>
-	<% yindex = 1 %>
-	<% Uchronist.all.each_with_index do |uchronist, index| %>
-		<% yindex = ( xindex == 5 ? yindex+1 : yindex) %>
-		<% xindex = ( xindex == 5 ? 1 : xindex+1) %>
-		<div id="<%= uchronist.slug %>" class="step uchronist" data-x="<%=  -1000 + (300* yindex) %>" data-y="<%= 1000 + (300 * xindex) %>" data-rotate="<%= 90 %>" data-scale="0.5">
-		<%= render :partial => 'uchronists/show_public', :locals => {:uchronist => uchronist} %>
-		</div>
+	<% @slides.each do |slide| %>
+		<% if slide[:type] == "page" %>
+			<% page =  Page.find(slide[:slug]) %>
+			<div id="<%= page.slug %>" class="step page editable" data-type="page" data-slug="<%= page.slug %>" data-x="<%= slide[:x] %>" data-y="<%= slide[:y] %>" data-rotate="<%= slide[:rotate] %>" data-scale="<%= slide[:scale] %>">
+				<%= render :partial => 'pages/show_public', :locals => { :page => page } %>
+			</div>
+		<% end %>
+		<% if slide[:type] == "uchronist" %>
+			<% uchronist =  Uchronist.find(slide[:slug]) %>
+			<div id="<%= uchronist.slug %>" class="step uchronist editable" data-type="uchronist" data-slug="<%= uchronist.slug %>" data-x="<%= slide[:x] %>" data-y="<%= slide[:y] %>" data-rotate="<%= slide[:rotate] %>" data-scale="<%= slide[:scale] %>">
+				<%= render :partial => 'uchronists/show_public', :locals => { :uchronist => uchronist } %>
+			</div>
+		<% end %>	
+		
 	<% end %>
+
 
 	<div id="biographygenerator" class="step" data-x="30" data-y="490">	
 		<%= render 'user_biographies/form_public' %>

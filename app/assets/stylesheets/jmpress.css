@@ -13,7 +13,7 @@
  */
 
 body {
-    background-image:url("/assets/concrete.jpg");
+    /*background-image:url("/assets/concrete.jpg");*/
     background-position:90% 0%;
     background-size: cover;
     font-family: Times, Times Roman, sans-serif;
@@ -40,7 +40,7 @@ body {
 }
 
 .step.page {
-	background-color: white;
+	background-color: transparent;
 
 	display: block;
     padding: 20px;
@@ -64,7 +64,7 @@ body {
 }
 
 .step.uchronist {
-	background-color: white;
+	background-color: transparent;
     padding: 40px 60px;
 }
 
@@ -73,7 +73,7 @@ body {
 }
 
 .step.uchronia {
-	background-color: white;
+	background-color: transparent;
 }
 
 .step.overview {
@@ -93,7 +93,7 @@ body {
 }
 
 #biographygenerator {
-	background-color: white;
+	background-color: transparent;
 	padding: 40px;
 }
 

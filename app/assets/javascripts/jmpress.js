@@ -42,18 +42,28 @@ $(document).ready(function() {
 	$('*').on('mouseenter', function() { hoverElem = this; });
 	
 	$( "body" ).keypress(function(event) {
-		//console.log(event.which);
+		console.log(event.which);
   		if (event.which == "113") { // q
   			window.location.hash="#/overview";
   		}  		
   		if (event.which == "111") { // o
-  			$(".step").each (function (index, elem) {
-  				x = modifyTransformStyle(elem,"x");
-  				y = modifyTransformStyle(elem,"y");
-  				if (x != $(elem).attr("data-x") || y != $(elem).attr("data-y")) {
-  					console.log( "" + $(elem).attr("id") + ": " + "data-x=\""+modifyTransformStyle(elem,"x")+"\" " + "data-y=\""+modifyTransformStyle(elem,"y")+"\"");
-  				}
+  			out = "";
+  			$(".step.editable").each (function (index, elem) {
+  				//x = modifyTransformStyle(elem,"x");
+  				//y = modifyTransformStyle(elem,"y");  				
+  				//if (x != $(elem).attr("data-x") || y != $(elem).attr("data-y")) {
+  					data_x = $(elem).attr("data-x");
+  					data_y = $(elem).attr("data-y");
+  					data_rotate = $(elem).attr("data-rotate");
+  					if (typeof $(elem).attr("data-scale-x") != "undefined") $(elem).attr("data-scale", $(elem).attr("data-scale-x"));
+  					data_scale = $(elem).attr("data-scale");  					
+  					data_type = $(elem).attr("data-type");
+  					data_slug = $(elem).attr("data-slug");
+  					out += "{:type => \""+data_type+"\", :slug => \""+data_slug+"\", :x => "+data_x+", :y => "+data_y+", :rotate => "+data_rotate+", :scale => "+data_scale+"},\n";
+  					//console.log( "" + $(elem).attr("id") + ": " + "data-x=\""+modifyTransformStyle(elem,"x")+"\" " + "data-y=\""+modifyTransformStyle(elem,"y")+"\"");
+  				//}
   			});
+  			console.log(out);
  		}
  		
 		if (typeof (hoverElem) != "undefined") {
@@ -67,18 +77,31 @@ $(document).ready(function() {
   		}
 		//elem = $(".step.active").get(0); 		
   		if (event.which == "115") { // s
-  			modifyTransformStyle(elem,"x",10);
+  			modifyTransformStyle(elem,"x",50);
   		}  	
   		if (event.which == "97") { // a
-  			modifyTransformStyle(elem,"x",-10);
+  			modifyTransformStyle(elem,"x",-50);
   		} 
   		if (event.which == "119") { // w
-  			modifyTransformStyle(elem,"y",-10);
+  			modifyTransformStyle(elem,"y",-50);
   		}
   		if (event.which == "121") { // y
-  			modifyTransformStyle(elem,"y",10);
+  			modifyTransformStyle(elem,"y",50);
   		}
-  		
+  		if (event.which == "100") { // d
+  			modifyTransformStyle(elem,"rotate",6);
+  		}
+  		if (event.which == "102") { // f
+  			modifyTransformStyle(elem,"rotate",-6);
+  		}
+  		if (event.which == "101") { // e
+  			modifyTransformStyle(elem,"scale-x",-0.1);
+  			modifyTransformStyle(elem,"scale-y",-0.1);
+  		}
+  		if (event.which == "114") { // r
+  			modifyTransformStyle(elem,"scale-x",0.1);
+  			modifyTransformStyle(elem,"scale-y",0.1);
+  		}    		
 	});
 
 });
@@ -86,8 +109,12 @@ $(document).ready(function() {
 function modifyTransformStyle(elem, param, increment)
 {
 	transformStyle = elem.style.webkitTransform;
-	if (param == "x") regexp = /translate3d\(([\d-]+)/;
-	if (param == "y") regexp = /translate3d\([\d-]+px, ([\d-]+)/;
+	console.log(transformStyle);
+	if (param == "x")       regexp = /translate3d\(([\d-]+)/;           
+	if (param == "y")       regexp = /translate3d\([\d-]+px, ([\d-]+)/; 
+	if (param == "rotate")  regexp = /rotateZ\(([\d-]+)/;               
+	if (param == "scale-x") regexp = /scaleX\(([\d\.-]+)/;              
+	if (param == "scale-y") regexp = /scaleY\(([\d\.-]+)/;              
 	currentValueResult = transformStyle.match(regexp);
 	if (currentValueResult == null) return false;
 	currentValue = currentValueResult[1];
@@ -95,10 +122,10 @@ function modifyTransformStyle(elem, param, increment)
 		return currentValue;
 	}
 	else {
-		newValue = parseInt(currentValue) + increment;
+		newValue = parseFloat(currentValue) + increment;
 		newTransformStyle = transformStyle.replace(regexp,currentValueResult[0].substr(0, currentValueResult[0].length - currentValue.length)+newValue);
 		elem.style.webkitTransform = newTransformStyle;
-		//$(elem).attr("data-" + param, newValue);
+		$(elem).attr("data-" + param, newValue);
 	}
 }
 
