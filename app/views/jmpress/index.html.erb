@@ -4,16 +4,14 @@
 
 	<% @slides.each do |slide| %>
 		<% if slide[:type] == "page" %>
-			<%= render :partial => 'pages/show_on_canvas', :locals => {
-				:page => Page.find(slide[:slug]),
-				:x => slide[:x],
-				:y => slide[:y],
-				} 
-			%>
+			<% page =  Page.find(slide[:slug]) %>
+			<div id="<%= page.slug %>" class="step page editable" data-type="page" data-slug="<%= page.slug %>" data-x="<%= slide[:x] %>" data-y="<%= slide[:y] %>" data-rotate="<%= slide[:rotate] %>" data-scale="<%= slide[:scale] %>">
+				<%= render :partial => 'pages/show_public', :locals => { :page => page } %>
+			</div>
 		<% end %>
 		<% if slide[:type] == "uchronist" %>
 			<% uchronist =  Uchronist.find(slide[:slug]) %>
-			<div id="<%= uchronist.slug %>" class="step uchronist editable" data-type="uchronist" data-slug="<%= uchronist.slug %>" data-x="<%= slide[:x] %>" data-y="<%= slide[:y] %>" data-rotate="<%= 90 %>" data-scale="0.5">
+			<div id="<%= uchronist.slug %>" class="step uchronist editable" data-type="uchronist" data-slug="<%= uchronist.slug %>" data-x="<%= slide[:x] %>" data-y="<%= slide[:y] %>" data-rotate="<%= slide[:rotate] %>" data-scale="<%= slide[:scale] %>">
 				<%= render :partial => 'uchronists/show_public', :locals => { :uchronist => uchronist } %>
 			</div>
 		<% end %>	
