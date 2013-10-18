@@ -28,7 +28,10 @@ $(document).ready(function() {
 	*/
 	
 	$('#new_user_biography').on('ajax:success', function(event, data, status, xhr) {
-		alert(data);
+		$.each(data.translations, function(key, value) {
+			console.log(key + ' ' + value);
+  	  $('#' + key + ' div.bio_translation').html(value);
+		});
 	});
 	
 	$('*').on('mouseenter', function() { hoverElem = this; });
