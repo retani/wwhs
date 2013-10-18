@@ -7,6 +7,7 @@ Wwhs::Application.routes.draw do
 		resources :pages
 	  resources :uchronists
 	  resources :uchronias
+	  resources :user_biographies
 	end
 
 	resources :pages, :only => ['show']

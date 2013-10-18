@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  birthday: 
+  birthplace: 
+  parents: 
+  childhood: 
+  youth_1: 
+  youth_2: 
+  youth_3: 
+  youth_4: 
+  education: 
+  travel: 
+  job_changes: 
+  romance: 
+  crisis: 
+  hobby: 
+  religion: MyString
+
+two:
+  birthday: 
+  birthplace: 
+  parents: 
+  childhood: 
+  youth_1: 
+  youth_2: 
+  youth_3: 
+  youth_4: 
+  education: 
+  travel: 
+  job_changes: 
+  romance: 
+  crisis: 
+  hobby: 
+  religion: MyString

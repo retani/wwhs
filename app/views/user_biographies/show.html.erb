@@ -1,0 +1,86 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Birthday:</b>
+  <%= @user_biography.birthday %>
+</p>
+
+<p>
+  <b>Birthplace:</b>
+  <%= @user_biography.birthplace %>
+</p>
+
+<p>
+  <b>Parents:</b>
+  <%= @user_biography.parents %>
+</p>
+
+<p>
+  <b>Childhood:</b>
+  <%= @user_biography.childhood %>
+</p>
+
+<p>
+  <b>Youth 1:</b>
+  <%= @user_biography.youth_1 %>
+</p>
+
+<p>
+  <b>Youth 2:</b>
+  <%= @user_biography.youth_2 %>
+</p>
+
+<p>
+  <b>Youth 3:</b>
+  <%= @user_biography.youth_3 %>
+</p>
+
+<p>
+  <b>Youth 4:</b>
+  <%= @user_biography.youth_4 %>
+</p>
+
+<p>
+  <b>Education:</b>
+  <%= @user_biography.education %>
+</p>
+
+<p>
+  <b>Travel:</b>
+  <%= @user_biography.travel %>
+</p>
+
+<p>
+  <b>Job changes:</b>
+  <%= @user_biography.job_changes %>
+</p>
+
+<p>
+  <b>Romance:</b>
+  <%= @user_biography.romance %>
+</p>
+
+<p>
+  <b>Crisis:</b>
+  <%= @user_biography.crisis %>
+</p>
+
+<p>
+  <b>Hobby:</b>
+  <%= @user_biography.hobby %>
+</p>
+
+<p>
+  <b>Religion:</b>
+  <%= @user_biography.religion %>
+</p>
+
+<p>
+  <b>Zürich:</b>
+  <%= @user_biography.zurich %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_user_biography_path(@user_biography) %> |
+<%= link_to 'Back', user_biographies_path %>

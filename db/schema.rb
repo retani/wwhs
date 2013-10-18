@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131018114950) do
+ActiveRecord::Schema.define(:version => 20131018131219) do
 
   create_table "images", :force => true do |t|
     t.string   "title"
@@ -54,6 +54,27 @@ ActiveRecord::Schema.define(:version => 20131018114950) do
     t.datetime "updated_at",                     :null => false
     t.boolean  "hidden",      :default => false
     t.string   "slug"
+  end
+
+  create_table "user_biographies", :force => true do |t|
+    t.date     "birthday"
+    t.string   "birthplace"
+    t.string   "parents"
+    t.string   "childhood"
+    t.boolean  "youth_1"
+    t.boolean  "youth_2"
+    t.boolean  "youth_3"
+    t.boolean  "youth_4"
+    t.string   "education"
+    t.string   "travel"
+    t.integer  "job_changes"
+    t.string   "romance"
+    t.string   "crisis"
+    t.boolean  "hobby"
+    t.string   "religion"
+    t.boolean  "zurich"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

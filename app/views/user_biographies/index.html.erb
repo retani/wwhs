@@ -1,0 +1,51 @@
+<h1>Listing user_biographies</h1>
+
+<table>
+  <tr>
+    <th>Birthday</th>
+    <th>Birthplace</th>
+    <th>Parents</th>
+    <th>Childhood</th>
+    <th>Youth 1</th>
+    <th>Youth 2</th>
+    <th>Youth 3</th>
+    <th>Youth 4</th>
+    <th>Education</th>
+    <th>Travel</th>
+    <th>Job changes</th>
+    <th>Romance</th>
+    <th>Crisis</th>
+    <th>Hobby</th>
+    <th>Religion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_biographies.each do |user_biography| %>
+  <tr>
+    <td><%= user_biography.birthday %></td>
+    <td><%= user_biography.birthplace %></td>
+    <td><%= user_biography.parents %></td>
+    <td><%= user_biography.childhood %></td>
+    <td><%= user_biography.youth_1 %></td>
+    <td><%= user_biography.youth_2 %></td>
+    <td><%= user_biography.youth_3 %></td>
+    <td><%= user_biography.youth_4 %></td>
+    <td><%= user_biography.education %></td>
+    <td><%= user_biography.travel %></td>
+    <td><%= user_biography.job_changes %></td>
+    <td><%= user_biography.romance %></td>
+    <td><%= user_biography.crisis %></td>
+    <td><%= user_biography.hobby %></td>
+    <td><%= user_biography.religion %></td>
+    <td><%= link_to 'Show', user_biography %></td>
+    <td><%= link_to 'Edit', edit_user_biography_path(user_biography) %></td>
+    <td><%= link_to 'Destroy', user_biography, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User biography', new_user_biography_path %>
