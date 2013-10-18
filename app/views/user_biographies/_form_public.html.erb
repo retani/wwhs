@@ -63,6 +63,15 @@
   </div>
   <h4>Gegenwart</h4>
   <div class="field">
+  Besitzen Sie
+    <%= f.check_box :owns_boat %>
+    <%= f.label :owns_boat, "Boot" %>
+    <%= f.check_box :owns_house %>
+    <%= f.label :owns_house, "Haus" %>
+    <%= f.check_box :owns_gold %>
+    <%= f.label :owns_gold,"Gold" %> (Mehrfach-Auswahl möglich)
+  </div>
+  <div class="field">
     <%= f.label :travel, "Ihre intensivste Reise in den letzten 10 Jahren führte Sie in welches Land?" %>
     <%= f.text_field :travel %>
   </div>
