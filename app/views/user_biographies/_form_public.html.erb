@@ -1,4 +1,4 @@
-<%= form_for(@user_biography) do |f| %>
+<%= form_for(@user_biography, :remote=>true, :format => :json) do |f| %>
   <% if @user_biography.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user_biography.errors.count, "error") %> prohibited this user_biography from being saved:</h2>
@@ -99,6 +99,6 @@
 
   <br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Berechnen" %>
   </div>
 <% end %>

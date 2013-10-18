@@ -20,5 +20,15 @@ class UserBiography < ActiveRecord::Base
 	
 	RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum']
 	validates :religion, :inclusion => RELIGION_OPTIONS
+
+	def translations
+		
+		t = {}
+		Uchronia.all.each do |uchronia|
+			t[uchronia.slug] = "Du wurdest im Jahr " + self.birthday.year.to_s + " in der Uchronie " + uchronia.title + " geboren."
+		end
+
+		return t
+	end
 	
 end

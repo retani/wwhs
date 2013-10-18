@@ -27,6 +27,9 @@ $(document).ready(function() {
 	});
 	*/
 	
+	$('#new_user_biography').on('ajax:success', function(event, data, status, xhr) {
+		alert(data);
+	});
 	
 	$('*').on('mouseenter', function() { hoverElem = this; });
 	
