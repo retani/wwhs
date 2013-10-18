@@ -9,24 +9,50 @@
 
 Page.destroy_all
 
-Page.create([{ title: "termine" , content: "
+Page.create([{ title: "termine" , content: '
 
-	<h2>Die Wanderungen</h2>
+	<h2>Tickets</h2>
 	
-	Tour 1: 9.11.2013 -> Tickets <br>
-	Tour 2: 10.11.2013 -> Tickets <br>
-	<br>
-	Tour 3: 16.11.2013 -> Tickets <br>
-	Tour 4: 17.11.2013 -> Tickets <br>
-	<br>
-	Tour 5: 23.11.2013 -> Tickets <br>
-	Tour 6: 24.11.2013 -> Tickets <br>
-	<br>
-	Tour 7: 30.11.2013 -> Tickets <br>
-	Tour 8: 01.12.2013 -> Tickets <br>
-	<br>
+	Tour 1<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68229&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Freitag, 8.11.2013, 22:00<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68230&ShowDetails=1" target="_blank">Wanderung</a> Start: Samstag, 9.11.2013, 6:30<br/>
 
-" }])
+	<br/>
+	Tour 2<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68280&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Samstag, 9.11.2013, 22:00<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68286&ShowDetails=1" target="_blank">Wanderung</a> Start: Sonntag, 10.11.2013, 6:30<br/>
+
+	<br/>
+	Tour 3<br/>	
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68281&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Freitag, 15.11.2013, 22:00<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68287&ShowDetails=1" target="_blank">Wanderung</a> Start: Samstag, 16.11.2013, 6:30<br/>
+	
+	<br/>	
+	Tour 4<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68282&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Samstag, 16.11.2013, 22:00<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68288&ShowDetails=1" target="_blank">Wanderung</a> Start: Sonntag, 17.11.2013, 6:30<br/>
+	
+	<br/>	
+	Tour 5<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68283&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Freitag, 22.11.2013, 22:00<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68289&ShowDetails=1" target="_blank">Wanderung</a> Start: Samstag, 23.11.2013, 6:30<br/>
+
+	<br/>	
+	Tour 6<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68284&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Samstag, 23.11.2013, 22:00<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68290&ShowDetails=1" target="_blank">Wanderung</a> Start: Sonntag, 24.11.2013, 6:30<br/>
+
+	<br/>	
+	Tour 7<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68285&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Freitag, 29.11.2013, 22:00<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68291&ShowDetails=1" target="_blank">Wanderung</a> Start: Samstag, 30.11.2013, 6:30<br/>
+	
+	<br/>	
+	Tour 8<br/>
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68379&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Freitag, 30.11.2013, 22:00<br/>	
+	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68380&ShowDetails=1" target="_blank">Wanderung</a> Start: 01.12.2013
+	
+' }])
 
 Page.create([{ title: "trailer" , content: '
 
