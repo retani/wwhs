@@ -34,7 +34,7 @@ body {
 
 .step {
 	width: 500px;
-    height: 400px;
+    /*height: 200px;*/
 	font-size: 1em;
 	min-height: 500px;
 }
@@ -89,6 +89,7 @@ body {
 /* fade out inactive slides */
 .step:not(.active) {
 	/*opacity: 0.3;*/
+	/*display:none;*/
 	cursor:pointer;
 }
 
