@@ -45,7 +45,7 @@ class UserBiographiesController < ApplicationController
     respond_to do |format|
       if @user_biography.save
         format.html { redirect_to @user_biography, notice: 'User biography was successfully created.' }
-        format.json { render json: @user_biography, status: :created, location: @user_biography }
+        format.json { render json: {:original => @user_biography, :translations => @user_biography.translations }, status: :created, location: @user_biography }
       else
         format.html { render action: "new" }
         format.json { render json: @user_biography.errors, status: :unprocessable_entity }

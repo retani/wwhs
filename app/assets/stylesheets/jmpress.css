@@ -64,10 +64,16 @@ body {
 }
 
 .step.uchronist {
+	background-color: white;
+    padding: 40px 60px;
 }
 
 .step.uchronist img {
 	width:100%;
+}
+
+.step.uchronia {
+	background-color: white;
 }
 
 .step.overview {
@@ -84,6 +90,11 @@ body {
 #overview-uchronists {
 	background-image:url("/assets/wireframe.png");
 	background-size:100%;
+}
+
+#biographygenerator {
+	background-color: white;
+	padding: 40px;
 }
 
 /* fade out inactive slides */

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131018131219) do
+ActiveRecord::Schema.define(:version => 20131018174946) do
 
   create_table "challenges", :force => true do |t|
     t.string   "name"
@@ -128,8 +128,11 @@ ActiveRecord::Schema.define(:version => 20131018131219) do
     t.boolean  "hobby"
     t.string   "religion"
     t.boolean  "zurich"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "owns_boat",   :default => false
+    t.boolean  "owns_house",  :default => false
+    t.boolean  "owns_gold",   :default => false
   end
 
   create_table "username_cookies", :force => true do |t|

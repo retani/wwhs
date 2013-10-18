@@ -63,6 +63,18 @@
   </div>
   <h4>Gegenwart</h4>
   <div class="field">
+    <%= f.label :owns_boat %><br />
+    <%= f.check_box :owns_boat %>
+  </div>
+  <div class="field">
+    <%= f.label :owns_house %><br />
+    <%= f.check_box :owns_house %>
+  </div>
+  <div class="field">
+    <%= f.label :owns_gold %><br />
+    <%= f.check_box :owns_gold %>
+  </div>
+  <div class="field">
     <%= f.label :travel, "Ihre intensivste Reise in den letzten 10 Jahren führte Sie in welches Land?" %>
     <%= f.text_field :travel %>
   </div>

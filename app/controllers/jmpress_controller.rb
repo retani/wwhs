@@ -2,7 +2,7 @@ class JmpressController < ApplicationController
 
   def index  
 		@user_biography = UserBiography.new
-		
+
 		@slides = [
 		
 {:type => "page", :slug => "termine", :x => 0, :y => 0},

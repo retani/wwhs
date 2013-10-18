@@ -181,25 +181,92 @@ Page.create([{ title: "regeln", content: "
 Uchronist.destroy_all
 
 Uchronist.create(name: "Uchronist 1", 
-	description: "description")
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
 Uchronist.create(name: "Uchronist 2", 
-	description: "description")
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
 Uchronist.create(name: "Uchronist 3", 
-	description: "description")
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
 Uchronist.create(name: "Uchronist 4", 
-	description: "description")
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
 Uchronist.create(name: "Uchronist 5", 
-	description: "description")
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
 Uchronist.create(name: "Uchronist 6", 
-	description: "description")
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
 Uchronist.create(name: "Uchronist 7", 
-	description: "description")
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
 Uchronist.create(name: "Uchronist 8", 
-	description: "description")
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
 Uchronist.create(name: "Uchronist 9", 
-	description: "description")
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
 Uchronist.create(name: "Uchronist 10", 
-	description: "description")
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
+Uchronist.create(name: "Uchronist 10", 
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
+Uchronist.create(name: "Uchronist 11", 
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
+Uchronist.create(name: "Uchronist 12", 
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
+Uchronist.create(name: "Uchronist 13", 
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
+Uchronist.create(name: "Uchronist 14", 
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
+Uchronist.create(name: "Uchronist 15", 
+	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
+<b>Im Alltag:</b> Architektur, Comics<br/><br/>
+<b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
+<b>Untersucht die Uchronien:</b> #44, #23')
+
+
+
+
+
+
+
 
 Uchronia.destroy_all
 
