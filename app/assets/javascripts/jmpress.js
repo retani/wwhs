@@ -36,13 +36,20 @@ $(document).ready(function() {
   			window.location.hash="#/overview";
   		}  		
   		if (event.which == "111") { // o
-  			$(".step").each (function (index, elem) {
-  				x = modifyTransformStyle(elem,"x");
-  				y = modifyTransformStyle(elem,"y");
-  				if (x != $(elem).attr("data-x") || y != $(elem).attr("data-y")) {
-  					console.log( "" + $(elem).attr("id") + ": " + "data-x=\""+modifyTransformStyle(elem,"x")+"\" " + "data-y=\""+modifyTransformStyle(elem,"y")+"\"");
-  				}
+  			out = "";
+  			$(".step.editable").each (function (index, elem) {
+  				//x = modifyTransformStyle(elem,"x");
+  				//y = modifyTransformStyle(elem,"y");  				
+  				//if (x != $(elem).attr("data-x") || y != $(elem).attr("data-y")) {
+  					data_x = $(elem).attr("data-x");
+  					data_y = $(elem).attr("data-y");
+  					data_type = $(elem).attr("data-type");
+  					data_slug = $(elem).attr("data-slug");
+  					out += "{:type => \""+data_type+"\", :slug => \""+data_slug+"\", :x => "+data_x+", :y => "+data_y+"},\n";
+  					//console.log( "" + $(elem).attr("id") + ": " + "data-x=\""+modifyTransformStyle(elem,"x")+"\" " + "data-y=\""+modifyTransformStyle(elem,"y")+"\"");
+  				//}
   			});
+  			console.log(out);
  		}
  		
 		if (typeof (hoverElem) != "undefined") {
@@ -87,7 +94,7 @@ function modifyTransformStyle(elem, param, increment)
 		newValue = parseInt(currentValue) + increment;
 		newTransformStyle = transformStyle.replace(regexp,currentValueResult[0].substr(0, currentValueResult[0].length - currentValue.length)+newValue);
 		elem.style.webkitTransform = newTransformStyle;
-		//$(elem).attr("data-" + param, newValue);
+		$(elem).attr("data-" + param, newValue);
 	}
 }
 
