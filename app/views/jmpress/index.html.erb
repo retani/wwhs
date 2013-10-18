@@ -25,7 +25,7 @@
 		</div>
 	<% end %>
 	
-	<% Uchronia.all.each do |index, uchronia| %>
+	<% Uchronia.all.each do |uchronia| %>
 			<div class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>">
 			<%= render :partial => 'uchronias/show_public', :locals => {:uchronia => uchronia} %>
 			</div>
