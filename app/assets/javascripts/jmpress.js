@@ -37,7 +37,7 @@ $(document).ready(function() {
 	$('*').on('mouseenter', function() { hoverElem = this; });
 	
 	$( "body" ).keypress(function(event) {
-		console.log(event.which);
+		//console.log(event.which);
   		if (event.which == "113") { // q
   			window.location.hash="#/overview";
   		}  		
@@ -104,7 +104,6 @@ $(document).ready(function() {
 function modifyTransformStyle(elem, param, increment)
 {
 	transformStyle = elem.style.webkitTransform;
-	console.log(transformStyle);
 	if (param == "x")       regexp = /translate3d\(([\d-]+)/;           
 	if (param == "y")       regexp = /translate3d\([\d-]+px, ([\d-]+)/; 
 	if (param == "rotate")  regexp = /rotateZ\(([\d-]+)/;               
