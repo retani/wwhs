@@ -32,6 +32,11 @@ $(document).ready(function() {
 			console.log(key + ' ' + value);
   	  $('#' + key + ' div.bio_translation').html(value);
 		});
+		
+		keys = Object.keys(data.translations)
+		r = Math.floor(Math.random()*keys.length);
+		console.log(r);
+		window.location.hash = '/' + keys[r];
 	});
 	
 	$('*').on('mouseenter', function() { hoverElem = this; });
