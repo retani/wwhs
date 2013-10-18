@@ -2,7 +2,9 @@
 
 <% if uchronia.image %>
 	<%= image_tag uchronia.image.image.url(:thumb) %>
-<% end %> 
+<% else %> 
+	<%= image_tag "http://wwhs-production.s3.amazonaws.com/images/16/medium/image.jpg?1382099134" %>
+<% end %>
 
 <% if uchronia.media_embed %>
 	<%= uchronia.media_embed.html_safe %>

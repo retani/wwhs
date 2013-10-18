@@ -1,19 +1,20 @@
 <div id="canvas">
 
-	<div id="overview" class="step overview" data-x="3000" data-y="1500" data-scale="7">
-    </div>
-    
-	<% x = 1 %>
-	<% Page.all.each_with_index do |page,index| %>
-		<div id="<%= page.slug %>" class="step page" data-x="<%= 1500 + 500*index+(1000*index/(index.to_f+1)) %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>" data-scale="<%= 1 %>">
-		<!-- data-src="<%= url_for controller: 'pages', action: 'show', id: page %>" -->
-		<%= render :partial => 'pages/show', :locals => {:page => page} %>
-		</div>
-	<% x=x+1 %>
-	<% end %>
+	<div id="overview" class="step overview" data-x="3000" data-y="1500" data-scale="7"></div>
 
-	<div id="overview-uchronists" class="step overview" data-x="2500" data-y="1900" data-scale="3" data-rotate="90">
-    </div>
+	<%= render :partial => 'pages/show_on_canvas', :locals => {
+		:page => Page.find('termine'),
+		:x => 500,
+		:y => 500,
+		} 
+	%>
+
+	<%= render :partial => 'pages/show_on_canvas', :locals => {
+		:page => Page.find('trailer'),
+		:x => 1500,
+		:y => 500,
+		} 
+	%>
 
 	<% xindex = 0 %>
 	<% yindex = 1 %>
@@ -25,6 +26,7 @@
 		</div>
 	<% end %>
 	
+	<% x = 0 %>
 	<% Uchronia.all.each do |uchronia| %>
 			<div class="step" data-x="<%= x %>" data-y="<%= rand(200)%>" data-rotate="<%= rand(10)-5%>">
 			<%= render :partial => 'uchronias/show_public', :locals => {:uchronia => uchronia} %>

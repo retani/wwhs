@@ -7,6 +7,8 @@
 #   cities = City.create([{ name: 'Chicago', name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Page.destroy_all
+
 Page.create([{ title: "termine" , content: "
 
 	<h2>Die Wanderungen</h2>
@@ -25,6 +27,13 @@ Page.create([{ title: "termine" , content: "
 	<br>
 
 " }])
+
+Page.create([{ title: "trailer" , content: '
+
+<iframe width="500" height="375" src="//www.youtube.com/embed/nBotEgWjZJw" frameborder="0" allowfullscreen></iframe>
+
+' }])
+
 
 Page.create([{ title: "startpunkt", content: '
 
@@ -169,4 +178,47 @@ Page.create([{ title: "regeln", content: "
 
 " }])
 
-#Page.create([{ title: "Tourdaten" }])
+Uchronist.destroy_all
+
+Uchronist.create(name: "Uchronist 1", 
+	description: "description")
+Uchronist.create(name: "Uchronist 2", 
+	description: "description")
+Uchronist.create(name: "Uchronist 3", 
+	description: "description")
+Uchronist.create(name: "Uchronist 4", 
+	description: "description")
+Uchronist.create(name: "Uchronist 5", 
+	description: "description")
+Uchronist.create(name: "Uchronist 6", 
+	description: "description")
+Uchronist.create(name: "Uchronist 7", 
+	description: "description")
+Uchronist.create(name: "Uchronist 8", 
+	description: "description")
+Uchronist.create(name: "Uchronist 9", 
+	description: "description")
+Uchronist.create(name: "Uchronist 10", 
+	description: "description")
+
+Uchronia.destroy_all
+
+Uchronia.create(title: "Uchronie 1", 
+	pod: "pod",
+	description: "description")
+Uchronia.create(title: "Uchronie 2", 
+	pod: "pod",
+	description: "description")
+Uchronia.create(title: "Uchronie 3", 
+	pod: "pod",
+	description: "description")
+Uchronia.create(title: "Uchronie 4", 
+	pod: "pod",
+	description: "description")
+Uchronia.create(title: "Uchronie 5", 
+	pod: "pod",
+	description: "description")
+Uchronia.create(title: "Uchronie 6", 
+	pod: "pod",
+	description: "description")
+
