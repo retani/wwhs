@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jmpress.custom
 
+hoverElem = null;
 
 $(document).ready(function() {
 
@@ -26,15 +27,34 @@ $(document).ready(function() {
 	});
 	*/
 	
+	
+	$('*').on('mouseenter', function() { hoverElem = this; });
+	
 	$( "body" ).keypress(function(event) {
-		elem = $(".step.active").get(0);
 		//console.log(event.which);
   		if (event.which == "113") { // q
   			window.location.hash="#/overview";
   		}  		
+  		if (event.which == "111") { // o
+  			$(".step").each (function (index, elem) {
+  				x = modifyTransformStyle(elem,"x");
+  				y = modifyTransformStyle(elem,"y");
+  				if (x != $(elem).attr("data-x") || y != $(elem).attr("data-y")) {
+  					console.log( "" + $(elem).attr("id") + ": " + "data-x=\""+modifyTransformStyle(elem,"x")+"\" " + "data-y=\""+modifyTransformStyle(elem,"y")+"\"");
+  				}
+  			});
+ 		}
+ 		
+		if (typeof (hoverElem) != "undefined") {
+			if ($(hoverElem).hasClass("step")) elem = hoverElem;
+			else elem = $(hoverElem).parents(".step").get(0);
+		}
+		else { console.log("no hover elem");return;}
+
   		if (event.which == "105") { // i
   			console.log("data-x=\""+modifyTransformStyle(elem,"x")+"\" " + "data-y=\""+modifyTransformStyle(elem,"y")+"\"");
   		}
+		//elem = $(".step.active").get(0); 		
   		if (event.which == "115") { // s
   			modifyTransformStyle(elem,"x",10);
   		}  	
@@ -66,6 +86,7 @@ function modifyTransformStyle(elem, param, increment)
 		newValue = parseInt(currentValue) + increment;
 		newTransformStyle = transformStyle.replace(regexp,currentValueResult[0].substr(0, currentValueResult[0].length - currentValue.length)+newValue);
 		elem.style.webkitTransform = newTransformStyle;
+		//$(elem).attr("data-" + param, newValue);
 	}
 }
 
