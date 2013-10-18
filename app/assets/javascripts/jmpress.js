@@ -78,9 +78,10 @@ $(document).ready(function() {
 function modifyTransformStyle(elem, param, increment)
 {
 	transformStyle = elem.style.webkitTransform;
-	if (param == "x") regexp = /translate3d\((\d+)/;
-	if (param == "y") regexp = /translate3d\(\d+px, (\d+)/;
+	if (param == "x") regexp = /translate3d\(([\d-]+)/;
+	if (param == "y") regexp = /translate3d\([\d-]+px, ([\d-]+)/;
 	currentValueResult = transformStyle.match(regexp);
+	if (currentValueResult == null) return false;
 	currentValue = currentValueResult[1];
 	if (typeof (increment) == "undefined") {
 		return currentValue;

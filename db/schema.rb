@@ -130,7 +130,7 @@ ActiveRecord::Schema.define(:version => 20131018131219) do
     t.boolean  "zurich"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-	end
+  end
 
   create_table "username_cookies", :force => true do |t|
     t.string   "cookiehash"
