@@ -31,9 +31,47 @@ class UserBiography < ActiveRecord::Base
 			t[uchronia.slug] = "Du wurdest im Jahr " + self.birthday.year.to_s + " in der Uchronie " + uchronia.title + " geboren."
 		end
 		
-		t['uchronie-2']="2";
+		# UCHRONIE #2
+		
+		t['uchronie-2']=translate_uchronia_2;
 
 		return t
+	end
+	
+	def translate_uchronia_2
+	
+		t = ""
+	
+		if self.birthday.year < 1978
+			crisis_age = "adult";
+		elsif self.birthday.year < 1978
+			crisis_age = "twen";
+		elsif self.birthday.year < 1988
+			crisis_age = "teen";
+		elsif self.birthday.year < 2008
+			crisis_age = "child";			
+		else
+			crisis_age = "baby";
+		end
+		
+		if crisis_age == "child" 
+			if self.parents == "Reich"
+				t += "Der Niedergang Ihrer Familie hat Ihnen schwer zu schaffen gemacht. "
+			end
+		end
+		
+		good_countries = ['Russland', 'Brasilien', 'China', 'Indien']
+		if good_countries.any? { |w| self.travel[w] }
+			t += "Sie entschlossen sich schließlich, in ein weniger chaotisches Land auszuwandern, nämlich nach " + self.travel
+			return t
+		end
+		
+		if owns_boat
+			t += "Glücklicherweise konnten Sie sich über Wasser halten. Dank Ihres Boots verdienen Sie als Drogenschmuggler über den Zürisee recht gut."
+		end
+		
+		
+		
 	end
 	
 end

@@ -74,9 +74,13 @@ body {
 
 .step.uchronia {
 	background-color: transparent;
+	position:relative;
 }
 
 .step.uchronia .bio_translation {
+	position:absolute;
+	top:100px;
+	right:0;
 }
 
 .post-it {
