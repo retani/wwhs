@@ -8,7 +8,7 @@ class JmpressController < ApplicationController
 {:type => "page", :slug => "termine", :x => 0, :y => -150, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "trailer", :x => -590, :y => 150, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "hinweise", :x => 480, :y => 320, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "startpunkt", :x => -40, :y => 560, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "startpunkt", :x => -540, :y => 560, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "society", :x => -610, :y => -220, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "manifest", :x => 470, :y => 665, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "regeln", :x => 470, :y => -100, :rotate => 0, :scale => 1},

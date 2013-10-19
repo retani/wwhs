@@ -1,7 +1,5 @@
 <div id="canvas">
 
-	<div id="overview" class="step overview" data-x="0" data-y="0" data-scale="7"></div>
-
 	<% @slides.each do |slide| %>
 		<% if slide[:type] == "page" %>
 			<% page =  Page.find(slide[:slug]) %>
@@ -32,6 +30,7 @@
 			<% x += 700 %>
 	<% end %>
 
+	<div id="overview" class="step overview" data-x="0" data-y="0" data-scale="7"></div>
 
 
 </div>
