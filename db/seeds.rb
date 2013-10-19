@@ -301,7 +301,7 @@ Uchronia.create(title: "Uchronie 1",
 	description: "description")
 Uchronia.create(title: "Uchronie 2", 
 	pod: "pod",
-	description: "description")
+	description: "Mit der Pleite der U.B.S. im Schwarzen September 2008 erreichte die internationale Finanzkrise auch die bis dato als sicher geltende Schweiz. Von dem Zusammenbruch des Schweizer Bankensystems, bei dem etliche Bürger ihre Spareinlagen verloren, profitierte vor allem die SVP, die ihre isolationistische Politik weiter vorantrieb. Unter ihrer Führung wurde durchgesetzt, dass fortan der Aufenthaltsort der Bürger durch technische Maßnahmen permanent überprüft werden konnte. Erst dadurch – und unter Einsetzung hoher Strafen – konnte den allgegenwärtigen Plünderungen Einhalt geboten, und die Ordnung notdürftig wiederhergestellt werden. Dank weitsichtiger Krisenvorbereitungen und seiner geschützten Lage konnte Zürich trotz allem einen gewissen Lebensstandard wahren.")
 Uchronia.create(title: "Uchronie 3", 
 	pod: "pod",
 	description: "description")
