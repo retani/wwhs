@@ -28,17 +28,55 @@ class UserBiography < ActiveRecord::Base
 		return year - self.birthday.year 
 	end
 
+	def zuercher
+		if self.birthplace == 'in Zürich'
+			return true
+		else 
+			return false
+		end
+	end
+
+	def schweizer
+		if self.birthplace == 'in Zürich' || self.birthplace == 'im Aargau' || self.birthplace == 'in der Schweiz'
+			return true
+		else 
+			return false
+		end
+	end
+
 	def translations
 		
 		t = {}
 		Uchronia.all.each do |uchronia|
-			t[uchronia.slug] = "Du wurdest im Jahr " + self.birthday.year.to_s + " in der Uchronie " + uchronia.title + " geboren."
+			t[uchronia.slug] = "Sie werden im Jahr " + self.birthday.year.to_s + " " + self.birthplace + " " + "geboren. "
 		end
 		
-		t['uchronie-2']="2";
+		t['uchronie-2']="2"
 
-		t
+		#111
+		if age(1973) > 12 && schweizer
+			t['111'] += "Ihre Kindheit verläuft genau so, wie sie sich an sie erinnern. Das Abstimmungsergebnis 1973 verändert jedoch Ihr Lebensgefühl grundlegend. Gebannt verfolgen Sie über die nächsten Jahre den Baufortschritt der Zürcher U-Bahn. "
+		end
 
+		if self.birthday.year >= 1973 && self.birthday.year <= 1985 && zuercher
+			t['111'] += "Die überall verteilten Baustellen der U-Bahn-Haltestellen prägen das Stadtbild ihrer Kindheit. "
+		end 
+
+		if self.birthday.year >= 1988 && zuercher
+			t['111'] += "Zu Ihren frühesten Kindheitserinnerungen gehört ein Erlebnis auf der “Rösslitram”. Die U-Bahn gibt es seit Sie denken können. "
+		end
+
+		if age(2004) > 10 && age(2004) < 20
+			t['111'] += "Als fan von TEARS sind sie selbstverständlich beim Konzert in der Tram dabei und erleben den Unfall mit. "
+		end
+
+		if age(2008) > 20 && self.zurich
+			t['111'] += "Sie nutzen regelmäßig die Spielautomaten in der Tram. Als ein anderer Fahrgast einen Hauptgewinn macht, wird er überfallen. Sie schreiten ein und erhalten einen Orden für Zivilcourage. "
+		end
+
+		Uchronia.all.each do |uchronia|
+			t[uchronia.slug] += "Heute sind Sie " + age(2013).to_s + " Jahre alt."
+		end
 
 
 		return t

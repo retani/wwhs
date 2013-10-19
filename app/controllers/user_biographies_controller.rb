@@ -1,6 +1,8 @@
 class UserBiographiesController < ApplicationController
   # GET /user_biographies
   # GET /user_biographies.json
+  layout 'admin'
+
   def index
     @user_biographies = UserBiography.all
 
@@ -43,12 +45,16 @@ class UserBiographiesController < ApplicationController
     @user_biography = UserBiography.new(params[:user_biography])
 
     respond_to do |format|
-      if @user_biography.save
-        format.html { redirect_to @user_biography, notice: 'User biography was successfully created.' }
-        format.json { render json: {:original => @user_biography, :translations => @user_biography.translations }, status: :created, location: @user_biography }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user_biography.errors, status: :unprocessable_entity }
+      if params[:save]
+      	if @user_biography.save
+	        format.html { redirect_to @user_biography, notice: 'User biography was successfully created.' }
+  	      format.json { render json: {:original => @user_biography, :translations => @user_biography.translations }, status: :created, location: @user_biography }
+  	    else 	
+	        format.html { render action: "new" }
+  	      format.json { render json: @user_biography.errors, status: :unprocessable_entity }
+  	    end
+  	  else
+	  	  format.json { render json: {:original => @user_biography, :translations => @user_biography.translations }, status: :created, location: @user_biography }
       end
     end
   end
