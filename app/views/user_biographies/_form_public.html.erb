@@ -18,7 +18,7 @@
   </div>
   <div class="field">
     <%= f.label :birthplace, "Geburtsort" %>
-    <%= f.text_field :birthplace %>
+    <%= f.select :birthplace, UserBiography::BIRTHPLACE_OPTIONS %>
   </div>
   <div class="field">
     <%= f.label :parents, "Elternhaus" %>

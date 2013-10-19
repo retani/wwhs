@@ -3,6 +3,9 @@
 class UserBiography < ActiveRecord::Base
   attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold
 
+	BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aaargau', 'in der Schweiz']
+	validates :birthplace, :inclusion => BIRTHPLACE_OPTIONS	
+	
 	PARENTS_OPTIONS = ['Arm', 'Reich', 'weiß nicht']
 	validates :parents, :inclusion => PARENTS_OPTIONS
 
@@ -31,6 +34,8 @@ class UserBiography < ActiveRecord::Base
 		Uchronia.all.each do |uchronia|
 			t[uchronia.slug] = "Du wurdest im Jahr " + self.birthday.year.to_s + " in der Uchronie " + uchronia.title + " geboren."
 		end
+		
+		t['uchronie-2']="2";
 
 		t
 
