@@ -18,6 +18,7 @@ Page.create([{ title: "info" , content: '
 
 <a href="#/trailer">Trailer</a><br>
 <a href="#/termine">Termine</a><br>
+<a href="#/society">Über die U.R.S.</a><br>
 <a href="#/uchronist-1">Uchronisten</a><br>
 <a href="#/111">Uchronien</a><br>
 
