@@ -60,12 +60,15 @@ $(document).ready(function() {
 	
 	$('*').on('mouseenter', function() { hoverElem = this; });
 	
-	$( "body" ).keypress(function(event) {
-		//console.log(event.which);
-  		if (event.which == "113") { // q
+	$( "body" ).keyup(function(event) {
+		console.log(event.which);
+  		if (event.which == "81") { // q
   			window.location.hash="#/overview";
-  		}  		
-  		if (event.which == "111") { // o
+  		} 
+  		if (event.which == "27") { // q
+  			window.location.hash="#/info";
+  		}   		
+  		if (event.which == "79") { // o
   			out = "";
   			$(".step.editable").each (function (index, elem) {
   				//x = modifyTransformStyle(elem,"x");
@@ -83,6 +86,7 @@ $(document).ready(function() {
   				//}
   			});
   			console.log(out);
+  			//window.prompt("copy",out);
  		}
  		
 		if (typeof (hoverElem) != "undefined") {
@@ -91,33 +95,33 @@ $(document).ready(function() {
 		}
 		else { console.log("no hover elem");return;}
 
-  		if (event.which == "105") { // i
+  		if (event.which == "73") { // i
   			console.log("data-x=\""+modifyTransformStyle(elem,"x")+"\" " + "data-y=\""+modifyTransformStyle(elem,"y")+"\"");
   		}
 		//elem = $(".step.active").get(0); 		
-  		if (event.which == "115") { // s
+  		if (event.which == "83") { // s
   			modifyTransformStyle(elem,"x",50);
   		}  	
-  		if (event.which == "97") { // a
+  		if (event.which == "65") { // a
   			modifyTransformStyle(elem,"x",-50);
   		} 
-  		if (event.which == "119") { // w
+  		if (event.which == "87") { // w
   			modifyTransformStyle(elem,"y",-50);
   		}
-  		if (event.which == "121") { // y
+  		if (event.which == "89") { // y
   			modifyTransformStyle(elem,"y",50);
   		}
-  		if (event.which == "100") { // d
-  			modifyTransformStyle(elem,"rotate",6);
-  		}
-  		if (event.which == "102") { // f
+  		if (event.which == "68") { // d
   			modifyTransformStyle(elem,"rotate",-6);
   		}
-  		if (event.which == "101") { // e
+  		if (event.which == "70") { // f
+  			modifyTransformStyle(elem,"rotate",6);
+  		}
+  		if (event.which == "69") { // e
   			modifyTransformStyle(elem,"scale-x",-0.1);
   			modifyTransformStyle(elem,"scale-y",-0.1);
   		}
-  		if (event.which == "114") { // r
+  		if (event.which == "82") { // r
   			modifyTransformStyle(elem,"scale-x",0.1);
   			modifyTransformStyle(elem,"scale-y",0.1);
   		}    		
