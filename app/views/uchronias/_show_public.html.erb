@@ -16,6 +16,14 @@
 	</p>
 	
 	<p><%= uchronia.description.html_safe %></p>
+
+<p>
+	Uchronists: 
+<% uchronia.uchronists.each do |u| %>
+	<%= link_to u.name, "#/" + u.slug %>
+<% end %>
+</p>
+
 </article>
 
 <aside class="bio_translation post-it"></aside>

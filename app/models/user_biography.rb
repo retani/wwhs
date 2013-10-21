@@ -21,6 +21,9 @@ class UserBiography < ActiveRecord::Base
 	CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiß nicht']
 	validates :crisis, :inclusion => CRISIS_OPTIONS
 	
+	TRAVEL_OPTIONS = ['Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiß nicht']
+	validates :travel, :inclusion => TRAVEL_OPTIONS
+	
 	RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiß nicht']
 	validates :religion, :inclusion => RELIGION_OPTIONS
 

@@ -11,3 +11,10 @@
 <% end %>
 
 <p><%= uchronist.description.html_safe %></p>
+
+<p>
+	Uchronien: 
+<% uchronist.uchronias.each do |u| %>
+	<%= link_to u.title, "#/" + u.slug %>
+<% end %>
+</p>

@@ -72,8 +72,8 @@
     <%= f.label :owns_gold,"Gold" %> (Mehrfach-Auswahl möglich)
   </div>
   <div class="field">
-    <%= f.label :travel, "Ihre intensivste Reise in den letzten 10 Jahren führte Sie in welches Land?" %>
-    <%= f.text_field :travel %>
+    <%= f.label :travel, "Ihre intensivste Reise in den letzten 10 Jahren führte Sie in welchen Erdteil?" %>
+    <%= f.select :travel, UserBiography::TRAVEL_OPTIONS %>
   </div>
   <div class="field">
     <%= f.label :job_changes, "Wie oft haben Sie seit Ihrer Ausbildung den Beruf gewechselt?" %>
