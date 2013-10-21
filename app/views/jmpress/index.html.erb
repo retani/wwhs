@@ -37,7 +37,7 @@
 	<% x = 0 %>
 	<% rand_phi = (0..12).to_a.sort{ rand() - 0.5 }[0..Uchronia.all.count] %>
 	<% Uchronia.all.each_with_index do |uchronia, index| %>
-			<div id="<%= uchronia.slug %>" class="step uchronia" data-r="<%= 2000 %>" data-phi="<%= 30 * rand_phi[index] %>" data-rotate="<%= rand(100)-5%>">
+			<div id="<%= uchronia.slug %>" class="step uchronia" data-r="<%= 2000 %>" data-phi="<%= 30 * rand_phi[index] %>" data-rotate="<%= rand(100)-5%>" data-scale="0.1">
 			<%= render :partial => 'uchronias/show_public', :locals => {:uchronia => uchronia} %>
 			</div>
 			<% x += 700 %>

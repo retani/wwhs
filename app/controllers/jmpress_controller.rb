@@ -6,13 +6,13 @@ class JmpressController < ApplicationController
 		@slides = [
 
 {:type => "page", :slug => "info", :x => 0, :y => 0, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "termine", :x => 0, :y => -500, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "trailer", :x => -740, :y => 50, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "hinweise", :x => 630, :y => 320, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "startpunkt", :x => -690, :y => 560, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "termine", :x => 0, :y => -750, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "trailer", :x => -740, :y => -850, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "hinweise", :x => 1030, :y => -880, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "startpunkt", :x => 510, :y => -840, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "society", :x => -1460, :y => 1480, :rotate => 0, :scale => 2.100000000000001},
-{:type => "page", :slug => "manifest", :x => 620, :y => 665, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "regeln", :x => 620, :y => -100, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "manifest", :x => -1480, :y => 165, :rotate => 0, :scale => 2.000000000000001},
+{:type => "page", :slug => "regeln", :x => 1070, :y => 300, :rotate => 0, :scale => 1.7000000000000006},
 {:type => "uchronist", :slug => "uchronist-1", :x => -700.0, :y => 1500.0, :rotate => -90, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-2", :x => -758.25291634657, :y => 1799.6852747327296, :rotate => -68, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-3", :x => -924.528159729079, :y => 2055.7266963671977, :rotate => -46, :scale => 0.4},
@@ -28,8 +28,7 @@ class JmpressController < ApplicationController
 {:type => "uchronist", :slug => "uchronist-12", :x => -1583.6227706141233, :y => 704.3824837053813, :rotate => 174, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-13", :x => -1279.4901153464011, :y => 730.9906432493448, :rotate => 196, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-14", :x => -1007.4708197394739, :y => 869.5913971146222, :rotate => 218, :scale => 0.4},
-{:type => "uchronist", :slug => "uchronist-15", :x => -807.1796769724493, :y => 1099.9999999999995, :rotate => 240, :scale => 0.4},
-		]
+{:type => "uchronist", :slug => "uchronist-15", :x => -807.1796769724493, :y => 1099.9999999999995, :rotate => 240, :scale => 0.4},		]
 		
   end
 

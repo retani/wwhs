@@ -11,7 +11,7 @@ Page.destroy_all
 
 Page.create([{ title: "info" , content: '
 
-<h2>Willkommen</h2>
+<h2>Wir würden hier sein</h2>
 
 <p>Navigieren sie mit den Cursortasten</p>
 <p>Hierher zurück kommen Sie immer mit "Esc" (Escape)</p>
@@ -154,11 +154,23 @@ Page.create([{ title: "manifest", content: "
 	<h2>Das Manifest</h2>
 	<p>
 	Zürich hat nicht nur eine Gegenwart, sondern viele.
+	</p>
+	<p>
 	Zürich hat nicht nur eine Geschichte, sondern viele.
+	</p>
+	<p>
 	Wir können die Zukunft jeder Uchronie beeinflussen, indem wir ihre Gegenwart verändern. 
+	</p>
+	<p>
 	Wir können die Zukunft unserer Gegenwart verändern, in dem wir unsere Gegenwart verändern.
+	</p>
+	<p>
 	Jede Entscheidung zieht als Konsequenz eine Uchronie nach sich und lässt andere zurück. Jede Entscheidung könnte auch anders verlaufen
+	</p>
+	<p>
 	Indem wir Uchronien erforschen schaffen wir Bewustsein für alternative Möglichkeiten von Geschichte.
+	</p>
+	<p>
 	Werte der U.R.S. sind: 
 	Sorgfalt, Gelassenheit, Toleranz, Offenheit ,Vorsicht, Präzision, Qualität, Nachsicht
 	</p>

@@ -106,18 +106,23 @@ class UserBiography < ActiveRecord::Base
 			end
 		end
 		
+		# easter eggs
+		
 		good_countries = ['Russland', 'Brasilien', 'China', 'Indien']
 		if good_countries.any? { |w| self.travel[w] }
 			t += "Sie entschlossen sich schließlich, in ein weniger chaotisches Land auszuwandern, nämlich nach " + self.travel
 			return t
 		end
 		
+		# now
+
 		if owns_boat
 			t += "Glücklicherweise konnten Sie sich über Wasser halten. Dank Ihres Boots verdienen Sie als Drogenschmuggler über den Zürisee recht gut."
+			return t
 		end
 		
 		
-		
+
 	end
 	
 end
