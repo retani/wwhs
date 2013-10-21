@@ -16,9 +16,22 @@ body {
     /*background-image:url("/assets/concrete.jpg");*/
     background-position:90% 0%;
     background-size: cover;
-    font-family: Times, Times Roman, sans-serif;
+    font-family: sans-serif;
     color:black;
+    line-height:1.3em;
 }
+
+th {
+	white-space:nowrap;
+	font-weight: bold;
+}
+
+th,td {
+	vertical-align:top;
+	text-align:left;
+	padding:0 10px 10px 0;
+}
+
 
 /** FLOATING MENU **/
 
@@ -48,7 +61,6 @@ body {
 
 .step.page {
 	display: block;
-    padding: 20px;
 
     /*box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
     border: 1px solid rgba(0, 0, 0, .3);*/
