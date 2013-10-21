@@ -27,8 +27,7 @@ class JmpressController < ApplicationController
 {:type => "uchronist", :slug => "uchronist-12", :x => -1583.6227706141233, :y => 704.3824837053813, :rotate => 174, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-13", :x => -1279.4901153464011, :y => 730.9906432493448, :rotate => 196, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-14", :x => -1007.4708197394739, :y => 869.5913971146222, :rotate => 218, :scale => 0.4},
-{:type => "uchronist", :slug => "uchronist-15", :x => -807.1796769724493, :y => 1099.9999999999995, :rotate => 240, :scale => 0.4},
-		]
+{:type => "uchronist", :slug => "uchronist-15", :x => -807.1796769724493, :y => 1099.9999999999995, :rotate => 240, :scale => 0.4},		]
 		
   end
 

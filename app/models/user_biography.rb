@@ -86,14 +86,20 @@ class UserBiography < ActiveRecord::Base
 			end
 		end
 		
+		# easter eggs
+		
 		good_countries = ['Russland', 'Brasilien', 'China', 'Indien']
 		if good_countries.any? { |w| self.travel[w] }
 			t += "Sie entschlossen sich schließlich, in ein weniger chaotisches Land auszuwandern, nämlich nach " + self.travel + ". "
 			return t
 		end
 		
+		# now
+
 		if owns_boat
-			t += "Glücklicherweise konnten Sie sich über Wasser halten. Dank Ihres Boots verdienen Sie als Drogenschmuggler über den Zürisee recht gut. "
+			t += "Glücklicherweise konnten Sie sich über Wasser halten. Dank Ihres Boots verdienen Sie als Drogenschmuggler über den Zürisee recht gut."
+			return t
+
 		end
 		
 		return t
@@ -103,7 +109,6 @@ class UserBiography < ActiveRecord::Base
 	def translate_uchronia_111
 	
 		s = ""
-		
 		if age(1973) > 12 && schweizer
 			s += "Ihre Kindheit verläuft genau so, wie sie sich an sie erinnern. Das Abstimmungsergebnis 1973 verändert jedoch Ihr Lebensgefühl grundlegend. Gebannt verfolgen Sie über die nächsten Jahre den Baufortschritt der Zürcher U-Bahn. "
 		end

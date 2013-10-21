@@ -162,6 +162,37 @@ Page.create([{ title: "society", content: "
 	
 " }])
 
+<<<<<<< HEAD
+=======
+Page.create([{ title: "manifest", content: "
+
+	<h2>Das Manifest</h2>
+	<p>
+	Zürich hat nicht nur eine Gegenwart, sondern viele.
+	</p>
+	<p>
+	Zürich hat nicht nur eine Geschichte, sondern viele.
+	</p>
+	<p>
+	Wir können die Zukunft jeder Uchronie beeinflussen, indem wir ihre Gegenwart verändern. 
+	</p>
+	<p>
+	Wir können die Zukunft unserer Gegenwart verändern, in dem wir unsere Gegenwart verändern.
+	</p>
+	<p>
+	Jede Entscheidung zieht als Konsequenz eine Uchronie nach sich und lässt andere zurück. Jede Entscheidung könnte auch anders verlaufen
+	</p>
+	<p>
+	Indem wir Uchronien erforschen schaffen wir Bewustsein für alternative Möglichkeiten von Geschichte.
+	</p>
+	<p>
+	Werte der U.R.S. sind: 
+	Sorgfalt, Gelassenheit, Toleranz, Offenheit ,Vorsicht, Präzision, Qualität, Nachsicht
+	</p>
+
+" }])
+
+>>>>>>> a4614ced9fe23cb2354a8b8194386da0b1e891c0
 Page.create([{ title: "uchronien", content: "
 
 	<h2>Die Uchronien</h2>
@@ -289,12 +320,6 @@ Uchronist.create(name: "Uchronist 15",
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
 <b>Untersucht die Uchronien:</b> #44, #23')
-
-
-
-
-
-
 
 
 Uchronia.destroy_all
