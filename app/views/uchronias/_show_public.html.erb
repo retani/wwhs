@@ -24,11 +24,22 @@
 <% end %>
 </p>
 
-	<%= link_to "vorherige Uchronie", "#/" + uchronia.previous_uchronia.slug %>
-	<%= link_to "nächste Uchronie", "#/" + uchronia.next_uchronia.slug %>
+<p>Weitere Uchronien: 
 
-	<%= link_to "Zum Biographien-Generator", "#/biographygenerator" %>
+<% Uchronia.all.each do |u| %>
+	<% unless u.id == uchronia.id %>
+		<%= link_to u.title, "#/" + u.slug, {:class=>"uchronia_link", :rel=>u.slug} %>
+	<% end %>
+<% end %>
+
+<br/>
+	<%#= link_to "vorherige", "#/" + uchronia.previous_uchronia.slug %>
+	<%#= link_to "nächste", "#/" + uchronia.next_uchronia.slug %>
+</p>
+
 </article>
 
 <aside class="post-it bio_translation">
+	<div class="bio_translation_content"></div>
+	<%= link_to "Biographie ändern", "#/biographygenerator", {:class=>"uchronia_link", :rel=>uchronia.slug} %>
 </aside>
