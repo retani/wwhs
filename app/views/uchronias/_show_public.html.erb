@@ -24,17 +24,17 @@
 <% end %>
 </p>
 
-<p>Weitere Uchronien: 
+<!--p>Weitere Uchronien: 
 
 <% Uchronia.all.each do |u| %>
 	<% unless u.id == uchronia.id %>
 		<%= link_to u.title, "#/" + u.slug, {:class=>"uchronia_link", :rel=>u.slug} %>
 	<% end %>
 <% end %>
+-->
 
-<br/>
 	<%#= link_to "vorherige", "#/" + uchronia.previous_uchronia.slug %>
-	<%#= link_to "nächste", "#/" + uchronia.next_uchronia.slug %>
+	<%= link_to "Weiter zur nächsten Uchronie", "#/" + uchronia.next_uchronia.slug %> oder <%= link_to "zurück zum Start", "#/start" %>
 </p>
 
 </article>
