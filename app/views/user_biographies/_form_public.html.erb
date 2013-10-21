@@ -1,3 +1,4 @@
+<h2>Der Biographie-Transformator</h2>
 <%= form_for(@user_biography, :remote=>true, :format => :json) do |f| %>
   <% if @user_biography.errors.any? %>
     <div id="error_explanation">
