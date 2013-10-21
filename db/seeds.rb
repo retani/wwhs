@@ -49,43 +49,84 @@ Page.create([{ title: "termine" , content: '
 		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68230&ShowDetails=1" target="_blank">Wanderung</a></td>
 		<td>Samstag, 9.11.2013, 6:30</td>
 	</tr>
+
+	<tr>		
+		<td rowspan="2">2</td>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68280&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a></td>
+		<td>Samstag, 9.11.2013, 22:00</td>
+	</tr>
+	<tr>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68286&ShowDetails=1" target="_blank">Wanderung</a></td>
+		<td>Sonntag, 10.11.2013, 6:30</td>
+	</tr>	
+
+	<tr>		
+		<td rowspan="2">3</td>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68281&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a></td>
+		<td>Freitag, 15.11.2013, 22:00</td>
+	</tr>
+	
+	<tr>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68287&ShowDetails=1" target="_blank">Wanderung</a></td>
+		<td>Samstag, 16.11.2013, 6:30</td>
+	</tr>
+	
+	<tr>		
+		<td rowspan="2">4</td>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68282&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a></td>
+		<td>Samstag, 16.11.2013, 22:00</td>
+	</tr>
+		
+	<tr>	
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68288&ShowDetails=1" target="_blank">Wanderung</a></td>
+		<td>Sonntag, 17.11.2013, 6:30</td>
+	</tr>
+	
+	<tr>		
+		<td rowspan="2">5</td>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68283&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a></td>
+		<td>Freitag, 22.11.2013, 22:00</td>
+	</tr>
+	
+	<tr>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68289&ShowDetails=1" target="_blank">Wanderung</a></td>
+	 	<td>Samstag, 23.11.2013, 6:30</td>
+	 </tr>
+
+	<tr>		
+		<td rowspan="2">6</td>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68284&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a></td>
+		<td>Samstag, 23.11.2013, 22:00</td>
+	</tr>
+	
+	<tr>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68290&ShowDetails=1" target="_blank">Wanderung</a></td>
+		<td>Sonntag, 24.11.2013, 6:30</td>
+	</tr>
+
+	<tr>		
+		<td rowspan="2">7</td>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68285&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a></td>
+		<td>Freitag, 29.11.2013, 22:00</td>
+	</tr>
+	
+	<tr>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68291&ShowDetails=1" target="_blank">Wanderung</a></td>
+		<td>Samstag, 30.11.2013, 6:30</td>
+	</tr>
+	
+	<tr>		
+		<td rowspan="2">8</td>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68379&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a></td>
+		<td>Samstag, 30.11.2013, 22:00</td>
+	</tr>
+	
+	<tr>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68380&ShowDetails=1" target="_blank">Wanderung</a></td>
+		<td>Sonntag, 01.12.2013, 6:30</td>
+	</tr>
 	
 	</table>
-
-	<br/>
-	Tour 2<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68280&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Samstag, 9.11.2013, 22:00<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68286&ShowDetails=1" target="_blank">Wanderung</a> Start: Sonntag, 10.11.2013, 6:30<br/>
-
-	<br/>
-	Tour 3<br/>	
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68281&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Freitag, 15.11.2013, 22:00<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68287&ShowDetails=1" target="_blank">Wanderung</a> Start: Samstag, 16.11.2013, 6:30<br/>
-	
-	<br/>	
-	Tour 4<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68282&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Samstag, 16.11.2013, 22:00<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68288&ShowDetails=1" target="_blank">Wanderung</a> Start: Sonntag, 17.11.2013, 6:30<br/>
-	
-	<br/>	
-	Tour 5<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68283&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Freitag, 22.11.2013, 22:00<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68289&ShowDetails=1" target="_blank">Wanderung</a> Start: Samstag, 23.11.2013, 6:30<br/>
-
-	<br/>	
-	Tour 6<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68284&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Samstag, 23.11.2013, 22:00<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68290&ShowDetails=1" target="_blank">Wanderung</a> Start: Sonntag, 24.11.2013, 6:30<br/>
-
-	<br/>	
-	Tour 7<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68285&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Freitag, 29.11.2013, 22:00<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68291&ShowDetails=1" target="_blank">Wanderung</a> Start: Samstag, 30.11.2013, 6:30<br/>
-	
-	<br/>	
-	Tour 8<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68379&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Freitag, 30.11.2013, 22:00<br/>	
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68380&ShowDetails=1" target="_blank">Wanderung</a> Start: 01.12.2013
 	
 ' }])
 
@@ -162,8 +203,6 @@ Page.create([{ title: "society", content: "
 	
 " }])
 
-<<<<<<< HEAD
-=======
 Page.create([{ title: "manifest", content: "
 
 	<h2>Das Manifest</h2>
@@ -192,7 +231,6 @@ Page.create([{ title: "manifest", content: "
 
 " }])
 
->>>>>>> a4614ced9fe23cb2354a8b8194386da0b1e891c0
 Page.create([{ title: "uchronien", content: "
 
 	<h2>Die Uchronien</h2>
@@ -244,83 +282,82 @@ Uchronist.create(name: "Uchronist 1",
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 2", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 3", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 4", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 5", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 6", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 7", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 8", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 9", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 10", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 10", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 11", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 12", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 13", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 14", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
+')
 Uchronist.create(name: "Uchronist 15", 
 	description: '<b>"Man sollte sich auf genau eine Entwicklung konzentrieren."</b><br/><br/>
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
-<b>Untersucht die Uchronien:</b> #44, #23')
-
+')
 
 Uchronia.destroy_all
 
