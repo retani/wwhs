@@ -47,6 +47,14 @@ $(document).ready(function() {
 	});
 	*/
 	
+	$("input[name='user_biography[on_tour]'").change(function(e){
+    if($(this).val() == 'true') {
+			$('#user_biography_name').parent().slideDown();
+    } else {
+			$('#user_biography_name').parent().slideUp();
+    }
+	});
+	
 	$('.uchronia_link').click(function() {
 		current_uchronia = $(this).attr("rel");
 	});
