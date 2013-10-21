@@ -52,7 +52,7 @@ th,td {
 	/*min-height: 500px;*/
 }
 
-@media only screen and ( (max-width: 500px) or (max-height: 500px) ){
+@media only screen and (max-width: 500px), only screen and (max-height: 500px) {
 .step {
 	width: 300px;
 	font-size: 0.8em;
