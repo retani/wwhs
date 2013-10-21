@@ -54,25 +54,36 @@ class UserBiography < ActiveRecord::Base
 		t['uchronie-2']="2"
 
 		#111
+		s = ""
+		
 		if age(1973) > 12 && schweizer
-			t['111'] += "Ihre Kindheit verläuft genau so, wie sie sich an sie erinnern. Das Abstimmungsergebnis 1973 verändert jedoch Ihr Lebensgefühl grundlegend. Gebannt verfolgen Sie über die nächsten Jahre den Baufortschritt der Zürcher U-Bahn. "
+			s += "Ihre Kindheit verläuft genau so, wie sie sich an sie erinnern. Das Abstimmungsergebnis 1973 verändert jedoch Ihr Lebensgefühl grundlegend. Gebannt verfolgen Sie über die nächsten Jahre den Baufortschritt der Zürcher U-Bahn. "
 		end
 
 		if self.birthday.year >= 1973 && self.birthday.year <= 1985 && zuercher
-			t['111'] += "Die überall verteilten Baustellen der U-Bahn-Haltestellen prägen das Stadtbild ihrer Kindheit. "
+			s += "Die überall verteilten Baustellen der U-Bahn-Haltestellen prägen das Stadtbild ihrer Kindheit. "
 		end 
 
 		if self.birthday.year >= 1988 && zuercher
-			t['111'] += "Zu Ihren frühesten Kindheitserinnerungen gehört ein Erlebnis auf der “Rösslitram”. Die U-Bahn gibt es seit Sie denken können. "
+			s += "Zu Ihren frühesten Kindheitserinnerungen gehört ein Erlebnis auf der “Rösslitram”. Die U-Bahn gibt es seit Sie denken können. "
 		end
 
 		if age(2004) > 10 && age(2004) < 20
-			t['111'] += "Als fan von TEARS sind sie selbstverständlich beim Konzert in der Tram dabei und erleben den Unfall mit. "
+			s += "Als fan von TEARS sind sie selbstverständlich beim Konzert in der Tram dabei und erleben den Unfall mit. "
+		end
+		if age(2004) > 20
+			s += "Als sich das Unglück in der Musik-Tram ereignet, sind Sie schon viel zu alt, um live dabei zu sein. "
 		end
 
-		if age(2008) > 20 && self.zurich
-			t['111'] += "Sie nutzen regelmäßig die Spielautomaten in der Tram. Als ein anderer Fahrgast einen Hauptgewinn macht, wird er überfallen. Sie schreiten ein und erhalten einen Orden für Zivilcourage. "
+		if age(2013) > 16 && self.zurich
+			s += "Heute nutzen Sie regelmäßig die Spielautomaten in der Tram. "
 		end
+
+		if age(2013) > 16 && self.zurich && self.crisis == 'zupackend'
+			s += "Als kürzlich ein anderer Fahrgast einen Hauptgewinn macht, wird er überfallen. Sie schreiten ein und erhalten einen Orden für Zivilcourage. "
+		end
+
+		t['111'] += s
 
 		Uchronia.all.each do |uchronia|
 			t[uchronia.slug] += "Heute sind Sie " + age(2013).to_s + " Jahre alt."
