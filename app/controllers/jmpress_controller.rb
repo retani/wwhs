@@ -5,14 +5,13 @@ class JmpressController < ApplicationController
 
 		@slides = [
 
-{:type => "page", :slug => "info", :x => 0, :y => 0, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "termine", :x => 0, :y => -500, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "trailer", :x => -740, :y => 50, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "hinweise", :x => 630, :y => 320, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "startpunkt", :x => -690, :y => 560, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "start", :x => -1250, :y => -100, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "termine", :x => 0, :y => -750, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "startpunkt", :x => -540, :y => -840, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "hinweise", :x => 480, :y => -580, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "society", :x => -1460, :y => 1480, :rotate => 0, :scale => 2.100000000000001},
-{:type => "page", :slug => "manifest", :x => 620, :y => 665, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "regeln", :x => 620, :y => -100, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "uchronien", :x => 820, :y => 750, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "regeln", :x => 770, :y => 1200, :rotate => 0, :scale => 1},
 {:type => "uchronist", :slug => "uchronist-1", :x => -700.0, :y => 1500.0, :rotate => -90, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-2", :x => -758.25291634657, :y => 1799.6852747327296, :rotate => -68, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-3", :x => -924.528159729079, :y => 2055.7266963671977, :rotate => -46, :scale => 0.4},

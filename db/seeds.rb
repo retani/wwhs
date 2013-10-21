@@ -9,28 +9,48 @@
 
 Page.destroy_all
 
-Page.create([{ title: "info" , content: '
+Page.create([{ title: "start" , content: '
 
-<h2>Willkommen</h2>
+<h1>WIR WÜRDEN HIER SEIN</h1>
 
-<p>Navigieren sie mit den Cursortasten</p>
-<p>Hierher zurück kommen Sie immer mit "Esc" (Escape)</p>
+<div class="col-2">
+	<iframe style="width:100%" src="//www.youtube.com/embed/nBotEgWjZJw" frameborder="0" allowfullscreen></iframe>
+</div>
 
-<a href="#/trailer">Trailer</a><br>
-<a href="#/termine">Termine</a><br>
-<a href="#/society">Über die U.R.S.</a><br>
-<a href="#/uchronist-1">Uchronisten</a><br>
-<a href="#/111">Uchronien</a><br>
+<div class="col-2">
+	<h3>Eine Morgenwanderung mit der Uchronic Research Society</h3>
+
+	<p>Sie haben folgende Möglichkeiten:</p>
+
+	<a href="#/termine">Die Tour</a><br>
+	<a href="#/society">Die Uchronic Research Society</a><br>
+	<a href="#/uchronien">Die Uchronien</a><br>
+</div>
 
 ' }])
 
 Page.create([{ title: "termine" , content: '
 
-	<h2>Tickets</h2>
+	<table>
+
+	<tr>
+		<th>Tour</th>
+		<th>Tickets</th>
+		<th>Start</th>
+	</tr>
+		
+	<tr>		
+		<td rowspan="2">1</td>
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68229&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> </td>
+		<td>Freitag, 8.11.2013, 22:00 </td>
+	</tr>
+
+	<tr>		
+		<td><a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68230&ShowDetails=1" target="_blank">Wanderung</a></td>
+		<td>Samstag, 9.11.2013, 6:30</td>
+	</tr>
 	
-	Tour 1<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68229&ShowDetails=1" target="_blank">Übernachtung + Wanderung</a> Start: Freitag, 8.11.2013, 22:00<br/>
-	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68230&ShowDetails=1" target="_blank">Wanderung</a> Start: Samstag, 9.11.2013, 6:30<br/>
+	</table>
 
 	<br/>
 	Tour 2<br/>
@@ -68,13 +88,6 @@ Page.create([{ title: "termine" , content: '
 	<a href="http://www.starticket.ch/0ShowInfo.asp?ShowID=68380&ShowDetails=1" target="_blank">Wanderung</a> Start: 01.12.2013
 	
 ' }])
-
-Page.create([{ title: "trailer" , content: '
-
-<iframe width="500" height="375" src="//www.youtube.com/embed/nBotEgWjZJw" frameborder="0" allowfullscreen></iframe>
-
-' }])
-
 
 Page.create([{ title: "startpunkt", content: '
 
@@ -149,38 +162,18 @@ Page.create([{ title: "society", content: "
 	
 " }])
 
-Page.create([{ title: "manifest", content: "
-
-	<h2>Das Manifest</h2>
-	<p>
-	Zürich hat nicht nur eine Gegenwart, sondern viele.
-	Zürich hat nicht nur eine Geschichte, sondern viele.
-	Wir können die Zukunft jeder Uchronie beeinflussen, indem wir ihre Gegenwart verändern. 
-	Wir können die Zukunft unserer Gegenwart verändern, in dem wir unsere Gegenwart verändern.
-	Jede Entscheidung zieht als Konsequenz eine Uchronie nach sich und lässt andere zurück. Jede Entscheidung könnte auch anders verlaufen
-	Indem wir Uchronien erforschen schaffen wir Bewustsein für alternative Möglichkeiten von Geschichte.
-	Werte der U.R.S. sind: 
-	Sorgfalt, Gelassenheit, Toleranz, Offenheit ,Vorsicht, Präzision, Qualität, Nachsicht
-	</p>
-
-" }])
-
 Page.create([{ title: "uchronien", content: "
 
 	<h2>Die Uchronien</h2>
 	
-	<p>
-	Uchronien sind spielbare Varianten von Geschichte, die zu neuen Gegenwarten führen. Uchronien hängen untereinander nicht zusammen, sondern stehen parallel zueinander als Welten in einem Multiversum. Zürich hat nicht nur eine Gegenwart, sondern viele. In jedem Moment kann sich eine alternative Geschichte abspalten - eine Uchronie.
-	</p>
-	<p>
-	Der Point of Divergence (Deutsch: Moment der Abweichung) markiert den am frühesten feststellbaren Punkt, an dem sich ein alternativer Wege vom Normal-Jetzt abspaltet: eine Uchronie entsteht! 
-	</p>
-	<p>
-	Die Uchronische Differenz beschreibt den Faktor der Abweichung der Uchronie vom Normal-Jetzt. 
-	</p>
-	<p>
-	Es gibt in Zürich unzählige noch unerforschte Uchronien. An besonderen Tagen am frühen Morgen ist es möglich, Uchronien zu betreten und ihre Zukunft zu beeinflussen, indem man ihre Gegenwart verändern. 
-	</p>
+Was sind Uchronien?
+Wir alle kennen unsere Gegenwart.  Wir wissen, welche Ereignisse den Lauf der Dinge geprägt haben. Das ist historisch verbrieft. Wir haben uns darauf geeingt. Jedoch: Jedes Ereignis, egal ob bedeutsam oder nebensächlich, hätte auch anders verlaufen können. Was wäre dann?
+
+Nach der seit der Antike diskutierten Annahme eines Multiversums ist es möglich, dass es unendlich viele alternative Gegenwarten gibt, sogenannte UCHRONIEN. Diese existieren parallel zur uns bekannten Gegenwart. Voneinander sind sie völlig unabhängig.
+
+Unsere Gegenwart bezeichnen wir als NORMAL-JETZT und nutzen sie als Referenz bei der Beschreibung und Klassifizierung von Uchronien. Von besonderem Interesse für die Erforschung von Uchronien ist der sogenannte Point of Divergence (Moment der Abweichung): Dies ist der Moment, das Ereignis, das in der Vergangenheit zu einem anderen als dem bekannten Ausgang geführt hat und somit alles daraufhin Folgende verändert hat.
+
+Uchronien können unterschiedlich stark vom Normal-Jetzt abweichen.  Unter Umständen beschränkt  sich die Abweichung nur auf einzelne Aspekte der Gegenwart wie z.B. Ökonomie, Umwelt oder Politik, während sich andere Bereiche nahezu identisch zum Normal-Jetzt entwickelt sein können. 
 
 " }])
 
