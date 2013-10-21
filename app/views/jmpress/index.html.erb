@@ -7,7 +7,7 @@
 				<%= render :partial => 'pages/show_public', :locals => { :page => page } %>
 			</div>
 		<% end %>
-		<% if slide[:type] == "uchronist" %>
+		<% if slide[:type] == "uchronistDISABLED" %>
 			<% uchronist =  Uchronist.find(slide[:slug]) %>
 			<div id="<%= uchronist.slug %>" class="step uchronist editable" data-type="uchronist" data-slug="<%= uchronist.slug %>" data-x="<%= slide[:x] %>" data-y="<%= slide[:y] %>" data-rotate="<%= slide[:rotate] %>" data-scale="<%= slide[:scale] %>">
 				<%= render :partial => 'uchronists/show_public', :locals => { :uchronist => uchronist } %>
@@ -15,16 +15,29 @@
 		<% end %>	
 		
 	<% end %>
-
+	
+	
+	<% Uchronist.all.each_with_index do |uchronist, index| %>
+		<% phi = 360 / Uchronist.all.count * index %>
+		<%   r = 800 %>
+		<% rotate = phi - 90 %>
+		<% scale = 0.4%>
+		<% x = -1500 + r * Math.cos(2*Math::PI*(phi.to_f/360)) %>
+		<% y = 1500 + r * Math.sin(2*Math::PI*(phi.to_f/360)) %>		
+		<div id="<%= uchronist.slug %>" class="step uchronist editable" data-type="uchronist" data-slug="<%= uchronist.slug %>" data-x="<%= x %>" data-y="<%= y %>" data-rotate="<%= rotate %>" data-scale="<%= scale %>">
+			<%= render :partial => 'uchronists/show_public', :locals => { :uchronist => uchronist } %>
+		</div>
+	<% end %>
+		
 
 	<div id="biographygenerator" class="step" data-x="30" data-y="490">	
 		<%= render 'user_biographies/form_public' %>
 	</div>
 	
 	<% x = 0 %>
-	<% rand_phi = (0..36).to_a.sort{ rand() - 0.5 }[0..Uchronia.all.count] %>
+	<% rand_phi = (0..12).to_a.sort{ rand() - 0.5 }[0..Uchronia.all.count] %>
 	<% Uchronia.all.each_with_index do |uchronia, index| %>
-			<div id="<%= uchronia.slug %>" class="step uchronia" data-r="<%= 2000 %>" data-phi="<%= 10*rand_phi[index] %>" data-rotate="<%= rand(100)-5%>">
+			<div id="<%= uchronia.slug %>" class="step uchronia" data-r="<%= 2000 %>" data-phi="<%= 30 * rand_phi[index] %>" data-rotate="<%= rand(100)-5%>">
 			<%= render :partial => 'uchronias/show_public', :locals => {:uchronia => uchronia} %>
 			</div>
 			<% x += 700 %>

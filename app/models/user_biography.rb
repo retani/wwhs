@@ -51,9 +51,54 @@ class UserBiography < ActiveRecord::Base
 			t[uchronia.slug] = "Sie werden im Jahr " + self.birthday.year.to_s + " " + self.birthplace + " " + "geboren. "
 		end
 		
-		t['uchronie-2']="2"
+		t['111'] += translate_uchronia_111
+		t['uchronie-2'] += translate_uchronia_2
 
-		#111
+		Uchronia.all.each do |uchronia|
+			t[uchronia.slug] += "Heute sind Sie " + age(2013).to_s + " Jahre alt."
+		end
+
+		return t
+	end
+	
+	def translate_uchronia_2
+	
+		t = ""
+	
+		if self.birthday.year < 1978
+			crisis_age = "adult";
+		elsif self.birthday.year < 1978
+			crisis_age = "twen";
+		elsif self.birthday.year < 1988
+			crisis_age = "teen";
+		elsif self.birthday.year < 2008
+			crisis_age = "child";			
+		else
+			crisis_age = "baby";
+		end
+		
+		if crisis_age == "child" 
+			if self.parents == "Reich"
+				t += "Der Niedergang Ihrer Familie hat Ihnen schwer zu schaffen gemacht. "
+			end
+		end
+		
+		good_countries = ['Russland', 'Brasilien', 'China', 'Indien']
+		if good_countries.any? { |w| self.travel[w] }
+			t += "Sie entschlossen sich schließlich, in ein weniger chaotisches Land auszuwandern, nämlich nach " + self.travel + ". "
+			return t
+		end
+		
+		if owns_boat
+			t += "Glücklicherweise konnten Sie sich über Wasser halten. Dank Ihres Boots verdienen Sie als Drogenschmuggler über den Zürisee recht gut. "
+		end
+		
+		return t
+
+	end
+
+	def translate_uchronia_111
+	
 		s = ""
 		
 		if age(1973) > 12 && schweizer
@@ -83,15 +128,10 @@ class UserBiography < ActiveRecord::Base
 			s += "Als kürzlich ein anderer Fahrgast einen Hauptgewinn macht, wird er überfallen. Sie schreiten ein und erhalten einen Orden für Zivilcourage. "
 		end
 
-		t['111'] += s
-
-		Uchronia.all.each do |uchronia|
-			t[uchronia.slug] += "Heute sind Sie " + age(2013).to_s + " Jahre alt."
-		end
-
-
-		return t
-	end
-	
+		return s
 		
+	end
+
+
+	
 end

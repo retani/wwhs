@@ -1,19 +1,21 @@
 <h1>Uchronia <%= uchronia.title %></h1>
 
-<% if uchronia.image %>
-	<%= image_tag uchronia.image.image.url(:thumb) %>
-<% else %> 
-	<%= image_tag "http://wwhs-production.s3.amazonaws.com/images/16/medium/image.jpg?1382099134" %>
-<% end %>
+<article>
+	<% if uchronia.image %>
+		<%= image_tag uchronia.image.image.url(:thumb) %>
+	<% else %> 
+		<%= image_tag "http://wwhs-production.s3.amazonaws.com/images/16/medium/image.jpg?1382099134" %>
+	<% end %>
+	
+	<% if uchronia.media_embed %>
+		<%= uchronia.media_embed.html_safe %>
+	<% end %>
+	
+	<p>
+	  <b>Point of Divergence:</b> <%= uchronia.pod %>
+	</p>
+	
+	<p><%= uchronia.description.html_safe %></p>
+</article>
 
-<% if uchronia.media_embed %>
-	<%= uchronia.media_embed.html_safe %>
-<% end %>
-
-<p>
-  <b>Point of Divergence:</b> <%= uchronia.pod %>
-</p>
-
-<p><%= uchronia.description.html_safe %></p>
-
-<div class="bio_translation post-it"></div>
+<aside class="bio_translation post-it"></aside>

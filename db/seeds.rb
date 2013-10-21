@@ -9,6 +9,21 @@
 
 Page.destroy_all
 
+Page.create([{ title: "info" , content: '
+
+<h2>Willkommen</h2>
+
+<p>Navigieren sie mit den Cursortasten</p>
+<p>Hierher zurück kommen Sie immer mit "Esc" (Escape)</p>
+
+<a href="#/trailer">Trailer</a><br>
+<a href="#/termine">Termine</a><br>
+<a href="#/society">Über die U.R.S.</a><br>
+<a href="#/uchronist-1">Uchronisten</a><br>
+<a href="#/111">Uchronien</a><br>
+
+' }])
+
 Page.create([{ title: "termine" , content: '
 
 	<h2>Tickets</h2>
