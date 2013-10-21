@@ -97,22 +97,68 @@ Page.create([{ title: "startpunkt", content: '
 
 Page.create([{ title: "hinweise", content: "
 
-	<h2>Praktische Hinweise Übernachtungsgäste</h2>
-	<p>
-	Start: Vorabend der Morgenwanderung um 22:00 bei der Zivilschutzanlage, Hirzelstrasse 11, 8004 Zürich. 
-	Ausrüstung: Wir bitten Sie nach Möglichkeit einen eigenen Schlafsack mitzubringen. Wolldecken und Kissen sind vorhanden. Für die Morgenwanderung werden gutes Schuhwerk sowie warme und wetterfeste Kleidung empfohlen. 
-	Tageskarte der ZVV Zone 110 ist inklusive. 
-	Verpflegung: kleines Frühstück und Wegproviant inklusive 
-	Sicherheit: Versicherung ist Sache der Teilnehmenden.
-	Ziel: Die Vorstellung endet am nächsten Tag um ca. 11 Uhr. 
-	
-	Praktische Hinweise Tourgäste
-	Start: 6:30 bei der Zivilschutzanlage, Hirzelstrasse 11, 8004 Zürich. 
-	Ausrüstung: Für die Morgenwanderung werden gutes Schuhwerk sowie warme und wetterfeste Kleidung empfohlen. Tageskarte der ZVV Zone 110 ist inklusive.  
-	Verpflegung: Wegproviant inklusive 
-	Sicherheit: Versicherung ist Sache der Teilnehmenden.
-	Ziel: Die Vorstellung endet um ca. 11 Uhr. 
-	</p>
+	<h2>Praktische Hinweise zur Tour und Übernachtung</h2>
+	<table>
+		<tr>
+			<th>
+				Start der Übernachtung
+			</th>
+			<td>
+				22:00 am Vorabend der Morgenwanderung in der Zivilschutzanlage, Hirzelstrasse 11, 8004 Zürich. 
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Ausrüstung
+			</th>
+			<td>
+				Wir bitten Sie nach Möglichkeit einen eigenen Schlafsack mitzubringen. Wolldecken und Kissen sind vorhanden. 
+			</td>
+		</tr>
+			<td colspan=\"2\">
+				<hr>
+			</td>
+		<tr>
+			<th>
+				Start der Tour
+			</th>
+			<td>
+				6:30 in der Zivilschutzanlage, Hirzelstrasse 11, 8004 Zürich. 
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Ausrüstung
+			</th>
+			<td>
+				Für die Morgenwanderung werden gutes Schuhwerk sowie warme und wetterfeste Kleidung empfohlen. Tageskarte der ZVV Zone 110 ist inklusive. 
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Verpflegung
+			</th>
+			<td>
+				Wegproviant inklusive
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Sicherheit
+			</th>
+			<td>
+				Versicherung ist Sache der Teilnehmenden. 
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Ziel
+			</th>
+			<td>
+				Die Vorstellung endet um ca. 11 Uhr (Zielpunkt ist nicht der Startpunkt!)
+			</td>
+		</tr>	
+	</table>
 
 " }])
 
@@ -162,37 +208,6 @@ Page.create([{ title: "society", content: "
 	
 " }])
 
-<<<<<<< HEAD
-=======
-Page.create([{ title: "manifest", content: "
-
-	<h2>Das Manifest</h2>
-	<p>
-	Zürich hat nicht nur eine Gegenwart, sondern viele.
-	</p>
-	<p>
-	Zürich hat nicht nur eine Geschichte, sondern viele.
-	</p>
-	<p>
-	Wir können die Zukunft jeder Uchronie beeinflussen, indem wir ihre Gegenwart verändern. 
-	</p>
-	<p>
-	Wir können die Zukunft unserer Gegenwart verändern, in dem wir unsere Gegenwart verändern.
-	</p>
-	<p>
-	Jede Entscheidung zieht als Konsequenz eine Uchronie nach sich und lässt andere zurück. Jede Entscheidung könnte auch anders verlaufen
-	</p>
-	<p>
-	Indem wir Uchronien erforschen schaffen wir Bewustsein für alternative Möglichkeiten von Geschichte.
-	</p>
-	<p>
-	Werte der U.R.S. sind: 
-	Sorgfalt, Gelassenheit, Toleranz, Offenheit ,Vorsicht, Präzision, Qualität, Nachsicht
-	</p>
-
-" }])
-
->>>>>>> a4614ced9fe23cb2354a8b8194386da0b1e891c0
 Page.create([{ title: "uchronien", content: "
 
 	<h2>Die Uchronien</h2>
