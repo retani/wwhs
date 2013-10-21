@@ -15,6 +15,7 @@
 //= require jmpress.custom
 
 hoverElem = null;
+current_uchronia = null;
 
 $(document).ready(function() {
 
@@ -46,16 +47,26 @@ $(document).ready(function() {
 	});
 	*/
 	
+	$('.uchronia_link').click(function() {
+		current_uchronia = $(this).attr("rel");
+	});
+	
 	$('#new_user_biography').on('ajax:success', function(event, data, status, xhr) {
 		$.each(data.translations, function(key, value) {
 			console.log(key + ' ' + value);
-  	  $('#' + key + ' aside.bio_translation').html(value).show();
+  	  $('#' + key + ' aside.bio_translation div.bio_translation_content').html(value).show();
 		});
 		
-		keys = Object.keys(data.translations)
-		r = Math.floor(Math.random()*keys.length);
-		console.log(r);
-		window.location.hash = '/' + keys[r];
+		if(!current_uchronia) {
+			keys = Object.keys(data.translations)
+			r = Math.floor(Math.random()*keys.length);
+			console.log(r);
+			current_uchronia = keys[r]
+			window.location.hash = '/' + keys[r];
+		} else {
+		
+			window.location.hash = '/' + current_uchronia
+		}
 	});
 	
 	$('*').on('mouseenter', function() { hoverElem = this; });

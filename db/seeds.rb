@@ -315,19 +315,19 @@ Uchronia.destroy_all
 Uchronia.create(title: "#111", 
 	pod: "Am 20. Mai 1973 stimmen die Zürcher dem Bau einer U-Bahn knapp zu.",
 	description: 'Trotz Protesten beginnt noch im Sommer 1973 der Bau von mehr als 30 U-Bahn-Haltestellen. Viele befinden sich in bester Lage: am Schaffhauserplatz, am Central, am Stauffacher und an der Sihlporte. Als nach 15 Jahren Bauarbeiten 1988 das Projekt vollendet ist, geht ein Aufatmen durch die Stadt. Die Tram wird nach und nach zurückgebaut; die verbleibenden Linien werden privatisiert. Auf der Strecke Tiefenbrunnen-Nordostbahnhof-Paradeplatz-Enge wird die Tram – wie schon zwischen 1882 und 1900 – als nostalgische “Rösslitram” wieder von Pferden gezogen. Die Linie 4 wird 1998 von Tina Turner, die seit 1994 in Küsnacht lebt, übernommen und zur weltweit ersten “Musiktram” umgebaut. 2004 kommt es bei einem Konzert der Girlgroup TEARS zu einem schweren Unfall mit mehreren Verletzten. Die Gruppe löst sich auf, Turner verkauft die Linie und verlässt die Schweiz, um mit ihrem Ehemann, dem Musikproduzenten Erwin Bach, zurückgezogen in einem Vorort von Köln zu leben. Neuer Betreiber der Tramlinie wird die Swiss Casinos Zürich AG. Alle Wagen werden nach und nach mit Spielautomaten ausgestattet. Die Mitfahrt ist seit 2009 kostenlos. Die Tramhaltestelle “Sihlstrasse” wird verlegt und in das neue Grandcasino im Haus Ober integriert, das 2011 eröffnet.')
-Uchronia.create(title: "Uchronie 2", 
+Uchronia.create(title: "#2", 
 	pod: "pod",
 	description: "Mit der Pleite der U.B.S. im Schwarzen September 2008 erreichte die internationale Finanzkrise auch die bis dato als sicher geltende Schweiz. Von dem Zusammenbruch des Schweizer Bankensystems, bei dem etliche Bürger ihre Spareinlagen verloren, profitierte vor allem die SVP, die ihre isolationistische Politik weiter vorantrieb. Unter ihrer Führung wurde durchgesetzt, dass fortan der Aufenthaltsort der Bürger durch technische Maßnahmen permanent überprüft werden konnte. Erst dadurch – und unter Einsetzung hoher Strafen – konnte den allgegenwärtigen Plünderungen Einhalt geboten, und die Ordnung notdürftig wiederhergestellt werden. Dank weitsichtiger Krisenvorbereitungen und seiner geschützten Lage konnte Zürich trotz allem einen gewissen Lebensstandard wahren.")
-Uchronia.create(title: "Uchronie 3", 
+Uchronia.create(title: "#3", 
 	pod: "pod",
 	description: "description")
-Uchronia.create(title: "Uchronie 4", 
+Uchronia.create(title: "#4", 
 	pod: "pod",
 	description: "description")
-Uchronia.create(title: "Uchronie 5", 
+Uchronia.create(title: "#5", 
 	pod: "pod",
 	description: "description")
-Uchronia.create(title: "Uchronie 6", 
+Uchronia.create(title: "#6", 
 	pod: "pod",
 	description: "description")
 
