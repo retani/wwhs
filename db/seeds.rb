@@ -22,12 +22,22 @@ Page.create([{ title: "start" , content: '
 
 	<p>Sie haben folgende Möglichkeiten:</p>
 
-	<a href="#/termine">Die Tour</a><br>
+	<a href="#/tour">Die Tour</a><br>
 	<a href="#/society">Die Uchronic Research Society</a><br>
 	<a href="#/uchronien">Die Uchronien</a><br>
 </div>
 
 ' }])
+
+Page.create([{ title: "tour", content: '
+
+	<h2>Die Tour</h2>
+
+	<p>Es erwartet Sie: Termine, Startpunke, Praktische Hinweise</p>
+	<a href="#/termine">Los gehts!</a><br>
+
+' }])
+
 
 Page.create([{ title: "termine" , content: '
 
@@ -128,15 +138,19 @@ Page.create([{ title: "termine" , content: '
 	
 	</table>
 	
+	<a href="#/startpunkt">Weiter zu Startpunkt</a><br>
+		
 ' }])
 
 Page.create([{ title: "startpunkt", content: '
 
 	<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps?t=m&amp;ie=UTF8&amp;ll=47.392434,8.495366&amp;spn=0.036316,0.06609&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://www.google.com/maps?t=m&amp;ie=UTF8&amp;ll=47.392434,8.495366&amp;spn=0.036316,0.06609&amp;z=14&amp;source=embed" style="color:#0000FF;text-align:left">Größere Kartenansicht</a></small>
 
+	<a href="#/hinweise">Weiter zu Praktische Hinweise</a><br>
+
 ' }])
 
-Page.create([{ title: "hinweise", content: "
+Page.create([{ title: "hinweise", content: '
 
 	<h2>Praktische Hinweise Übernachtungsgäste</h2>
 	<p>
@@ -155,7 +169,10 @@ Page.create([{ title: "hinweise", content: "
 	Ziel: Die Vorstellung endet um ca. 11 Uhr. 
 	</p>
 
-" }])
+	<a href="#/start">Zurück zum Start</a><br>
+
+
+' }])
 
 Page.create([{ title: "credits", content: "
 
