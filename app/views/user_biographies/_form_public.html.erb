@@ -1,3 +1,5 @@
+<h2>Der Biographie-Transformator</h2>
+<p>Bitte füllen Sie das Eingabe-Formular wahrheitsgemäß aus. Ihre Biographie wird dann in die verschiedenen Uchronien übersetzt. Wenn Sie zur Tour kommen, helfen uns diese Daten, Sie für das Betreten der Uchronien vorzubereiten.</p>
 <%= form_for(@user_biography, :remote=>true, :format => :json) do |f| %>
   <% if @user_biography.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +13,7 @@
     </div>
   <% end %>
 
+<div class="col-2">
   <h4>Kindheit</h4>
   <div class="field">
     <%= f.label :birthday, "Geburtsjahr" %>
@@ -29,6 +32,10 @@
     <%= f.select :childhood, UserBiography::CHILDHOOD_OPTIONS %>
   </div>
   <h4>Jugend</h4>
+    <div class="field">
+    <%= f.label "Geschlecht" %>
+    <%= f.select :sex, UserBiography::SEX_OPTIONS %>
+  </div>
   <div class="field">    
     Haben Sie mal was gestohlen?
     <%= f.radio_button :youth_1, 'true', :checked => true %> 
@@ -61,6 +68,8 @@
     <%= f.label "Ausbildung" %>
     <%= f.select :education, UserBiography::EDUCATION_OPTIONS %>
   </div>
+</div>
+<div class="col-2">  
   <h4>Gegenwart</h4>
   <div class="field">
   Besitzen Sie
@@ -105,9 +114,23 @@
     <%= f.radio_button :zurich, 'false' %> 
     <%= f.label :zurich, 'Nein', :value => 'false' %>
   </div>
+</div>
 
-  <br/>
-  <div class="actions">
-    <%= f.submit "Berechnen" %>
+  <div class="field" style="clear:both; padding-top: 2em;">
+    <%= f.label :zurich, "Kommen Sie zur Tour?" %>
+    <%= f.radio_button :on_tour, 'true', :checked => true %> 
+    <%= f.label :on_tour, 'Ja', :value => 'true' %>
+    <%= f.radio_button :on_tour, 'false' %> 
+    <%= f.label :on_tour, 'Nein', :value => 'false' %>
   </div>
+  <div class="field" style="display:none">
+    <%= f.label :name, "Dann bitte Name oder Pseudonym angeben" %> <%= f.text_field :name %>
+  </div>
+	<br/>
+	<div class="actions">
+    <%= f.submit "Jetzt Biographie transformieren" %>
+  </div>
+
+
+
 <% end %>

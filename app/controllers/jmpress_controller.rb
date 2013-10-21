@@ -9,8 +9,9 @@ class JmpressController < ApplicationController
 {:type => "page", :slug => "tour", :x => -550, :y => -1300, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "termine", :x => 0, :y => -750, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "startpunkt", :x => -540, :y => -840, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "hinweise", :x => 480, :y => -580, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "society", :x => -1460, :y => 1480, :rotate => 0, :scale => 2.100000000000001},
+{:type => "page", :slug => "hinweise", :x => 530, :y => -830, :rotate => 0, :scale => 0.9},
+{:type => "page", :slug => "transformator-hinweis", :x => 200, :y => 50, :rotate => 0, :scale => 1},
+{:type => "page", :slug => "society", :x => -1460, :y => 1480, :rotate => 0, :scale => 1.2999999999999994},
 {:type => "page", :slug => "uchronien", :x => 820, :y => 750, :rotate => 0, :scale => 1},
 {:type => "uchronist", :slug => "uchronist-1", :x => -700.0, :y => 1500.0, :rotate => -90, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-2", :x => -758.25291634657, :y => 1799.6852747327296, :rotate => -68, :scale => 0.4},
@@ -28,6 +29,7 @@ class JmpressController < ApplicationController
 {:type => "uchronist", :slug => "uchronist-13", :x => -1279.4901153464011, :y => 730.9906432493448, :rotate => 196, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-14", :x => -1007.4708197394739, :y => 869.5913971146222, :rotate => 218, :scale => 0.4},
 {:type => "uchronist", :slug => "uchronist-15", :x => -807.1796769724493, :y => 1099.9999999999995, :rotate => 240, :scale => 0.4},
+{:type => "page", :slug => "credits", :x => -2300, :y => 0, :rotate => 0, :scale => 0.30000000000000016},
 
 ]
 		

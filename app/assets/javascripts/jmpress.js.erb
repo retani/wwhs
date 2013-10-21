@@ -99,10 +99,36 @@ $(document).ready(function() {
 	});
 	*/
 	
+	$("input[name='user_biography[on_tour]'").change(function(e){
+    if($(this).val() == 'true') {
+			$('#user_biography_name').parent().slideDown();
+			$('#user_biography_name').attr('required', 'required');
+    } else {
+			$('#user_biography_name').parent().slideUp();
+			$('#user_biography_name').removeAttr('required');
+    }
+	});
+	
 	$('.uchronia_link').click(function() {
 		current_uchronia = $(this).attr("rel");
 	});
 	
+	$('.random_uchronia').click(function(event) {
+			event.preventDefault();
+
+			slugs = <%= Uchronia.pluck('slug').to_json %>;			
+			r = Math.floor(Math.random()*slugs.length);
+			window.location.hash = '/' + slugs[r];			
+	});
+	
+	$('.random_uchronist').click(function(event) {
+			event.preventDefault();
+
+			slugs = <%= Uchronist.pluck('slug').to_json %>;			
+			r = Math.floor(Math.random()*slugs.length);
+			window.location.hash = '/' + slugs[r];			
+	});
+		
 	$('#new_user_biography').on('ajax:success', function(event, data, status, xhr) {
 		$.each(data.translations, function(key, value) {
 			console.log(key + ' ' + value);

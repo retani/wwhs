@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class UserBiography < ActiveRecord::Base
-  attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold
+  attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour
 
 	BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aaargau', 'in der Schweiz']
 	validates :birthplace, :inclusion => BIRTHPLACE_OPTIONS	
@@ -11,6 +11,9 @@ class UserBiography < ActiveRecord::Base
 
 	CHILDHOOD_OPTIONS = ['Musterkind', 'Chaotisch', 'Neugierig', 'weiß nicht']
 	validates :childhood, :inclusion => CHILDHOOD_OPTIONS
+	
+	SEX_OPTIONS = ['weiblich', 'männlich', 'weiß nicht']
+	validates :sex, :inclusion => SEX_OPTIONS
 	
 	EDUCATION_OPTIONS = ['sozial', 'künstlerisch', 'technisch', 'ökonomisch', 'keine', 'weiß nicht']
 	validates :education, :inclusion => EDUCATION_OPTIONS

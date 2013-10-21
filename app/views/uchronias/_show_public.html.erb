@@ -3,9 +3,7 @@
 <article>
 	<% if uchronia.image %>
 		<%= image_tag uchronia.image.image.url(:thumb) %>
-	<% else %> 
-		<%= image_tag "http://wwhs-production.s3.amazonaws.com/images/16/medium/image.jpg?1382099134" %>
-	<% end %>
+	<% end %> 
 	
 	<% if uchronia.media_embed %>
 		<%= uchronia.media_embed.html_safe %>
@@ -24,22 +22,22 @@
 <% end %>
 </p>
 
-<p>Weitere Uchronien: 
+<!--p>Weitere Uchronien: 
 
 <% Uchronia.all.each do |u| %>
 	<% unless u.id == uchronia.id %>
 		<%= link_to u.title, "#/" + u.slug, {:class=>"uchronia_link", :rel=>u.slug} %>
 	<% end %>
 <% end %>
+-->
 
-<br/>
 	<%#= link_to "vorherige", "#/" + uchronia.previous_uchronia.slug %>
-	<%#= link_to "nächste", "#/" + uchronia.next_uchronia.slug %>
+	<%= link_to "Weiter zur nächsten Uchronie", "#/" + uchronia.next_uchronia.slug %> oder <%= link_to "zurück zum Start", "#/start" %>
 </p>
 
 </article>
 
 <aside class="post-it bio_translation">
 	<div class="bio_translation_content"></div>
-	<%= link_to "Biographie ändern", "#/biographygenerator", {:class=>"uchronia_link", :rel=>uchronia.slug} %>
+	<%= link_to "Biographie ändern", "#/biographie-transformator", {:class=>"uchronia_link", :rel=>uchronia.slug} %>
 </aside>

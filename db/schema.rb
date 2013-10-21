@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131021095605) do
+ActiveRecord::Schema.define(:version => 20131021201017) do
 
   create_table "challenges", :force => true do |t|
     t.string   "name"
@@ -138,6 +138,9 @@ ActiveRecord::Schema.define(:version => 20131021095605) do
     t.boolean  "owns_boat",   :default => false
     t.boolean  "owns_house",  :default => false
     t.boolean  "owns_gold",   :default => false
+    t.string   "name"
+    t.string   "sex"
+    t.boolean  "on_tour",     :default => false
   end
 
   create_table "username_cookies", :force => true do |t|
