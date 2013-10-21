@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131018174946) do
+ActiveRecord::Schema.define(:version => 20131021095605) do
 
   create_table "challenges", :force => true do |t|
     t.string   "name"
@@ -98,6 +98,11 @@ ActiveRecord::Schema.define(:version => 20131018174946) do
     t.datetime "updated_at",                     :null => false
     t.boolean  "hidden",      :default => false
     t.string   "slug"
+  end
+
+  create_table "uchronias_uchronists", :force => true do |t|
+    t.integer "uchronia_id"
+    t.integer "uchronist_id"
   end
 
   create_table "uchronists", :force => true do |t|

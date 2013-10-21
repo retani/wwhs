@@ -20,6 +20,16 @@
   <%= @uchronist.description %>
 </p>
 
+<p>
+  <b>Description:</b>
+  <%= @uchronist.description %>
+</p>
+
+<p>
+  Untersucht die Uchronien: <% @uchronist.uchronias.each do |uchronia| %>
+  	<%= uchronia.title %>,   
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_uchronist_path(@uchronist) %> |
 <%= link_to 'Back', uchronists_path %>

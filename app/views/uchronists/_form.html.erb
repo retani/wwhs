@@ -27,6 +27,13 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+
+	<p>  
+  <% Uchronia.all.each do |uchronia| %>
+  	<%= check_box_tag "uchronist[uchronia_ids][]", uchronia.id, @uchronist.uchronias.include?(uchronia) %>
+  	<%= uchronia.title %>  
+  <% end %>
+  </p>
   
   <div class="field">
     <%= f.label :hidden %><br />

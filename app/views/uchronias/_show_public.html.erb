@@ -16,6 +16,19 @@
 	</p>
 	
 	<p><%= uchronia.description.html_safe %></p>
+
+<p>
+	Uchronists: 
+<% uchronia.uchronists.each do |u| %>
+	<%= link_to u.name, "#/" + u.slug %>
+<% end %>
+</p>
+
+	<%= link_to "vorherige Uchronie", "#/" + uchronia.previous_uchronia.slug %>
+	<%= link_to "nächste Uchronie", "#/" + uchronia.next_uchronia.slug %>
+
+	<%= link_to "Zum Biographien-Generator", "#/biographygenerator" %>
 </article>
 
-<aside class="bio_translation post-it"></aside>
+<aside class="post-it bio_translation">
+</aside>

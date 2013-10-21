@@ -204,14 +204,12 @@ Page.create([{ title: "regeln", content: "
 		<li>
 			Uchronien können nur gemeinsam betreten werden.
 		</li>
-		<li>
 			<li>
 				Auf keinen Fall den Aufenthalt in einer Uchronie (oder Personenen, Gegenstände darin) für egoistische Motive missbrauchen
 			</li>
 			<li>
 				In jeder Uchronie gelten andere Regeln, Gesetze. Respektiere sie!
 			</li>
-		</li>
 		<li>
 			Achtung: dein Körper bleibt weiterhin im Normal-Jetzt (ist Verwundbar)
 		</li>
@@ -223,9 +221,6 @@ Page.create([{ title: "regeln", content: "
 		</li>
 		<li>		
 			Es ist gefährlich, unterschiedliche Uchronien zu vermischen.
-		</li>
-		<li>
-		( - größere Eingriffe in eine Uchronie dürfen nur mit Zustimmung des U.R.S. controlling boards durchgeführt werden)
 		</li>
 	</ul>
 
@@ -313,12 +308,6 @@ Uchronist.create(name: "Uchronist 15",
 <b>Im Alltag:</b> Architektur, Comics<br/><br/>
 <b>Spezialist für:</b> Nah-Tod-Erfahrungen, spekulative Finanzprodukte<br/><br/>
 <b>Untersucht die Uchronien:</b> #44, #23')
-
-
-
-
-
-
 
 
 Uchronia.destroy_all

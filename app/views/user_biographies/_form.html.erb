@@ -14,7 +14,7 @@
   <h4>Kindheit</h4>
   <div class="field">
     <%= f.label :birthday, "Geburtsjahr" %>
-    <%= f.date_select :birthday, :start_year => 1913, :end_year => 2013, :discard_month => true, :discard_day => true %>
+    <%= f.date_select :birthday, :start_year => 1913, :end_year => 1999, :discard_month => true, :discard_day => true %>
   </div>
   <div class="field">
     <%= f.label :birthplace, "Geburtsort" %>
@@ -75,8 +75,8 @@
     <%= f.check_box :owns_gold %>
   </div>
   <div class="field">
-    <%= f.label :travel, "Ihre intensivste Reise in den letzten 10 Jahren führte Sie in welches Land?" %>
-    <%= f.text_field :travel %>
+    <%= f.label :travel, "Ihre intensivste Reise in den letzten 10 Jahren führte Sie in welchen Erdteil?" %>
+    <%= f.select :travel, UserBiography::TRAVEL_OPTIONS %>
   </div>
   <div class="field">
     <%= f.label :job_changes, "Wie oft haben Sie seit Ihrer Ausbildung den Beruf gewechselt?" %>
@@ -103,9 +103,9 @@
   </div>
   <div class="field">
     <%= f.label :zurich, "Leben Sie in Zürich?" %>
-    <%= f.radio_button :hobby, 'true', :checked => true %> 
+    <%= f.radio_button :zurich, 'true', :checked => true %> 
     <%= f.label :zurich, 'Ja', :value => 'true' %>
-    <%= f.radio_button :hobby, 'false' %> 
+    <%= f.radio_button :zurich, 'false' %> 
     <%= f.label :zurich, 'Nein', :value => 'false' %>
   </div>
 
@@ -119,7 +119,7 @@
 <br/>
 <% Uchronia.all.each do |uchronia| %>
 	<div id="<%= uchronia.slug %>">
-		Uchronie <%= uchronia.title %>: <span class="bio_translation"></span>
+		Uchronie <%= uchronia.title %> (Point of divergence: <%= uchronia.pod %>)<br/> <span class="bio_translation"></span>
 	</div>
 <br/>
 <% end %>
