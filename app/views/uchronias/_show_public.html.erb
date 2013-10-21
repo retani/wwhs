@@ -24,6 +24,11 @@
 <% end %>
 </p>
 
+	<%= link_to "vorherige Uchronie", "#/" + uchronia.previous_uchronia.slug %>
+	<%= link_to "nächste Uchronie", "#/" + uchronia.next_uchronia.slug %>
+
+	<%= link_to "Zum Biographien-Generator", "#/biographygenerator" %>
 </article>
 
-<aside class="bio_translation post-it"></aside>
+<aside class="post-it bio_translation">
+</aside>
