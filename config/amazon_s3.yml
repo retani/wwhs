@@ -1,5 +1,5 @@
 development:
-  bucket: wwhs-dev
+  bucket: wwhs-production
   access_key_id: AKIAIHEPYQC4GHTWJWXQ
   secret_access_key: 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
   max_file_size: 524288000
