@@ -13,7 +13,7 @@ class JmpressController < ApplicationController
 {:type => "page", :slug => "transformator-hinweis", :x => -100, :y => 350, :rotate => 0, :scale => 1.9000000000000006},
 {:type => "page", :slug => "society", :x => -1460, :y => 1480, :rotate => 0, :scale => 1.2999999999999994},
 {:type => "page", :slug => "uchronien", :x => 820, :y => 750, :rotate => 0, :scale => 1},
-{:type => "page", :slug => "credits", :x => -2300, :y => 0, :rotate => 0, :scale => 0.30000000000000016},
+{:type => "page", :slug => "credits", :x => -1300, :y => -850, :rotate => 90, :scale => 0.30000000000000016},
 {:type => "uchronist", :slug => "baki-ullah-khan", :x => -700.0, :y => 1500.0, :rotate => -90, :scale => 0.4},
 {:type => "uchronist", :slug => "fred-frohofer", :x => -739.1547869638772, :y => 1747.2135954999578, :rotate => -72, :scale => 0.4},
 {:type => "uchronist", :slug => "esther-reinhardt", :x => -852.7864045000421, :y => 1970.2282018339786, :rotate => -54, :scale => 0.4},

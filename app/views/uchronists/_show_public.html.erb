@@ -15,17 +15,16 @@
 		<p>
 			<%= uchronist.description.html_safe %>
 		</p>
-		<p>
-			Untersucht die Uchronien: <% uchronist.uchronias.each do |u| %>
-				<%= link_to u.title, "#/" + u.slug %>
-			<% end %>
-		</p>
-		
 	</div>
 </div>
 
 <div class="row col-1">
 	<nav>
+		<p>
+			Untersucht die Uchronien: <% uchronist.uchronias.each do |u| %>
+				<%= link_to u.title, "#/" + u.slug %>
+			<% end %>
+		</p>	
 		<%= link_to "Weiter", "#/" + uchronist.next_uchronist.slug %> oder <%= link_to "zurück zum Start", "#/start" %>
 	</nav>
 </div>
