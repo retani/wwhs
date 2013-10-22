@@ -1,136 +1,139 @@
-<h2>Der Biographie-Transformator</h2>
-<p>Bitte füllen Sie das Eingabe-Formular wahrheitsgemäß aus. Ihre Biographie wird dann in die verschiedenen Uchronien übersetzt. Wenn Sie zur Tour kommen, helfen uns diese Daten, Sie für das Betreten der Uchronien vorzubereiten.</p>
-<%= form_for(@user_biography, :remote=>true, :format => :json) do |f| %>
-  <% if @user_biography.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user_biography.errors.count, "error") %> prohibited this user_biography from being saved:</h2>
+<div class="post-it-2 row">
+	
+	<h2>Der Biographie-Transformator</h2>
+	<p>Bitte füllen Sie das Eingabe-Formular wahrheitsgemäß aus. Ihre Biographie wird dann in die verschiedenen Uchronien übersetzt. Wenn Sie zur Tour kommen, helfen uns diese Daten, Sie für das Betreten der Uchronien vorzubereiten.</p>
+	<%= form_for(@user_biography, :remote=>true, :format => :json) do |f| %>
+	  <% if @user_biography.errors.any? %>
+		<div id="error_explanation">
+		  <h2><%= pluralize(@user_biography.errors.count, "error") %> prohibited this user_biography from being saved:</h2>
+	
+		  <ul>
+		  <% @user_biography.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	  <% end %>
+	
+	<div class="col-2">
+	  <h4>Kindheit</h4>
+	  <div class="field">
+		<%= f.label :birthday, "Geburtsjahr" %>
+		<%= f.date_select :birthday, :start_year => 1913, :end_year => 1999, :discard_month => true, :discard_day => true %>
+	  </div>
+	  <div class="field">
+		<%= f.label :birthplace, "Geburtsort" %>
+		<%= f.select :birthplace, UserBiography::BIRTHPLACE_OPTIONS %>
+	  </div>
+	  <div class="field">
+		<%= f.label :parents, "Elternhaus" %>
+			<%= f.select :parents, UserBiography::PARENTS_OPTIONS %>
+	  </div>
+	  <div class="field">
+		<%= f.label :childhood, "Wie waren Sie als Kind?" %>
+		<%= f.select :childhood, UserBiography::CHILDHOOD_OPTIONS %>
+	  </div>
+	  <h4>Jugend</h4>
+		<div class="field">
+		<%= f.label "Geschlecht" %>
+		<%= f.select :sex, UserBiography::SEX_OPTIONS %>
+	  </div>
+	  <div class="field">    
+		Haben Sie mal was gestohlen?
+		<%= f.radio_button :youth_1, 'true', :checked => true %> 
+		<%= f.label :youth_1, 'Ja', :value => 'true' %>
+		<%= f.radio_button :youth_1, 'false' %> 
+		<%= f.label :youth_1, 'Nein', :value => 'false' %>
+	  </div>
+	  <div class="field">
+		Drogenerfahrungen?
+		<%= f.radio_button :youth_2, 'true', :checked => true %> 
+		<%= f.label :youth_2, 'Ja', :value => 'true' %>
+		<%= f.radio_button :youth_2, 'false' %> 
+		<%= f.label :youth_2, 'Nein', :value => 'false' %>
+	  </div>
+	  <div class="field">
+		Haben Sie geglaubt, dass Sie die Welt verändern können?
+		<%= f.radio_button :youth_3, 'true', :checked => true %> 
+		<%= f.label :youth_3, 'Ja', :value => 'true' %>
+		<%= f.radio_button :youth_3, 'false' %> 
+		<%= f.label :youth_3, 'Nein', :value => 'false' %>
+	  </div>
+	  <div class="field">
+		Waren Sie bei Gleichaltrigen beliebt?
+		<%= f.radio_button :youth_4, 'true', :checked => true %> 
+		<%= f.label :youth_4, 'Ja', :value => 'true' %>
+		<%= f.radio_button :youth_4, 'false' %> 
+		<%= f.label :youth_4, 'Nein', :value => 'false' %>
+	  </div>
+	  <div class="field">
+		<%= f.label "Ausbildung" %>
+		<%= f.select :education, UserBiography::EDUCATION_OPTIONS %>
+	  </div>
+	</div>
+	<div class="col-2">  
+	  <h4>Gegenwart</h4>
+	  <div class="field">
+	  Besitzen Sie
+		<%= f.check_box :owns_boat %>
+		<%= f.label :owns_boat, "Boot" %>
+		<%= f.check_box :owns_house %>
+		<%= f.label :owns_house, "Haus" %>
+		<%= f.check_box :owns_gold %>
+		<%= f.label :owns_gold,"Gold" %> (Mehrfach-Auswahl möglich)
+	  </div>
+	  <div class="field">
+		<%= f.label :travel, "Ihre intensivste Reise in den letzten 10 Jahren führte Sie in welchen Erdteil?" %>
+		<%= f.select :travel, UserBiography::TRAVEL_OPTIONS %>
+	  </div>
+	  <div class="field">
+		<%= f.label :job_changes, "Wie oft haben Sie seit Ihrer Ausbildung den Beruf gewechselt?" %>
+		<%= f.select :job_changes, (0..10) %>
+	  </div>
+	  <div class="field">
+		<%= f.label :romance, "Romantik?" %>
+		<%= f.select :romance, UserBiography::ROMANCE_OPTIONS %>
+	  </div>
+	  <div class="field">
+		<%= f.label :crisis, "Wie reagieren Sie auf Krisen?" %>
+		<%= f.select :crisis, UserBiography::CRISIS_OPTIONS %>
+	  </div>
+	  <div class="field">
+		<%= f.label :hobby, "Haben Sie ein Hobby?" %>
+		<%= f.radio_button :hobby, 'true', :checked => true %> 
+		<%= f.label :hobby, 'Ja', :value => 'true' %>
+		<%= f.radio_button :hobby, 'false' %> 
+		<%= f.label :hobby, 'Nein', :value => 'false' %>
+	  </div>
+	  <div class="field">
+		<%= f.label "Religion?" %>
+		<%= f.select :religion, UserBiography::RELIGION_OPTIONS %>
+	  </div>
+	  <div class="field">
+		<%= f.label :zurich, "Leben Sie in Zürich?" %>
+		<%= f.radio_button :zurich, 'true', :checked => true %> 
+		<%= f.label :zurich, 'Ja', :value => 'true' %>
+		<%= f.radio_button :zurich, 'false' %> 
+		<%= f.label :zurich, 'Nein', :value => 'false' %>
+	  </div>
+	</div>
+	
+	  <div class="field" style="clear:both; padding-top: 2em;">
+		<%= f.label :zurich, "Kommen Sie zur Tour?" %>
+		<%= f.radio_button :on_tour, 'true', :checked => true %> 
+		<%= f.label :on_tour, 'Ja', :value => 'true' %>
+		<%= f.radio_button :on_tour, 'false' %> 
+		<%= f.label :on_tour, 'Nein', :value => 'false' %>
+	  </div>
+	  <div class="field" style="display:none">
+		<%= f.label :name, "Dann bitte Name oder Pseudonym angeben" %> <%= f.text_field :name %>
+	  </div>
+		<br/>
+		<div class="actions">
+		<%= f.submit "Jetzt Biographie transformieren" %> oder <%= link_to "zurück zum Start", "#/start" %>
+	  </div>
+	
 
-      <ul>
-      <% @user_biography.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<div class="col-2">
-  <h4>Kindheit</h4>
-  <div class="field">
-    <%= f.label :birthday, "Geburtsjahr" %>
-    <%= f.date_select :birthday, :start_year => 1913, :end_year => 1999, :discard_month => true, :discard_day => true %>
-  </div>
-  <div class="field">
-    <%= f.label :birthplace, "Geburtsort" %>
-    <%= f.select :birthplace, UserBiography::BIRTHPLACE_OPTIONS %>
-  </div>
-  <div class="field">
-    <%= f.label :parents, "Elternhaus" %>
-		<%= f.select :parents, UserBiography::PARENTS_OPTIONS %>
-  </div>
-  <div class="field">
-    <%= f.label :childhood, "Wie waren Sie als Kind?" %>
-    <%= f.select :childhood, UserBiography::CHILDHOOD_OPTIONS %>
-  </div>
-  <h4>Jugend</h4>
-    <div class="field">
-    <%= f.label "Geschlecht" %>
-    <%= f.select :sex, UserBiography::SEX_OPTIONS %>
-  </div>
-  <div class="field">    
-    Haben Sie mal was gestohlen?
-    <%= f.radio_button :youth_1, 'true', :checked => true %> 
-    <%= f.label :youth_1, 'Ja', :value => 'true' %>
-    <%= f.radio_button :youth_1, 'false' %> 
-    <%= f.label :youth_1, 'Nein', :value => 'false' %>
-  </div>
-  <div class="field">
-    Drogenerfahrungen?
-    <%= f.radio_button :youth_2, 'true', :checked => true %> 
-    <%= f.label :youth_2, 'Ja', :value => 'true' %>
-    <%= f.radio_button :youth_2, 'false' %> 
-    <%= f.label :youth_2, 'Nein', :value => 'false' %>
-  </div>
-  <div class="field">
-    Haben Sie geglaubt, dass Sie die Welt verändern können?
-    <%= f.radio_button :youth_3, 'true', :checked => true %> 
-    <%= f.label :youth_3, 'Ja', :value => 'true' %>
-    <%= f.radio_button :youth_3, 'false' %> 
-    <%= f.label :youth_3, 'Nein', :value => 'false' %>
-  </div>
-  <div class="field">
-    Waren Sie bei Gleichaltrigen beliebt?
-    <%= f.radio_button :youth_4, 'true', :checked => true %> 
-    <%= f.label :youth_4, 'Ja', :value => 'true' %>
-    <%= f.radio_button :youth_4, 'false' %> 
-    <%= f.label :youth_4, 'Nein', :value => 'false' %>
-  </div>
-  <div class="field">
-    <%= f.label "Ausbildung" %>
-    <%= f.select :education, UserBiography::EDUCATION_OPTIONS %>
-  </div>
+	<% end %>
+	
 </div>
-<div class="col-2">  
-  <h4>Gegenwart</h4>
-  <div class="field">
-  Besitzen Sie
-    <%= f.check_box :owns_boat %>
-    <%= f.label :owns_boat, "Boot" %>
-    <%= f.check_box :owns_house %>
-    <%= f.label :owns_house, "Haus" %>
-    <%= f.check_box :owns_gold %>
-    <%= f.label :owns_gold,"Gold" %> (Mehrfach-Auswahl möglich)
-  </div>
-  <div class="field">
-    <%= f.label :travel, "Ihre intensivste Reise in den letzten 10 Jahren führte Sie in welchen Erdteil?" %>
-    <%= f.select :travel, UserBiography::TRAVEL_OPTIONS %>
-  </div>
-  <div class="field">
-    <%= f.label :job_changes, "Wie oft haben Sie seit Ihrer Ausbildung den Beruf gewechselt?" %>
-    <%= f.select :job_changes, (0..10) %>
-  </div>
-  <div class="field">
-    <%= f.label :romance, "Romantik?" %>
-    <%= f.select :romance, UserBiography::ROMANCE_OPTIONS %>
-  </div>
-  <div class="field">
-    <%= f.label :crisis, "Wie reagieren Sie auf Krisen?" %>
-    <%= f.select :crisis, UserBiography::CRISIS_OPTIONS %>
-  </div>
-  <div class="field">
-    <%= f.label :hobby, "Haben Sie ein Hobby?" %>
-    <%= f.radio_button :hobby, 'true', :checked => true %> 
-    <%= f.label :hobby, 'Ja', :value => 'true' %>
-    <%= f.radio_button :hobby, 'false' %> 
-    <%= f.label :hobby, 'Nein', :value => 'false' %>
-  </div>
-  <div class="field">
-    <%= f.label "Religion?" %>
-    <%= f.select :religion, UserBiography::RELIGION_OPTIONS %>
-  </div>
-  <div class="field">
-    <%= f.label :zurich, "Leben Sie in Zürich?" %>
-    <%= f.radio_button :zurich, 'true', :checked => true %> 
-    <%= f.label :zurich, 'Ja', :value => 'true' %>
-    <%= f.radio_button :zurich, 'false' %> 
-    <%= f.label :zurich, 'Nein', :value => 'false' %>
-  </div>
-</div>
-
-  <div class="field" style="clear:both; padding-top: 2em;">
-    <%= f.label :zurich, "Kommen Sie zur Tour?" %>
-    <%= f.radio_button :on_tour, 'true', :checked => true %> 
-    <%= f.label :on_tour, 'Ja', :value => 'true' %>
-    <%= f.radio_button :on_tour, 'false' %> 
-    <%= f.label :on_tour, 'Nein', :value => 'false' %>
-  </div>
-  <div class="field" style="display:none">
-    <%= f.label :name, "Dann bitte Name oder Pseudonym angeben" %> <%= f.text_field :name %>
-  </div>
-	<br/>
-	<div class="actions">
-    <%= f.submit "Jetzt Biographie transformieren" %> oder <%= link_to "zurück zum Start", "#/start" %>
-  </div>
-
-
-
-<% end %>

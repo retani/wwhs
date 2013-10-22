@@ -12,13 +12,13 @@
 	<% end %>
 	
 	<p>
-	  <b>Point of Divergence:</b> <%= uchronia.pod %>
+	  <b>Point of Divergence</b> <%= uchronia.pod %>
 	</p>
 	
-	<p><%= uchronia.description.html_safe %></p>
+	<p><b>Entwicklung</b> <%= uchronia.description.html_safe %></p>
 
 <p>
-	<b>Uchronists</b> 
+	<b>Uchronisten</b> 
 <% uchronia.uchronists.each do |u| %>
 	<%= link_to u.name, "#/" + u.slug %>
 <% end %>
@@ -27,6 +27,7 @@
 </article>
 
 <aside class="col-2 post-it bio_translation">
+	<b>Ihre Biographie</b>
 	<div class="bio_translation_content"></div>
 	<%= link_to "Biographie ändern", "#/biographie-transformator", {:class=>"uchronia_link", :rel=>uchronia.slug} %>
 </aside>
