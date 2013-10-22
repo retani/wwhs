@@ -33,12 +33,12 @@ class JmpressController < ApplicationController
 {:type => "uchronist", :slug => "saidou-bah", :x => -1252.7864045000422, :y => 739.1547869638771, :rotate => 198, :scale => 0.4},
 {:type => "uchronist", :slug => "jeanette-fischer", :x => -1029.7717981660217, :y => 852.786404500042, :rotate => 216, :scale => 0.4},
 {:type => "uchronist", :slug => "janina-woods", :x => -852.7864045000422, :y => 1029.7717981660214, :rotate => 234, :scale => 0.4},
-#{:type => "uchronia", :slug => "undefined", :x => undefined, :y => undefined, :rotate => 46, :scale => 0.1},
-#{:type => "uchronia", :slug => "undefined", :x => undefined, :y => undefined, :rotate => 44, :scale => 0.1},
-#{:type => "uchronia", :slug => "undefined", :x => undefined, :y => undefined, :rotate => 32, :scale => 0.1},
-#{:type => "uchronia", :slug => "undefined", :x => undefined, :y => undefined, :rotate => 56, :scale => 0.1},
-#{:type => "uchronia", :slug => "undefined", :x => undefined, :y => undefined, :rotate => 21, :scale => 0.1},
-#{:type => "uchronia", :slug => "undefined", :x => undefined, :y => undefined, :rotate => 72, :scale => 0.1},
+{:type => "uchronia", :slug => "61", :x => 100, :y => -200, :rotate => 0, :scale => 1},
+{:type => "uchronia", :slug => "110", :x => 800, :y => -200, :rotate => 0, :scale => 1},
+{:type => "uchronia", :slug => "2", :x => 1500, :y => -200, :rotate => 0, :scale => 1},
+{:type => "uchronia", :slug => "17", :x => 2100, :y => -200, :rotate => 0, :scale => 1},
+{:type => "uchronia", :slug => "87", :x => 2800, :y => -200, :rotate => 0, :scale => 1},
+{:type => "uchronia", :slug => "19", :x => 3300, :y => -200, :rotate => 0, :scale => 1},
 
 ]
 		

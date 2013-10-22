@@ -13,9 +13,11 @@ module ApplicationHelper
     }
 
 		link_list = ""
-	  Uchronia.all.each do |u|
+		uchronias = Uchronia.all.sort_by { |u| u.slug.to_i }
+
+	  uchronias.each_with_index do |u, i|
   	 link_list += link_to u.title, '#/' + u.slug
-  	 link_list += ", "
+  	 link_list += ", " unless i == uchronias.count - 1
     end  
 		
     text = text.gsub(/<uchronia_links>/) {
