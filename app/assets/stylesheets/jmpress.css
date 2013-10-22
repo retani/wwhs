@@ -66,6 +66,14 @@ th,td {
 	padding:0 10px 10px 0;
 }
 
+q:before {
+	content: '«';
+}
+
+q:after {
+	content: '»';
+}
+
 img.youtube { width:100%; }
 
 .video-container {
@@ -140,7 +148,38 @@ img.youtube { width:100%; }
 
 .step.uchronist {
     padding: 40px 60px;
+    font-size:14px;
 }
+
+.step.uchronist q {
+	display:block;
+	margin-bottom: 0.6em;
+}
+
+.step.uchronist dt, .step.uchronist dd {
+	display:inline;
+}
+
+
+.step.uchronist dt {
+	font-weight:bold;
+	padding-right:3pt;
+	clear:both;
+	display:block;
+	float:left;
+}
+
+dd {
+	padding-top:5px;
+	padding-bottom:0;
+}
+
+.step.uchronist dd:after {
+	content: '\A\A';
+	margin-bottom:0.6em;
+	display:block;
+}
+
 
 .step.uchronist img {
 	width:100%;
