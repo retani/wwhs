@@ -23,8 +23,8 @@
 	<% end %>
 	
 	
-	<% Uchronist.all.each_with_index do |uchronist, index| %>
-		<% phi = 360 / Uchronist.all.count.to_f * index %>
+	<% Uchronist.where("hidden = ?", false).order('name DESC').all.each_with_index do |uchronist, index| %>
+		<% phi = 360 / Uchronist.where("hidden = ?", false).count.to_f * index %>
 		<%   r = 700 %>
 		<% rotate = phi - 90 %>
 		<% scale = 0.34%>
