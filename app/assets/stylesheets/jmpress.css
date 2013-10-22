@@ -43,6 +43,10 @@ h1, h2, h3, h4, iframe {
 	margin-bottom: 0.3em;
 }
 
+#start h1 {
+	margin-bottom: 0em;
+}
+
 div.video-container {
 	margin-bottom: 1em;
 }
