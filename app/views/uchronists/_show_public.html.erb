@@ -12,16 +12,15 @@
 	</div>
 	
 	<div class="col-2">
-		<p>
-			<%= uchronist.description.html_safe %>
-		</p>
+		<%= uchronist.description.html_safe %>
+
 	</div>
 </div>
 
 <div class="row col-1">
 	<nav>
 		<p>
-			Untersucht die Uchronien: <% uchronist.uchronias.each do |u| %>
+			<b>Untersucht die Uchronien</b> <% uchronist.uchronias.each do |u| %>
 				<%= link_to u.title, "#/" + u.slug %>
 			<% end %>
 		</p>	

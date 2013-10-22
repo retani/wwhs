@@ -1,6 +1,8 @@
 <h1>Uchronia <%= uchronia.title %></h1>
 
-<article>
+<div class="row">
+	
+<article class="col-2">
 	<% if uchronia.image %>
 		<%= image_tag uchronia.image.image.url(:thumb) %>
 	<% end %> 
@@ -10,25 +12,30 @@
 	<% end %>
 	
 	<p>
-	  <b>Point of Divergence:</b> <%= uchronia.pod %>
+	  <b>Point of Divergence</b> <%= uchronia.pod %>
 	</p>
 	
-	<p><%= uchronia.description.html_safe %></p>
+	<p><b>Entwicklung</b> <%= uchronia.description.html_safe %></p>
 
 <p>
-	Uchronists: 
+	<b>Uchronisten</b> 
 <% uchronia.uchronists.each do |u| %>
 	<%= link_to u.name, "#/" + u.slug %>
 <% end %>
 </p>
 
-<p>
-	<%= link_to "Weiter zur nächsten Uchronie", "#/" + uchronia.next_uchronia.slug %> oder <%= link_to "zurück zum Start", "#/start" %>
-</p>
-
 </article>
 
-<aside class="post-it bio_translation">
+<aside class="col-2 post-it bio_translation">
+	<b>Ihre Biographie</b>
 	<div class="bio_translation_content"></div>
 	<%= link_to "Biographie ändern", "#/biographie-transformator", {:class=>"uchronia_link", :rel=>uchronia.slug} %>
 </aside>
+
+</div>
+
+<div class="row col-1">
+<p>
+	<%= link_to "Weiter zur nächsten Uchronie", "#/" + uchronia.next_uchronia.slug %> oder <%= link_to "zurück zum Start", "#/start" %>
+</p>
+</div>
