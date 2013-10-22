@@ -13,11 +13,63 @@
 //= require jquery
 //= require jquery_ujs
 //= require jmpress.custom
+//= require jquery.fitvids
 
 hoverElem = null;
 current_uchronia = null;
+youtube_iframes = new Array();
+youtube_images = new Array();
+currentSlide = null;
 
 $(document).ready(function() {
+
+	
+	// init youtube
+	/*
+	$(".step iframe[src*=youtube]").each(function () {
+		var index = youtube_iframes.length;
+		$(this).attr("data-index",index);
+		$(this).addClass("youtube");
+		vid = $(this).attr("src").match(/\/([^\/]*)[$\?]/);
+		vid = vid[1];
+		imgUrl = "http://img.youtube.com/vi/" + vid + "/0.jpg";
+
+		$(this).closest(".step").on("enterStep leaveStep", function (event) {
+			
+			targetElem = $(this).children(".youtube");
+			index = parseInt(targetElem.attr("data-index"));
+			console.log(targetElem.length);
+			if (event.type == "enterStep") {
+				targetElem.replaceWith(youtube_iframes[index]);
+			}
+			if (event.type == "leaveStep") targetElem.replaceWith(youtube_images[index]);
+		});
+
+		youtube_images[index] = "<img class=\"youtube\" data-index=\"" + index + "\" src=\""+  imgUrl +"\">";
+		youtube_iframes[index] = $(this).replaceWith(youtube_images[index]);
+		
+		
+	});
+	*/
+	
+	$(".step").on("enterStep", function (event) {
+		currentSlide = $(this);
+		setTimeout(function () {
+			iframeElem = currentSlide.find("iframe[src*=youtube]");
+			x = iframeElem.attr("src");
+			iframeElem.attr("src", "");
+			iframeElem.attr("src", x);		
+		}, 1500);
+	});
+	
+	
+	//$(".step").fitVids();
+	
+	// init jmpress
+	$(function() {
+		$('#canvas').jmpress();
+	});
+
 
 	/*
   var zoomlevel=1;
@@ -103,7 +155,7 @@ $(document).ready(function() {
   			window.location.hash="#/overview";
   		} 
   		if (event.which == "27") { // q
-  			window.location.hash="#/info";
+  			window.location.hash="#/start";
   		}   		
   		if (event.which == "79") { // o
   			out = "";
@@ -123,6 +175,8 @@ $(document).ready(function() {
   				//}
   			});
   			console.log(out);
+  			$('#canvas').jmpress("deinit");
+  			$('#canvas').jmpress();
   			//window.prompt("copy",out);
  		}
  		
