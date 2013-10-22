@@ -189,6 +189,10 @@ dd {
 	width:100%;
 }
 
+.step.uchronist nav {
+	margin-top: 20px;
+}
+
 .step.uchronia {
 	position:relative;
 }
