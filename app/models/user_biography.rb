@@ -3,7 +3,7 @@
 class UserBiography < ActiveRecord::Base
   attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour
 
-BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aaargau', 'in der Schweiz']
+BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aaargau', 'in der Schweiz', 'im Ausland']
 PARENTS_OPTIONS = ['arm', 'reich', 'weiß nicht']
 CHILDHOOD_OPTIONS = ['Musterkind', 'chaotisch', 'neugierig', 'weiß nicht']
 SEX_OPTIONS = ['weiblich', 'männlich', 'weiß nicht']
@@ -76,6 +76,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		t['110'] += translate_uchronia_110
 		t['2'] += translate_uchronia_2
 		t['61'] += translate_uchronia_61
+		t['17'] += translate_uchronia_17
 
 		Uchronia.all.each do |uchronia|
 			t[uchronia.slug] += "Heute sind Sie " + age(2013).to_s + " Jahre alt."
@@ -201,16 +202,45 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		s.each do |e|
 			t += e + " "
 		end
-		
 		return t
 
 	end
 	
+	def translate_uchronia_17
 	
+		s = []
+		
+		if age(2013) > 1
+			s<<"Bis Ende 2012 verläuft Ihr Leben so, wie sie es kennen."
+		end
+
+		if self.childhood == 'Musterkind' || self.childhood == 'weiß nicht' 
+			s<<"Nach dem Terroranschlag wird es Ihnen in Zürich zu ungemütlich. Sie ziehen vorübergehend zu Verwandten aufs Land."
+		end
+
+		if self.childhood == 'chaotisch' || self.childhood == 'neugierig'
+			s<<"Nach dem Terroranschlag erleben Sie, wie viele Ihrer Freunde die Stadt verlassen. Sie selbst sehen in der Situation ein Chance für einen Neuanfang in Zürich. Am Fuße des Züribergs finden Sie eine leerstehende zurückgelassene Villa, in der sie sich einrichten."
+		end
+
+		if (self.childhood == 'chaotisch' || self.childhood == 'neugierig') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
+			s<<"An den Wochenenden genießen Sie das blühende Nachtleben der Stadt. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an."
+		end
+ 
+		if (self.childhood == 'Musterkind' || self.childhood == 'weiß nicht') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
+			s<<"An den Wochenenden kommen Sie zurück in die Stadt und genießen das blühende Nachtleben. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an."
+		end
+
+		if (self.childhood == 'chaotisch' || self.childhood == 'neugierig') && boot
+			s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Großstadthipster einfliegen. Niemand weiß vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
+		end
 	
-	
-	
-	
+		t = ""
+		s.each do |e|
+			t += e + " "
+		end
+		return t
+
+	end
 
 	
 end
