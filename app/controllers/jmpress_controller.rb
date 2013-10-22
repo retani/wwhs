@@ -5,12 +5,12 @@ class JmpressController < ApplicationController
 
 		@slides = [
 
-{:type => "page", :slug => "start", :x => -1300, :y => -100, :rotate => 90, :scale => 0.6},
+:type => "page", :slug => "start", :x => -1300, :y => -100, :rotate => 90, :scale => 0.6},
 {:type => "page", :slug => "tour", :x => -100, :y => -650, :rotate => 0, :scale => 2.100000000000001},
 {:type => "page", :slug => "termine", :x => -550, :y => -1200, :rotate => 0, :scale => 0.8},
 {:type => "page", :slug => "startpunkt", :x => 60, :y => -1190, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "hinweise", :x => 580, :y => -1230, :rotate => 0, :scale => 0.9},
-{:type => "page", :slug => "transformator-hinweis", :x => -300, :y => 400, :rotate => 0, :scale => 1.9000000000000006},
+{:type => "page", :slug => "transformator-hinweis", :x => -100, :y => 350, :rotate => 0, :scale => 1.9000000000000006},
 {:type => "page", :slug => "society", :x => -1460, :y => 1480, :rotate => 0, :scale => 1.2999999999999994},
 {:type => "page", :slug => "uchronien", :x => 820, :y => 750, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "credits", :x => -2300, :y => 0, :rotate => 0, :scale => 0.30000000000000016},
@@ -32,7 +32,7 @@ class JmpressController < ApplicationController
 {:type => "uchronist", :slug => "janina-woods", :x => -1500.0000000000002, :y => 700.0, :rotate => 180, :scale => 0.4},
 {:type => "uchronist", :slug => "jazzmin", :x => -1252.7864045000422, :y => 739.1547869638771, :rotate => 198, :scale => 0.4},
 {:type => "uchronist", :slug => "harald-bollinger", :x => -1029.7717981660217, :y => 852.786404500042, :rotate => 216, :scale => 0.4},
-{:type => "uchronist", :slug => "oli-wolf", :x => -852.7864045000422, :y => 1029.7717981660212, :rotate => 234, :scale => 0.4},
+{:type => "uchronist", :slug => "oli-wolf", :x => -852.7864045000422, :y => 1029.7717981660212, :rotate => 234, :scale => 0.4}
 
 ]
 		
