@@ -5,7 +5,7 @@ class JmpressController < ApplicationController
 
 		@slides = [
 
-:type => "page", :slug => "start", :x => -1300, :y => -100, :rotate => 90, :scale => 0.6},
+{:type => "page", :slug => "start", :x => -1300, :y => -100, :rotate => 90, :scale => 0.6},
 {:type => "page", :slug => "tour", :x => -100, :y => -650, :rotate => 0, :scale => 2.100000000000001},
 {:type => "page", :slug => "termine", :x => -550, :y => -1200, :rotate => 0, :scale => 0.8},
 {:type => "page", :slug => "startpunkt", :x => 60, :y => -1190, :rotate => 0, :scale => 1},
