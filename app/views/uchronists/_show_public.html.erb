@@ -1,28 +1,31 @@
 <h1>Uchrnoist<% if uchronist.sex == 'weiblich' %>in<% end %> <%= uchronist.name %></h1>
 
-<div class="col-2">
-	<% if uchronist.image %>
-		<%= image_tag uchronist.image.image.url(:medium) %>
-	<% end %> 
+<div class="row">
+	<div class="col-2">
+		<% if uchronist.image %>
+			<%= image_tag uchronist.image.image.url(:medium) %>
+		<% end %> 
+		
+		<% if uchronist.media_embed %>
+			<%= uchronist.media_embed.html_safe %>
+		<% end %>
+	</div>
 	
-	<% if uchronist.media_embed %>
-		<%= uchronist.media_embed.html_safe %>
-	<% end %>
-</div>
-
-<div class="col-2">
-	<p><%= uchronist.description.html_safe %></p>
-
-	</p>
-</div>
-
-<div class="col-1">
-	<nav>
+	<div class="col-2">
+		<p>
+			<%= uchronist.description.html_safe %>
+		</p>
 		<p>
 			Untersucht die Uchronien: <% uchronist.uchronias.each do |u| %>
 				<%= link_to u.title, "#/" + u.slug %>
 			<% end %>
 		</p>
+		
+	</div>
+</div>
+
+<div class="row col-1">
+	<nav>
 		<%= link_to "Weiter", "#/" + uchronist.next_uchronist.slug %> oder <%= link_to "zurück zum Start", "#/start" %>
 	</nav>
 </div>
