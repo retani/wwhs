@@ -18,7 +18,7 @@
 	
 	
 	<% Uchronist.all.each_with_index do |uchronist, index| %>
-		<% phi = 360 / Uchronist.all.count * index %>
+		<% phi = 360 / Uchronist.all.count.to_f * index %>
 		<%   r = 800 %>
 		<% rotate = phi - 90 %>
 		<% scale = 0.4%>
