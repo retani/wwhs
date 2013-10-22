@@ -1,4 +1,8 @@
 class UchroniasController < ApplicationController
+
+  before_filter :authenticate, except: [:show]
+  layout 'admin' 
+
   # GET /uchronias
   # GET /uchronias.json
   def index
