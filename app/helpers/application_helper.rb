@@ -12,6 +12,16 @@ module ApplicationHelper
       end      
     }
 
+		link_list = ""
+	  Uchronia.all.each do |u|
+  	 link_list += link_to u.title, '#/' + u.slug
+  	 link_list += ", "
+    end  
+		
+    text = text.gsub(/<uchronia_links>/) {
+			link_list    
+		}
+
     text.html_safe
   end
 
