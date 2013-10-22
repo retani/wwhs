@@ -2,9 +2,7 @@
 
 <% if uchronist.image %>
 	<%= image_tag uchronist.image.image.url(:medium) %>
-<% else %> 
-	<%= image_tag	"http://wwhs-production.s3.amazonaws.com/images/1/medium/image.jpeg?1381509426" %>
-<% end %>
+<% end %> 
 
 <% if uchronist.media_embed %>
 	<%= uchronist.media_embed.html_safe %>
