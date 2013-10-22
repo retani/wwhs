@@ -1,9 +1,14 @@
+# encoding: utf-8
+
 class Uchronist < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
-  attr_accessible :description, :image_id, :media_embed, :name, :hidden, :uchronia_ids
+  attr_accessible :description, :image_id, :media_embed, :name, :hidden, :uchronia_ids, :sex
 	belongs_to :image
 	has_and_belongs_to_many :uchronias
+
+	SEX_OPTIONS = ['weiblich', 'männlich', 'keine Angabe']
+	validates :sex, :inclusion => SEX_OPTIONS
 
 	def next_uchronist
 		u = self.class.first(:conditions => ["name > ?", name], :order => "name asc")

@@ -1,10 +1,8 @@
-<h1>Uchronist <%= uchronist.name %></h1>
+<h1>Uchrnoist<% if uchronist.sex == 'weiblich' %>in<% end %> <%= uchronist.name %></h1>
 
 <% if uchronist.image %>
 	<%= image_tag uchronist.image.image.url(:medium) %>
-<% else %> 
-	<%= image_tag	"http://wwhs-production.s3.amazonaws.com/images/1/medium/image.jpeg?1381509426" %>
-<% end %>
+<% end %> 
 
 <% if uchronist.media_embed %>
 	<%= uchronist.media_embed.html_safe %>
@@ -12,11 +10,10 @@
 
 <p><%= uchronist.description.html_safe %></p>
 
-<p>
-	Uchronien: 
-<% uchronist.uchronias.each do |u| %>
+<p>Untersucht die Uchronien: <% uchronist.uchronias.each do |u| %>
 	<%= link_to u.title, "#/" + u.slug %>
 <% end %>
 </p>
-	<%= link_to "Weiter zum nächsten Uchronisten", "#/" + uchronist.next_uchronist.slug %> oder <%= link_to "zurück zum Start", "#/start" %>
+
+<%= link_to "Weiter", "#/" + uchronist.next_uchronist.slug %> oder <%= link_to "zurück zum Start", "#/start" %>
 

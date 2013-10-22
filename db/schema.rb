@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131021201017) do
+ActiveRecord::Schema.define(:version => 20131022103819) do
 
   create_table "challenges", :force => true do |t|
     t.string   "name"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20131021201017) do
     t.datetime "updated_at",                     :null => false
     t.boolean  "hidden",      :default => false
     t.string   "slug"
+    t.string   "sex"
   end
 
   create_table "user_biographies", :force => true do |t|
