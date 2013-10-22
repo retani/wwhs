@@ -56,7 +56,7 @@ $(document).ready(function() {
 	$(".step").on("enterStep", function (event) {
 		currentSlide = $(this);
 		setTimeout(function () {
-			iframeElem = currentSlide.find("iframe[src*=youtube]");
+			iframeElem = currentSlide.find("iframe[src*=youtube]:not([src*=html5])");
 			x = iframeElem.attr("src");
 			iframeElem.attr("src", "");
 			iframeElem.attr("src", x);		
