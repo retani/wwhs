@@ -57,7 +57,7 @@ class UserBiography < ActiveRecord::Base
 			t[uchronia.slug] = "Sie werden im Jahr " + self.birthday.year.to_s + " " + self.birthplace + " " + "geboren. "
 		end
 		
-		t['111'] += translate_uchronia_111
+		t['110'] += translate_uchronia_110
 		t['2'] += translate_uchronia_2
 
 		Uchronia.all.each do |uchronia|
@@ -109,7 +109,7 @@ class UserBiography < ActiveRecord::Base
 
 	end
 
-	def translate_uchronia_111
+	def translate_uchronia_110
 	
 		s = ""
 		if age(1973) > 12 && schweizer

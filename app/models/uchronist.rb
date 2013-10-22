@@ -11,7 +11,7 @@ class Uchronist < ActiveRecord::Base
 	validates :sex, :inclusion => SEX_OPTIONS
 
 	def next_uchronist
-		u = self.class.first(:conditions => ["name > ?", name], :order => "name asc")
+		u = self.class.first(:conditions => ["name > ? and hidden = false", name], :order => "name asc")
 	  unless u
 	  	u = self.class.first(:order => "name asc")
 	  end

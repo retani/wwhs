@@ -5,20 +5,14 @@ class Uchronia < ActiveRecord::Base
 	belongs_to :image
 	has_and_belongs_to_many :uchronists
 
-	def previous_uchronia
-	  u = self.class.last(:conditions => ["title < ?", title], :order => "title asc")
-	  unless u
-	  	u = self.class.last(:order => "title asc")
-	  end
-	  return u
-	end
-
 	def next_uchronia
-		u = self.class.first(:conditions => ["title > ?", title], :order => "title asc")
-	  unless u
-	  	u = self.class.first(:order => "title asc")
-	  end
-	  return u
+		sorted = Uchronia.all.sort_by { |u| u.slug.to_i }
+		sorted.each_with_index do |u, index| 
+			if u.id == self.id 
+				return sorted[index+1] unless index+1 >= sorted.count
+			end
+		end
+		return sorted[0]
 	end
 
 end

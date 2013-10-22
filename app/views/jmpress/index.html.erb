@@ -13,12 +13,18 @@
 				<%= render :partial => 'uchronists/show_public', :locals => { :uchronist => uchronist } %>
 			</div>
 		<% end %>	
+		<% if slide[:type] == "uchronia" %>
+			<% uchronia =  Uchronia.find(slide[:slug]) %>
+			<div id="<%= uchronia.slug %>" class="step uchronia editable" data-type="uchronia" data-slug="<%= uchronia.slug %>" data-x="<%= slide[:x] %>" data-y="<%= slide[:y] %>" data-rotate="<%= slide[:rotate] %>" data-scale="<%= slide[:scale] %>">
+				<%= render :partial => 'uchronias/show_public', :locals => { :uchronia => uchronia } %>
+			</div>
+		<% end %>	
 		
 	<% end %>
 	
 	
-	<% Uchronist.all.each_with_index do |uchronist, index| %>
-		<% phi = 360 / Uchronist.all.count.to_f * index %>
+	<% Uchronist.where("hidden = ?", false).order('name DESC').all.each_with_index do |uchronist, index| %>
+		<% phi = 360 / Uchronist.where("hidden = ?", false).count.to_f * index %>
 		<%   r = 700 %>
 		<% rotate = phi - 90 %>
 		<% scale = 0.34%>
@@ -33,15 +39,6 @@
 		<%= render 'user_biographies/form_public' %>
 	</div>
 	
-	<% x = 0 %>
-	<% rand_phi = (0..12).to_a.sort{ rand() - 0.5 }[0..Uchronia.all.count] %>
-	<% Uchronia.all.each_with_index do |uchronia, index| %>
-			<div id="<%= uchronia.slug %>" class="step uchronia editable" data-r="<%= 2000 %>" data-phi="<%= 30 * rand_phi[index] %>" data-rotate="<%= rand(100)-5%>" data-scale="0.1">
-			<%= render :partial => 'uchronias/show_public', :locals => {:uchronia => uchronia} %>
-			</div>
-			<% x += 700 %>
-	<% end %>
-
 	<div id="overview" class="step overview" data-x="0" data-y="0" data-scale="7"></div>
 
 

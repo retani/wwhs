@@ -117,6 +117,7 @@ $(document).ready(function() {
 			event.preventDefault();
 
 			slugs = <%= Uchronia.pluck('slug').to_json %>;			
+			console.log(slugs);
 			r = Math.floor(Math.random()*slugs.length);
 			window.location.hash = '/' + slugs[r];			
 	});
