@@ -19,7 +19,7 @@
 	  <h4>Kindheit</h4>
 	  <div class="field">
 		<%= f.label :birthday, "Geburtsjahr" %>
-		<%= f.date_select :birthday, :start_year => 1913, :end_year => 1999, :discard_month => true, :discard_day => true %>
+		<%= f.date_select :birthday, :default => {:year => 1980}, :start_year => 1913, :end_year => 1999, :discard_month => true, :discard_day => true %>
 	  </div>
 	  <div class="field">
 		<%= f.label :birthplace, "Geburtsort" %>
@@ -80,7 +80,7 @@
 		<%= f.check_box :owns_house %>
 		<%= f.label :owns_house, "Haus" %>
 		<%= f.check_box :owns_gold %>
-		<%= f.label :owns_gold,"Gold" %> (Mehrfach-Auswahl möglich)
+		<%= f.label :owns_gold,"Gold?" %>
 	  </div>
 	  <div class="field">
 		<%= f.label :travel, "Ihre intensivste Reise in den letzten 10 Jahren führte Sie in welchen Erdteil?" %>
