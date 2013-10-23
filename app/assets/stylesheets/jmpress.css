@@ -110,7 +110,9 @@ img.youtube { width:100%; }
 /** STEP STYLES **/
 
 .step {
+	clear:both;
 	width: 600px;
+	margin-bottom:20px;
     /*height: 200px;*/
 	/*font-size: 1em;*/
 	/*min-height: 500px;*/
@@ -353,7 +355,7 @@ box-shadow: 0px 2px 4px #666;
 
 
 /* fade out inactive slides */
-.step:not(.active) {
+#canvas[class*=step] .step:not(.active) {
 	opacity: 0.3;
 	z-index:-1;
 	/*display:none;*/
@@ -364,7 +366,7 @@ box-shadow: 0px 2px 4px #666;
 	z-index:1
 }
 
-.step:not(.active):hover {
+#canvas[class*=step] .step:not(.active):hover {
 	opacity: 0.8;
 	cursor: pointer;
 }

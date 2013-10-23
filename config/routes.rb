@@ -16,9 +16,9 @@ Wwhs::Application.routes.draw do
 	match 'splash/register' => 'splash#register'
 	match 'splash/unregister' => 'splash#unregister'
 	
-	match 'j' => 'jmpress#index'
+	match 'j' => redirect("/")
 	
-	root to: 'splash#index'
+	root to: 'jmpress#index'
 	
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
