@@ -110,7 +110,9 @@ img.youtube { width:100%; }
 /** STEP STYLES **/
 
 .step {
+	clear:both;
 	width: 600px;
+	margin-bottom:20px;
     /*height: 200px;*/
 	/*font-size: 1em;*/
 	/*min-height: 500px;*/
