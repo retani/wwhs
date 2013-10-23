@@ -27,7 +27,7 @@ module ApplicationHelper
 		}
 		
 	user_agent = UserAgent.parse(request.user_agent)
-	if (user_agent.browser == "Chrome"  && user_agent.version > "29") || (user_agent.browser == "Firefox" && user_agent.version > "15") || (user_agent.browser == "Safari" && user_agent.version > "5")
+	if (user_agent.browser == "Chrome"  && user_agent.version > "29") || (user_agent.browser == "Firefox" && user_agent.version > "4") || (user_agent.browser == "Safari" && user_agent.version > "5")
 		logger.info "youtube HTML5 video for " + user_agent
 	else
 		text =  text.gsub(/&html5=1/) {
