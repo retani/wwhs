@@ -1,7 +1,7 @@
 <div class="post-it-2 row">
 	
-	<h2>Der Biographie-Transformator</h2>
-	<p>Bitte füllen Sie das Eingabe-Formular wahrheitsgemäß aus. Ihre Biographie wird dann in die verschiedenen Uchronien übersetzt. Wenn Sie zur Tour kommen, helfen uns diese Daten, Sie für das Betreten der Uchronien vorzubereiten.</p>
+	<h2>Der Biographie-Multiplikator</h2>
+	<p>Bitte füllen Sie das Eingabe-Formular wahrheitsgemäß aus. Ihre Biographie wird dann für die verschiedenen Uchronien im Multiversum transformiert. Wenn Sie zur Tour kommen, helfen uns diese Daten, das Betreten der Uchronien für Sie vorzubereiten.</p>
 	<%= form_for(@user_biography, :remote=>true, :format => :json) do |f| %>
 	  <% if @user_biography.errors.any? %>
 		<div id="error_explanation">
@@ -130,7 +130,7 @@
 	  </div>
 		<br/>
 		<div class="actions">
-		<%= f.submit "Jetzt Biographie transformieren" %> oder <%= link_to "zurück zum Start", "#/start" %>
+		<%= f.submit "Jetzt Biographie multiplizieren" %> oder <%= link_to "zurück zum Start", "#/start" %>
 	  </div>
 	
 

@@ -45,7 +45,7 @@ class UserBiographiesController < ApplicationController
     @user_biography = UserBiography.new(params[:user_biography])
 
     respond_to do |format|
-      if params[:save]
+      unless params[:nosave]
       	if @user_biography.save
 	        format.html { redirect_to @user_biography, notice: 'User biography was successfully created.' }
   	      format.json { render json: {:original => @user_biography, :translations => @user_biography.translations }, status: :created, location: @user_biography }
