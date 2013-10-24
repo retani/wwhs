@@ -58,7 +58,7 @@ h3 + div.video-container {
 }
 
 p {
-	margin-bottom: 1em;
+	margin-bottom: 0.6em;
 }
 
 th {
@@ -193,9 +193,10 @@ dd {
 	width:100%;
 }
 
-.step.uchronist nav, #credits nav {
+.step.uchronist nav, #credits nav, .uchronia nav, #uchronien nav {
 	clear:both;
-	margin-top: 20px;
+	display:block;
+	padding-top: 1.1em;
 }
 
 .step.uchronia {
@@ -233,6 +234,12 @@ dd {
 
 iframe {
 	width:100%;
+}
+
+#uchronien .col-1 {
+	-webkit-column-count:2;
+	-moz-column-count:2;
+	column-count:2;
 }
 
 #credits {
