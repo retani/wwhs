@@ -25,7 +25,7 @@
 	
 	<% Uchronist.where("hidden = ?", false).order('name DESC').all.each_with_index do |uchronist, index| %>
 		<% phi = 360 / Uchronist.where("hidden = ?", false).count.to_f * index %>
-		<%   r = 700 %>
+		<%   r = 680 %>
 		<% rotate = phi - 90 %>
 		<% scale = 0.34%>
 		<% x = -1500 + r * Math.cos(2*Math::PI*(phi.to_f/360)) %>
