@@ -2,6 +2,7 @@
 
 <table class="table">
   <tr>
+    <th>Name</th>
     <th>Birthday</th>
     <th>Birthplace</th>
     <th>Parents</th>
@@ -24,6 +25,7 @@
 
 <% @user_biographies.each do |user_biography| %>
   <tr>
+    <td><%= user_biography.name %></td>
     <td><%= user_biography.birthday %></td>
     <td><%= user_biography.birthplace %></td>
     <td><%= user_biography.parents %></td>
