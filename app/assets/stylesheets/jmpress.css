@@ -12,11 +12,13 @@
  *= 
  */
 
+/*@import url(http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700);*/
+
 body {
     /*background-image:url("/assets/concrete.jpg");*/
     background-position:90% 0%;
     background-size: cover;
-    font-family: "Helvetica",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size:15px;
     color:black;
     line-height:1.429;
@@ -231,6 +233,30 @@ dd {
 iframe {
 	width:100%;
 }
+
+#credits {
+	font-size:85%;
+}
+
+#credits dt {
+	clear:both;
+	float:left;
+	display:block;
+	margin-top:0.3em;
+	padding-right:1ex;
+	font-weight:bold;
+}
+
+#credits dd {
+	float:left;
+	display:block;
+	margin-top:0em;
+}
+
+#credits p {
+	float:left;
+}
+
 
 #society iframe {
 	float:left;
