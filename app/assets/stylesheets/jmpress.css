@@ -193,7 +193,8 @@ dd {
 	width:100%;
 }
 
-.step.uchronist nav {
+.step.uchronist nav, #credits nav {
+	clear:both;
 	margin-top: 20px;
 }
 
