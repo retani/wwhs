@@ -1,0 +1,21 @@
+<div>
+
+	<% @user_biographies.each do |bio| %>
+	
+		<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+		
+		<% @uchronias.each do |uchronia| %>
+		
+				<h4>Uchronie <%= uchronia.title %></h3>
+				
+					<p>
+						<%= bio.translations[uchronia.slug] %>
+					</p>
+				
+			</div>
+			
+		<% end %>
+	
+	<%end%>
+
+</div>
