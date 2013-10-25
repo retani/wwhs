@@ -12,6 +12,16 @@ class UserBiographiesController < ApplicationController
     end
   end
 
+  def all
+    @user_biographies = UserBiography.all
+    @uchronias = Uchronia.all
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @user_biography }
+    end
+  end
+
   # GET /user_biographies/1
   # GET /user_biographies/1.json
   def show
