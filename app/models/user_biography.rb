@@ -4,14 +4,14 @@ class UserBiography < ActiveRecord::Base
   attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour
 
 BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aaargau', 'in der Schweiz', 'im Ausland']
-PARENTS_OPTIONS = ['arm', 'reich', 'weiß nicht']
-CHILDHOOD_OPTIONS = ['Musterkind', 'chaotisch', 'neugierig', 'weiß nicht']
-SEX_OPTIONS = ['weiblich', 'männlich', 'weiß nicht']
-EDUCATION_OPTIONS = ['sozial', 'künstlerisch', 'technisch', 'ökonomisch', 'keine', 'weiß nicht']
-ROMANCE_OPTIONS = ['keine', 'kompliziert', 'verheiratet', 'geschieden', 'weiß nicht']
-CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiß nicht']
-TRAVEL_OPTIONS = ['Schweiz', 'Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiß nicht']
-RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiß nicht']
+PARENTS_OPTIONS = ['arm', 'reich', 'weiss nicht']
+CHILDHOOD_OPTIONS = ['Musterkind', 'chaotisch', 'neugierig', 'weiss nicht']
+SEX_OPTIONS = ['weiblich', 'männlich', 'weiss nicht']
+EDUCATION_OPTIONS = ['sozial', 'künstlerisch', 'technisch', 'ökonomisch', 'keine', 'weiss nicht']
+ROMANCE_OPTIONS = ['keine', 'kompliziert', 'verheiratet', 'geschieden', 'weiss nicht']
+CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiss nicht']
+TRAVEL_OPTIONS = ['Schweiz', 'Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiss nicht']
+RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiss nicht']
 
 # youth _1 Haben Sie mal was gestohlen?  Ja Nein
 # youth_2 Drogenerfahrungen?  Ja  Nein
@@ -45,7 +45,23 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 	def beliebt
 		return self.youth_4
 	end
-	
+
+	def chaotisch
+		return self.childhood == "chaotisch"
+	end
+
+	def musterkind
+		return self.childhood == "musterkind"
+	end
+
+	def neugierig
+		return self.childhood == "neugierig"
+	end
+
+	def kind_weissnicht
+		return self.childhood == "weiss nicht"
+	end
+
 	def age (year)
 		return year - self.birthday.year 
 	end
@@ -111,7 +127,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		
 		good_countries = ['Russland', 'Brasilien', 'China', 'Indien']
 		if good_countries.any? { |w| self.travel[w] }
-			t += "Sie entschlossen sich schließlich, in ein weniger chaotisches Land auszuwandern, nämlich nach " + self.travel + ". "
+			t += "Sie entschlossen sich schliesslich, in ein weniger chaotisches Land auszuwandern, nämlich nach " + self.travel + ". "
 			return t
 		end
 		
@@ -151,7 +167,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		end
 
 		if age(2013) > 16 && self.zurich
-			s += "Heute nutzen Sie regelmäßig die Spielautomaten in der Tram. "
+			s += "Heute nutzen Sie regelmässig die Spielautomaten in der Tram. "
 		end
 
 		if age(2013) > 16 && self.zurich && self.crisis == 'zupackend'
@@ -162,12 +178,21 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		
 	end
 
+	def translate_uchronia_61_NEW
+	
+		s = []
+		
+		#mitmacher = self.childhood ((Kindheit: chaotische ODER neugierig) ODER (Glaube an Weltveränderung )) UND nach 1970 geboren
+	
+	end
+
+
 	def translate_uchronia_61
 	
 		s = []
 	
 		if age(1984) <= 30 && age(1984) >= 15 && schweizer
-			s<<"Ihre Kindheit verlief gemäß ihren Erinnerungen. Die Jugendunruhen zu Beginn der 80er Jahre haben ihre Sicht auf Zürich beeinflusst." 
+			s<<"Ihre Kindheit verlief gemäss ihren Erinnerungen. Die Jugendunruhen zu Beginn der 80er Jahre haben ihre Sicht auf Zürich beeinflusst." 
 		end
 
 		if age(1984) <=30 && age(1984) >= 15 && schweizer && drogen && weltverbesserer
@@ -195,7 +220,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		end
 
 		if self.boot && self.hobby
-			s<<"Sie nehmen regelmäßig an den Drachenbootrennen zwischen Stadt und Freistaat auf dem Züri See teil."
+			s<<"Sie nehmen regelmässig an den Drachenbootrennen zwischen Stadt und Freistaat auf dem Züri See teil."
 		end
 		
 		t = ""
@@ -214,24 +239,24 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 			s<<"Bis Ende 2012 verläuft Ihr Leben so, wie sie es kennen."
 		end
 
-		if self.childhood == 'Musterkind' || self.childhood == 'weiß nicht' 
+		if self.childhood == 'Musterkind' || self.childhood == 'weiss nicht' 
 			s<<"Nach dem Terroranschlag wird es Ihnen in Zürich zu ungemütlich. Sie ziehen vorübergehend zu Verwandten aufs Land."
 		end
 
 		if self.childhood == 'chaotisch' || self.childhood == 'neugierig'
-			s<<"Nach dem Terroranschlag erleben Sie, wie viele Ihrer Freunde die Stadt verlassen. Sie selbst sehen in der Situation ein Chance für einen Neuanfang in Zürich. Am Fuße des Züribergs finden Sie eine leerstehende zurückgelassene Villa, in der sie sich einrichten."
+			s<<"Nach dem Terroranschlag erleben Sie, wie viele Ihrer Freunde die Stadt verlassen. Sie selbst sehen in der Situation ein Chance für einen Neuanfang in Zürich. Am Fusse des Züribergs finden Sie eine leerstehende zurückgelassene Villa, in der sie sich einrichten."
 		end
 
 		if (self.childhood == 'chaotisch' || self.childhood == 'neugierig') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
-			s<<"An den Wochenenden genießen Sie das blühende Nachtleben der Stadt. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an."
+			s<<"An den Wochenenden geniessen Sie das blühende Nachtleben der Stadt. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an."
 		end
  
-		if (self.childhood == 'Musterkind' || self.childhood == 'weiß nicht') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
-			s<<"An den Wochenenden kommen Sie zurück in die Stadt und genießen das blühende Nachtleben. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an."
+		if (self.childhood == 'Musterkind' || self.childhood == 'weiss nicht') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
+			s<<"An den Wochenenden kommen Sie zurück in die Stadt und geniessen das blühende Nachtleben. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an."
 		end
 
 		if (self.childhood == 'chaotisch' || self.childhood == 'neugierig') && boot
-			s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Großstadthipster einfliegen. Niemand weiß vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
+			s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Grossstadthipster einfliegen. Niemand weiss vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
 		end
 	
 		t = ""
