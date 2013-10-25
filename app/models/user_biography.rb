@@ -3,12 +3,12 @@
 class UserBiography < ActiveRecord::Base
   attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour
 
-BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aaargau', 'in der Schweiz', 'im Ausland']
+BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aargau', 'in der Schweiz', 'im Ausland']
 PARENTS_OPTIONS = ['arm', 'reich', 'weiß nicht']
 CHILDHOOD_OPTIONS = ['Musterkind', 'chaotisch', 'neugierig', 'weiß nicht']
 SEX_OPTIONS = ['weiblich', 'männlich', 'weiß nicht']
 EDUCATION_OPTIONS = ['sozial', 'künstlerisch', 'technisch', 'ökonomisch', 'keine', 'weiß nicht']
-ROMANCE_OPTIONS = ['keine', 'kompliziert', 'verheiratet', 'geschieden', 'weiß nicht']
+ROMANCE_OPTIONS = ['keine', 'kompliziert', 'polyamurös', 'stabil', 'verheiratet', 'geschieden', 'weiß nicht']
 CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiß nicht']
 TRAVEL_OPTIONS = ['Schweiz', 'Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiß nicht']
 RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiß nicht']
@@ -16,7 +16,9 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 # youth _1 Haben Sie mal was gestohlen?  Ja Nein
 # youth_2 Drogenerfahrungen?  Ja  Nein
 # youth_3 Haben Sie geglaubt, dass Sie die Welt verändern können?  Ja  Nein
-# youth_ 4Waren Sie bei Gleichaltrigen beliebt? Ja  Nein
+# youth_4 Waren Sie bei Gleichaltrigen beliebt? Ja  Nein
+# youth_5 Waren sie Teil eines Geheimclubs? Ja Nein
+# youth_6 Haben Sie sich Gedanken zu Überlebensstrategien gemacht? Ja Nein
 
 	def gold 
 		return self.owns_gold
@@ -45,6 +47,14 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 	def beliebt
 		return self.youth_4
 	end
+	
+	def geheimclub
+		return self. youth_5
+		end
+		
+	def überlebensstrategie
+		return self. youth_6
+		end	
 	
 	def age (year)
 		return year - self.birthday.year 
@@ -130,6 +140,19 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 	def translate_uchronia_110
 	
 		s = ""
+		
+		if age(2013) <= 33 \
+		&&  self.job_changes  >=4 \
+		&&  self.education == 'künstlerisch' \
+		&& (self.childhood == 'chaotisch' || self.childhood =='neugierig' || self.childhood == 'weiss nicht') \
+		&& (self.religion == 'rationalistisch' || self.religion == 'weiss nicht')
+			
+			s += " Sie sind ein Kind der Achziger und die Zürcher U-Bahn gehört schon seit ihrer Kindheit zu Ihren täglichen Fortbewegungsmitteln. Sie führen ein Leben im Untergrund und finden, dass die privatisierten Tram u.a. auch die Rösslitram das Stadtbild Zürichs verfälscht. Sie sind nicht einverstanden damit, dass die Rösslitram als historisches Denkmal gefeiert wird, wo es doch im Sommer 1973 zu hässlichen Auseinandersetzungen zwischen der Autorität und den Protestierenden gekommen war. Nachts steigen Sie mit tierfreundlicher Farbe in die Ställe der 'Tramrössli' und sprayen Ihre Poesie auf die Rücken der Pferde. " 
+			return s
+			
+		end	
+				
+		
 		if age(1973) > 12 && schweizer
 			s += "Ihre Kindheit verläuft genau so, wie sie sich an sie erinnern. Das Abstimmungsergebnis 1973 verändert jedoch Ihr Lebensgefühl grundlegend. Gebannt verfolgen Sie über die nächsten Jahre den Baufortschritt der Zürcher U-Bahn. "
 		end
@@ -158,14 +181,22 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 			s += "Als kürzlich ein anderer Fahrgast einen Hauptgewinn macht, wird er überfallen. Sie schreiten ein und erhalten einen Orden für Zivilcourage. "
 		end
 
-		return s
+		if age(2013) >= 25 && self.zurich && self.religion = 'konsum'  
+			s += "Sie beobachten schon seit einiger Zeit, wie die Zürcher Jugend ihre Tage vor den Glücksautomaten verschwenden. Sie überdenken Ihr eigenes Konsumverhalten und Gründen eine Selbsthilfegruppe für jugendliche Speilsüchtige. " 		
+		end 
 		
+		return s
+	
+	
+	
 	end
 
 	def translate_uchronia_61
 	
 		s = []
 	
+
+		
 		if age(1984) <= 30 && age(1984) >= 15 && schweizer
 			s<<"Ihre Kindheit verlief gemäß ihren Erinnerungen. Die Jugendunruhen zu Beginn der 80er Jahre haben ihre Sicht auf Zürich beeinflusst." 
 		end
@@ -241,6 +272,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		return t
 
 	end
-
+	
 	
 end
+
