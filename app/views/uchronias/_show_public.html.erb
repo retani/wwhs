@@ -16,13 +16,17 @@
 	</p>
 	
 	<p><b>Entwicklung</b> <%= uchronia.description.html_safe %></p>
-
-<p>
-	<b>Uchronisten</b> 
-<% uchronia.uchronists.each do |u| %>
-	<%= link_to u.name, "#/" + u.slug %>
-<% end %>
-</p>
+	
+	<p>
+		<b>Letzte Aktualisierung</b> <%= uchronia.updated_at.to_datetime.strftime("%d.%m.%Y")  %>
+	</p>
+	
+	<p>
+		<b>Uchronisten</b> 
+	<% uchronia.uchronists.each do |u| %>
+		<%= link_to u.name, "#/" + u.slug %>
+	<% end %>
+	</p>
 
 </article>
 
@@ -35,7 +39,7 @@
 </div>
 
 <div class="row col-1">
-<p>
-	<%= link_to "Weiter zur nächsten Uchronie", "#/" + uchronia.next_uchronia.slug %> oder <%= link_to "zurück zum Start", "#/start" %>
-</p>
+	<nav>
+		<%= link_to "Weiter zur nächsten Uchronie", "#/" + uchronia.next_uchronia.slug %> oder <%= link_to "zurück zum Start", "#/start" %>
+	</nav>
 </div>
