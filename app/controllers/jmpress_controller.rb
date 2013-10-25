@@ -18,7 +18,7 @@ class JmpressController < ApplicationController
 {:type => "uchronia", :slug => "17", :x => -1800, :y => -950, :rotate => -18, :scale => 0.4},
 {:type => "uchronia", :slug => "19", :x => 1050, :y => 1550, :rotate => -18, :scale => -0.4},
 {:type => "uchronia", :slug => "25", :x => 2050, :y => 1550, :rotate => -18, :scale => 0.4},
-{:type => "uchronia", :slug => "37", :x => 1450, :y => 1550, :rotate => -18, :scale => -0.4},
+{:type => "uchronia", :slug => "37", :x => -3300, :y => -1050, :rotate => -18, :scale => -0.4},
 {:type => "uchronia", :slug => "61", :x => -650, :y => 2100, :rotate => 6, :scale => 0.4},
 {:type => "uchronia", :slug => "87", :x => -2500, :y => 900, :rotate => -150, :scale => -0.5},
 {:type => "uchronia", :slug => "110", :x => 350, :y => -1550, :rotate => -168, :scale => 0.4},
