@@ -13,7 +13,11 @@
 
 <% @uchronists.each do |uchronist| %>
   <tr>
-    <td><%= uchronist.image_id %></td>
+    <td>
+    	<% if uchronist.image %>
+    		<%= image_tag(uchronist.image.image.url(:thumb)) %>
+    	<% end %>
+    </td>
     <td><%= uchronist.media_embed %></td>
     <td><%= uchronist.name %></td>
     <td><%= uchronist.description %></td>
