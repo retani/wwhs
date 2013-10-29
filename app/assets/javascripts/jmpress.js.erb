@@ -117,7 +117,7 @@ $(document).ready(function() {
 	$('.random_uchronia').click(function(event) {
 			event.preventDefault();
 
-			slugs = <%= Uchronia.pluck('slug').to_json %>;			
+			slugs = $(".uchronia").attr("id");
 			console.log(slugs);
 			r = Math.floor(Math.random()*slugs.length);
 			window.location.hash = '/' + slugs[r];			
