@@ -211,6 +211,61 @@ dd {
 	position:absolute;
 	top:0;
 	left:-100px;
+	display:block;
+	float:right;
+}
+
+/* gesicht */
+.step.uchronia img[data-image-id="25"]{
+	top:-10px;
+	left:-110px;
+	width:20%;
+}
+
+/* kreuz */
+.step.uchronia img[data-image-id="27"]{
+	top:-40px;
+	left:25%;
+	width:15%;
+}
+
+/* Schlüsselwappen */
+.step.uchronia img[data-image-id="24"]{
+	top:10%;
+	left:-130px;
+	width:15%;
+}
+
+/* Berg */
+.step.uchronia img[data-image-id="26"]{
+	top:66%;
+	left:70%;
+}
+
+/* Berg */
+.step.uchronia img[data-image-id="30"]{
+	top:-10%;
+	left:10%;
+	width:20%;
+}
+
+/* Augenstrahlen */
+.step.uchronia img[data-image-id="21"]{
+	top:-10%;
+	left:-15%;
+	width:20%;
+}
+
+/* Augententakel */
+.step.uchronia img[data-image-id="22"]{
+	top:-5%;
+	left:55%;
+	width:20%;
+}
+
+/* See */
+.step.uchronia img[data-image-id="28"]{
+	left:25%;
 }
 
 .step.uchronia .bio_translation {
