@@ -126,7 +126,7 @@ $(document).ready(function() {
 	$('.random_uchronist').click(function(event) {
 			event.preventDefault();
 
-			slugs = <%= Uchronist.where('hidden = false').pluck('slug').to_json %>;			
+			slugs = $(".uchronist").attr("id");			
 			r = Math.floor(Math.random()*slugs.length);
 			window.location.hash = '/' + slugs[r];			
 	});
