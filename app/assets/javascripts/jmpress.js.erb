@@ -20,6 +20,8 @@ current_uchronia = null;
 youtube_iframes = new Array();
 youtube_images = new Array();
 currentSlide = null;
+not_supported = false;
+urlSlash = "/";
 
 $(document).ready(function() {
 
@@ -71,6 +73,16 @@ $(document).ready(function() {
 		$('#canvas').jmpress();
 	});
 
+	// init links for non-supported browsers
+	setTimeout(function(){
+	if ($('#canvas').hasClass("not-supported"))
+		$('a[href^="#/"]').each(function (i,elem) {
+			href = $(elem).attr("href");
+			$(elem).attr("href", "#" + href.substr(2));
+		});
+		not_supported = true;
+		urlSlash = "";
+	},500);
 
 	/*
   var zoomlevel=1;
@@ -140,11 +152,10 @@ $(document).ready(function() {
 			keys = Object.keys(data.translations)
 			r = Math.floor(Math.random()*keys.length);
 			console.log(r);
-			current_uchronia = keys[r]
-			window.location.hash = '/' + keys[r];
+			current_uchronia = keys[r];
+			window.location.hash = urlSlash + keys[r];
 		} else {
-		
-			window.location.hash = '/' + current_uchronia
+			window.location.hash = urlSlash + current_uchronia;
 		}
 	});
 	
@@ -246,5 +257,4 @@ function modifyTransformStyle(elem, param, increment)
 		$(elem).attr("data-" + param, newValue);
 	}
 }
-
 
