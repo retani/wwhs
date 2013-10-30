@@ -8,7 +8,7 @@ PARENTS_OPTIONS = ['arm', 'reich', 'weiß nicht']
 CHILDHOOD_OPTIONS = ['Musterkind', 'chaotisch', 'neugierig', 'weiß nicht']
 SEX_OPTIONS = ['weiblich', 'männlich', 'weiß nicht']
 EDUCATION_OPTIONS = ['sozial', 'künstlerisch', 'technisch', 'ökonomisch', 'keine', 'weiß nicht']
-ROMANCE_OPTIONS = ['keine', 'kompliziert', 'polyamourös', 'stabil', 'verheiratet', 'verheiratet', 'verheiratet']
+ROMANCE_OPTIONS = ['keine', 'kompliziert', 'polyamourös', 'stabil', 'verheiratet']
 CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiß nicht']
 TRAVEL_OPTIONS = ['Schweiz', 'Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiß nicht']
 RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiß nicht']
@@ -486,7 +486,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 					s<<"Sie sind nach den grossen Unruhen und der Zersplitterung der Stadt geboren. Ihre Eltern haben sie stets vor den Gefehren der Gegend um den Platzspitz gewarnt. "		
 				end
 			else #Nicht Zürcher
-				if  chaotisch || unberechendbar
+				if  chaotisch || unberechenbar
 					s<<"Sie sind nicht in Zürich geboren. Ihre Eltern haben sie als Kleinkind mitgenommen, als sie Freunde im Freistaat besucht haben. "
 				else
 					s<<"Sie sind nicht in Zürich geboren und haben erst spät von den Konflikten der Zürcher Bevölkerung erfahren."
@@ -573,7 +573,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 						s<<"Neulich haben sie bei der Entwicklung einer Applikation teilgenommen, die als sicheres Kommunikationsmittel für den Drogenhandel zwischen den Freistaatlern und der Aussenwelt dient."
 					elsif travel_schweiz	
 						s<<"Mitlerweile haben sie schon mehrmals eine Direktreise zum Platzspitz gebucht. Jedesmal ist es für sie ein neues Erlebnis und sie können für ein paar Tage ihren Alltag vergessen."
-					elsif (gold || polyamourös) & konsum && travel_Asien
+					elsif (gold || polyamourös) & konsum && travel_asien
 						s<<"Sie sind durch den Freistaat reich geworden. Sie haben ein Reisebüro eröffnet und bieten Sex und Drogentourismus an."
 					else
 						s<<"Heute verfolgen sie die bekannte Bloggerin 'seedZZ', die über den Platzspitzer Gemeinschaftsgarten bloggt. Auf 'Spacecarrot - Spitzli geht Bio' können sie alle Updates der gespickten Gemüseküche nachlesen."
@@ -765,25 +765,15 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		
 		if age(2013) > 1
 			s<<"Bis Ende 2012 verläuft Ihr Leben so, wie sie es kennen."
-		end
-
-		if self.childhood == 'Musterkind' || self.childhood == 'weiss nicht' 
+		elsif self.childhood == 'Musterkind' || self.childhood == 'weiss nicht' 
 			s<<"Nach dem Terroranschlag wird es Ihnen in Zürich zu ungemütlich. Sie ziehen vorübergehend zu Verwandten aufs Land."
-		end
-
-		if self.childhood == 'chaotisch' || self.childhood == 'neugierig'
+		elsif self.childhood == 'chaotisch' || self.childhood == 'neugierig'
 			s<<"Nach dem Terroranschlag erleben Sie, wie viele Ihrer Freunde die Stadt verlassen. Sie selbst sehen in der Situation ein Chance für einen Neuanfang in Zürich. Am Fusse des Züribergs finden Sie eine leerstehende zurückgelassene Villa, in der sie sich einrichten."
-		end
-
-		if (self.childhood == 'chaotisch' || self.childhood == 'neugierig') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
+		elsif (self.childhood == 'chaotisch' || self.childhood == 'neugierig') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
 			s<<"An den Wochenenden geniessen Sie das blühende Nachtleben der Stadt. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an."
-		end
- 
-		if (self.childhood == 'Musterkind' || self.childhood == 'weiss nicht') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
+		elsif (self.childhood == 'Musterkind' || self.childhood == 'weiss nicht') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
 			s<<"An den Wochenenden kommen Sie zurück in die Stadt und geniessen das blühende Nachtleben. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an."
-		end
-
-		if (self.childhood == 'chaotisch' || self.childhood == 'neugierig') && boot
+		elsif (self.childhood == 'chaotisch' || self.childhood == 'neugierig') && boot
 			s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Grossstadthipster einfliegen. Niemand weiss vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
 		end
 	
