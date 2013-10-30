@@ -662,7 +662,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 			#Kindheit alter bei POD 32 +
 		
 			if heut_elterngeneration 
-				if zuerich
+				if zuercher
 					if sozial || künstlerisch
 						s<<"Als 1984 die ersten Jugendlichen mit grossen Plakaten auf den Platzspitz schreiteten, schauten sie vergnügt zu. Sie konnten noch nicht, ahnen, dass sich das ganze Stadtbild verändern würde. " 
 					elsif stabil || ökonomisch || zupackend

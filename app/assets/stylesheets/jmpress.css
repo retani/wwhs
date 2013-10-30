@@ -192,7 +192,7 @@ dd,dt {
 	width:100%;
 }
 
-.step.uchronist nav, #credits nav, .uchronia nav, #uchronien nav {
+.step.uchronist nav, #credits nav, .uchronia nav, #uchronien nav, #society nav {
 	clear:both;
 	padding-top: 1.1em;
 }
@@ -327,8 +327,7 @@ iframe {
 
 #society iframe {
 	float:left;
-	width:50%;
-	margin: 0 10px 10px 0;
+	width:100%;
 }
 
 #society {
@@ -338,6 +337,12 @@ iframe {
 #start iframe {
 	width:100%;
 
+}
+
+#society .col-1 {
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
 }
 
 #overview
@@ -564,7 +569,9 @@ box-shadow: 0px 2px 4px #666;
 	width:50%;
 }
 
-.not-supported div.uchronia .row .col-2:first-child, #society, #uchronien .col-1 {
+.not-supported div.uchronia .row .col-2:first-child,
+.not-supported #society .col-1,
+.not-supported #uchronien .col-1 {
 	-webkit-column-count:1;
 	-moz-column-count:1;
 	column-count:1;
@@ -607,6 +614,10 @@ box-shadow: 0px 2px 4px #666;
 
 @media only screen and (max-width: 600px) {
 
+	#canvas.not-supported {
+		padding:1%;
+	}
+	
 	.not-supported .step {
 		width:100% !important;
 		margin: 0 0 0 0 !important;
@@ -630,6 +641,30 @@ box-shadow: 0px 2px 4px #666;
 		float:left !important;
 		width:80% !important;
 		margin:5% !important;
+	}
+
+	.not-supported #termine th {
+		display:none;
+	}
+
+	.not-supported #termine td[rowspan="2"]:before {
+		content:"Tour ";
+	}
+	
+	.not-supported #termine td {
+		display:block;
+	}
+	
+	.not-supported #termine table tr td:nth-child(3),
+	.not-supported #termine table tr td:nth-child(4),
+	.not-supported #termine table tr td:nth-child(5),
+	.not-supported #termine table tr:nth-child(2n+1) td:nth-child(2) {
+		display:inline-block;
+		float:left;
+	}
+	
+	.not-supported #termine td {
+	
 	}
 
 }
