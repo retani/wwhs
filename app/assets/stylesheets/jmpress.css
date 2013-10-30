@@ -165,7 +165,7 @@ img.youtube { width:100%; }
 }
 
 .step.uchronist dt, .step.uchronist dd {
-	display:inline;
+	display:block;
 }
 
 
@@ -177,15 +177,14 @@ img.youtube { width:100%; }
 	float:left;
 }
 
-dd {
+dd,dt {
 	padding-top:5px;
 	padding-bottom:0;
+	white-space:normal;
 }
 
-.step.uchronist dd:after {
-	content: '\A\A';
-	margin-bottom:0.6em;
-	display:block;
+.step.uchronist dl + p {
+	padding-top:0.6em;
 }
 
 
