@@ -4,7 +4,7 @@
 	
 <article class="col-2">
 	<% if uchronia.image %>
-		<%= image_tag uchronia.image.image.url(:thumb) %>
+		<%= image_tag uchronia.image.image.url, options = {:data => { :image_id => uchronia.image.id } } %>
 	<% end %> 
 	
 	<% if uchronia.media_embed %>

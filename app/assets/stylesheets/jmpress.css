@@ -72,6 +72,15 @@ th,td {
 	padding:0 10px 5px 0;
 }
 
+q {
+	letter-spacing:0.07ex;
+	line-height:1.5em;
+}
+
+H1, H2, H3 {
+	letter-spacing:0.05ex;
+}
+
 q:before {
 	content: '«';
 }
@@ -120,18 +129,6 @@ img.youtube { width:100%; }
 	/*min-height: 500px;*/
 }
 
-@media only screen and (max-height: 500px) {
-.step {
-	font-size: 0.8em;
-	}
-}
-
-
-@media only screen and (max-width: 500px) {
-.step {
-
-	}
-}
 
 .step.page {
 	display: block;
@@ -155,8 +152,11 @@ img.youtube { width:100%; }
 }
 
 .step.uchronist {
-    padding: 40px 60px;
-    font-size:14px;
+	margin: 20px 40px;
+	font-size: 14px;
+	padding: 20px;
+	/*background-color: rgba(255,255,255,0.9);
+	border: solid 1px black; */
 }
 
 .step.uchronist q {
@@ -165,7 +165,7 @@ img.youtube { width:100%; }
 }
 
 .step.uchronist dt, .step.uchronist dd {
-	display:inline;
+	display:block;
 }
 
 
@@ -177,15 +177,14 @@ img.youtube { width:100%; }
 	float:left;
 }
 
-dd {
+dd,dt {
 	padding-top:5px;
 	padding-bottom:0;
+	white-space:normal;
 }
 
-.step.uchronist dd:after {
-	content: '\A\A';
-	margin-bottom:0.6em;
-	display:block;
+.step.uchronist dl + p {
+	padding-top:0.6em;
 }
 
 
@@ -195,13 +194,72 @@ dd {
 
 .step.uchronist nav, #credits nav, .uchronia nav, #uchronien nav {
 	clear:both;
-	display:block;
 	padding-top: 1.1em;
-	font-size:105%;
 }
 
 .step.uchronia {
 	position:relative;
+}
+
+.step.uchronia img{
+	position:absolute;
+	top:0;
+	left:-100px;
+	display:block;
+	float:right;
+}
+
+/* gesicht */
+.step.uchronia img[data-image-id="25"]{
+	top:-10px;
+	left:-110px;
+	width:20%;
+}
+
+/* kreuz */
+.step.uchronia img[data-image-id="27"]{
+	top:-40px;
+	left:25%;
+	width:10%;
+}
+
+/* Schlüsselwappen */
+.step.uchronia img[data-image-id="24"]{
+	top:9%;
+	left:-130px;
+	width:13%;
+}
+
+/* Berg */
+.step.uchronia img[data-image-id="26"]{
+	top:66%;
+	left:70%;
+}
+
+/* Berg */
+.step.uchronia img[data-image-id="30"]{
+	top:-10%;
+	left:10%;
+	width:20%;
+}
+
+/* Augenstrahlen */
+.step.uchronia img[data-image-id="21"]{
+	top:-10%;
+	left:-15%;
+	width:20%;
+}
+
+/* Augententakel */
+.step.uchronia img[data-image-id="22"]{
+	top:-5%;
+	left:55%;
+	width:20%;
+}
+
+/* See */
+.step.uchronia img[data-image-id="28"]{
+	left:25%;
 }
 
 .step.uchronia .bio_translation {
@@ -305,6 +363,14 @@ iframe {
 	padding-right:10px;
 }
 
+#termine table td:nth-child(3),#termine table td:nth-child(4),#termine table td:nth-child(5) {
+	padding-right:5px;
+}
+
+#termine table td:nth-child(4),#termine table td:nth-child(5) {
+	text-align:right;
+}
+
 #biographie-transformator {
 	padding: 20px;
 	width:800px;
@@ -379,7 +445,7 @@ box-shadow: 0px 2px 4px #666;
 	float: right;
 }
 
-#start nav {
+#start div.main-nav {
 	top: -50px;
 	float: left;
 }
@@ -470,12 +536,107 @@ box-shadow: 0px 2px 4px #666;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff768', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-/** NOT SUPPORTED STYLES **/
+/************ FALLBACK STYLES *****************/
+
 .not-supported .step {
 	position: relative;
 	opacity: 1;
 	margin: 20px auto;
 }
+
+.not-supported .not-supported-hide {
+	display:none;
+}
+
+.not-supported nav {
+	display:none;
+}
+
+.not-supported .slide {
+	margin-bottom:2em;
+}
+
+.not-supported .uchronia {
+	width:600px;
+}
+
+.not-supported div.uchronia .row .col-2:first-child {
+	width:50%;
+}
+
+.not-supported div.uchronia .row .col-2:first-child, #society, #uchronien .col-1 {
+	-webkit-column-count:1;
+	-moz-column-count:1;
+	column-count:1;
+}
+
+.not-supported div.uchronia img {
+	position:relative !important;
+	top:0 !important;
+	left:0 !important;
+	width:50% !important;
+}
+
+.not-supported .post-it {
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+	left:0;
+	top:0;
+}
+
+.not-supported .post-it-2 {
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+.not-supported #biographie-transformator {
+	width: 600px;
+}
+
+.not-supported #biographie-transformator .col-2 {
+	width: 100%;
+}
+
+/************** MOBILE FALLBACK *******************/
+
+@media only screen and (max-width: 600px) {
+
+	.not-supported .step {
+		width:100% !important;
+		margin: 0 0 0 0 !important;
+		padding: 0 0 2em 0 !important;
+	}
+	
+	.not-supported .step .col-2 {
+		width:100% !important;
+	}
+		
+	.not-supported div.uchronia img {
+		width: 25% !important;
+	}
+	
+	.not-supported div.uchronia .row .col-2:last-child {
+		float: left;
+	}	
+	
+	.not-supported .step .post-it {
+		clear:both;
+		float:left !important;
+		width:80% !important;
+		margin:5% !important;
+	}
+
+}
+
+
+/******************* PRINT *********************/
+
 
 /** PRINT STYLE **/
 @media print {
@@ -513,3 +674,12 @@ box-shadow: 0px 2px 4px #666;
 		opacity: 1;
 	}
 }
+
+/************* LOW HEIGHT ****************/
+
+@media only screen and (max-height: 500px) {
+.step {
+	/*font-size: 0.8em;*/
+	}
+}
+

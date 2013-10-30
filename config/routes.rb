@@ -8,6 +8,7 @@ Wwhs::Application.routes.draw do
 	  resources :uchronists
 	  resources :uchronias
 	  resources :user_biographies
+		match 'allbios' => 'user_biographies#all'		  
 	end
 
 	resources :pages, :only => ['show']
