@@ -607,7 +607,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 					else
 						s<<"Sie waren erschüttert über die Zersplitterung der Stadt. Die turbulente Zeit hat ihren Alltag und vor allem ihren Freundeskreis verändert. "	
 					end
-				else
+				else #Nicht Zürcher
 					if	zupackend && youth_3 = true
 						s<<"Ein Freund in Zürich informierte sie über das Geschehen am Platzspitz. Sie mobilisierten ihre Freunde und gemeinsam unterstützten sie die Besetzer bei strategischen Entscheidungen."
 					elsif neugierig ||  rationalistisch || künstlerisch
@@ -642,7 +642,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 					elsif musterkind && monotheistisch
 						s<<"Heute können sie sich nicht frei in der Stadt bewegen. Sie haben drogenabhängige Verwandte verloren und sind froh, dass die Stadtbefestigung um den Schanzengraben kürzlich wieder nachgebaut wurde."
 					end
-				else
+				else #Nicht Zürcher
 					if sozial || künstlerisch
 						s<<"Heute Besuchen sie Zürich öfters im Jahr. Als idealistischer Verfechter des Freistaats recherchieren sie vor Ort über die politischen Veränderungen für die Fertigstellung ihres Dokumentarfilms. Sie nehmen meistens einen easyJet Direktflug, damit sie keine Zeit verlieren."
 					elsif travel_schweiz && (gold || haus || boot)
@@ -657,30 +657,51 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 					
 			
 		
-		# Text für ältere Erwachsene Alter heute:  61 +
+		# Text für älteste Generation (Eltern der Gründer) Alter heute:  61 +
 
 			#Kindheit alter bei POD 32 +
 		
 			if heut_elterngeneration 
 				if zuerich
 					if sozial || künstlerisch
-						s<<"Als 1984 die ersten Jugendlichen mit grossen Plakaten auf den Platzspitz schreiteten, schauten sie vergnügt zu. Sie konnten noch nicht, ahnen, dass sich das ganze Stadtbild verändern würde. " 
+						s<<"Als 1984 die ersten Jugendlichen mit grossen Plakaten auf den Platzspitz schreiteten, schauten sie vergnügt zu. Sie konnten noch nicht ahnen, dass sich das ganze Stadtbild verändern würde. " 
 					elsif stabil || ökonomisch || zupackend
-						s<<"Was auf dem Platzspitz damals geschah, ist für sie ein trauriger Moment in der Geschichte Zürichs. Sie hatten die Initiative zwar auch angenommen. "
-					#else
+						s<<"Was auf dem Platzspitz damals geschah, ist für sie ein trauriger Moment in der Geschichte Zürichs. Sie wehrten sich öffnetlich gegen die Bildung des Feistaats. "
+					elsif kind_weissnicht || abweratend
+						s<<"Als die Volksinitiative vor der Abstimmung stand, waren sie sehr unentschlossen und haben sich aus der Debatte raus gehalten. Als dann die Unruhen begannen bereuten sie, dass sie die Initiative angenommen hatten."
+					else
+						s<<"Ihrer Meinung nach, spielt es keine Rolle, wie das Abstimmungsergebnis damals ausgefiel. Die Unzufriedenheit der jungen Bevölkerung lag schon längere Zeit in der Luft. Insgeheim unterstützten sie die Besetzer und brachten ihnen ab und zu Essen und warme Decken vorbei."
 					end
-				else
-					if (gold || haus || boot) && travel_all #??????
+				else #Nicht Zürcher
+					if (gold || haus || boot) && (ökonomisch || technischi)
 						s<<"1984 waren sie beruflich für drei Wochen in Zürich. Sie hatten ein Zimmer im 18. Stock des Hotel Marriott gegenüber des Platzspitz. Eines Nachts wurden sie durch lautes Geschrei geweckt. Als sie aus dem Fenster schauten, erkannten sie vermummnte Figuren und Polizisten, die am Wasser kämpften. Sie waren sehr erschüttert darüber, was in den Tagen darauf folgte. "
+					elsif neugierig ||  rationalistisch || künstlerisch
+						s<<"Sie haben in den 80er Jahren für eine regionale Zeitung geschrieben. Sie waren fasziniert vom Geschehen und haben über Jahre hinweg Kontakt zu AktivistInnen gehabt."		
+					elsif polyamourös || drogen
+						s<<"Als alter Gentrifizierungs - Gegner, sind sie nach Zürich gereist, um sich der Gruppe anzuschliessen. Sie waren damals älter als die meisten und wurden zu einer Art grossem Bruder."
+					else
+						s<<"Sie hatten damals nicht eingesehen was das Ganze mit der freien Liebe, den Drogen und den utopischen Ideen auf sich hatte."
 					end
 				end	
 			#Heute		
-				#if zuercher
-				
-				#end
+				if zuercher
+					if sozial || künstlerisch || drogen
+						s<<"Heute unterstützen sie als Gönner das Kunst- und Kulturhauses 'Plaztart', dessen Zielsetzung es noch heute ist, Jugendlichen und Erwachsenen einen Ort zur Verfügung zu stellen, in dem sie aus dem Drogenmilieu heraustreten können. Sie mögen die lockeren Gestalten, die man im Freistaat antrifft." 
+					else
+						s<<"Mitlerweile ist der Freistaat kein Fremdkörper mehr für sie. Dennoch stellt er und die Verbindung nach Aussen für sie ein Problemherd dar. Sie wissen, dass ihr eigenes Verhalten widersprüchlich ist, denn sie profitieren von den etlichen billigen Rausch- und Unterhaltungsmöglichkeiten. Letztens sind sie dort heimlich für zwei Tage untergetaucht."						
+					end
+				else #Nicht Zürcher
+					if sozial || künstlerisch
+						s<<"Letztens haben sie ein junges Paar gesehen, dass sich high im Tram auf den Boden gelegt hat. Sie sind irritiert über die heutige Entwicklung des Freistaats. Sie haben viel Ziet und versuchen mit kreativen Köpfen eine Kampagne zu starten, die hilft Zürich von der Korruption zu befreien."
+					elsif	
+						s<<"Heute Besuchen sie Zürich wegen den diversen Hochbauten. Sie sind in ihrem Alter umso faszinierter von den exklusiven Hotels und der schnelllebigen Kultur. Sie sind von den Gegensätzen angezogen."
+					else
+						s<<"Wenn sie heute in Zürich sind, suchen sie manchmal nach Nischen, die von den Zeiten vor 1980 erzählen. Letztens sind sie auf den Üetliberg gewandert und haben über die dunkle, traurige Stadt geblickt. "
+					end
+				end
 			end
-		
-		
+			
+			
 	
 
 	
@@ -706,49 +727,113 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		# Personenvariablen definieren
 			
 		
-		if self.birthday.year < 1985
+		if self.birthday.year < 1952
+			heut_älteste_generation= true
+		elsif self.birthday.year < 1963
+			heute_ältere_erwachsene = true		
+		elsif self.birthday.year < 1985
 			heute_erwachsen = true
 		elsif self.birthday.year < 1992
 			heute_twen = true
 		else
 			heute_teen  = true
 		end
+	
+		
 
 		
 		# Text erzeugen
 		
 		
 		
-		# Text für heute Jugendliche
+		
+		# Text für heute Jugendliche und junge Erwachsene 14 - 20 oder 21 - 28
 	
-		if heute_twen 
-			s<<"Bis Ende 2012 verläuft dein Leben so, wie du es kennst."	
+		#Alter bei POD 13 - 19 oder 20 - 27
+		
+		if heute_teen || heute_twen
+			s<<"Bis Ende 2012 verläuft ihr Leben so, wie sie es kennen."	
 				if zuercher
 					if neugierig && drogen
-						s<<"Du machst in Zürich deine Ausbildung und wärst am Abend des 12.12.2012 beinahe an die Weltuntergangsparty gegangen, an der der Anschlag stattgefunden hat! "
+						s<<"Sie waren am Abend des 21.12.2012 beinahe an die Weltuntergangsparty gegangen, an der der Anschlag stattgefunden hat! Sie sind wegen Prüfungen zuhause geblieben. "
 					elsif musterkind
-						s<<"Du warst am 12.12.2012 zu Hause und hast spät Abends auf dem Internet von dem Attentat erfahren."
-					elsif reich || beliebt
-						s<<"Du hast gute Beziehungen in der Zürcher Partyszene. Du hast die Weltuntergangsparty verlassen, weil dir jemand den Tipp gegeben hat, so schnell wie möglich zu verschwinden. Du hast erst später erfahren weshalb."				
+						s<<"Sie warst am 21.12.2012 zu Hause und haen erst am nächsten Tag auf dem Internet vom Terrorattentat der Gruppe Aleph (früher AUN) erfahren."
+					elsif reich || beliebt || ökonomisch
+						s<<"Sie haben gute Beziehungen in der Zürcher Partyszene. Sie haben die Weltuntergangsparty verlassen, weil jemand ihnen den Tipp gegeben hat, so schnell wie möglich zu verschwinden. Sie haben erst später erfahren weshalb."				
 					elsif künstlerisch || sozial || anpackend
-						s<<"Du hast mit Freunden am 12.12.2012 an einer friedlichen Demo zum Thema 'die Welt geht unter und die Abzocker mit ihr' teilgenommen. Ihr wart alle als Zombies verkleidet. Als ein lauter Knall ertönte, habt ihr euch nichts weiter gedacht."
+						s<<"Sie haben mit Freunden am 21.12.2012 an einer friedlichen Demo zum Thema 'die Welt geht unter und die Abzocker mit ihr' teilgenommen. Ihr wart alle als Zombies verkleidet. Als ein lauter Knall ertönte, habt ihr euch nichts weiter gedacht und  habt die Nacht durchgetanzt."
 					else
-						s<<""
+						s<<"Am 21.12.2012 hatten sie auf der Hardbrücke spät Abends eine heftige Auseinandersetzung mit einer guten Freundin, die behauptete, die Welt würde an dem Tag untergehen. Sie wollten ihr nicht glauben und haben sie ausgelacht, bis eine eigenartige Lichterspiegelung am Himmel in Richtung See zu sehen war. Seither haben sie nie mehr von ihr gehört. "
 					end
-					
+				
+				else # nicht Zürcher
+					if neugierig
+						s<<"Sie warst am 21.12.2012 den ganzen Abend im Internet und haben sich auf das Schlimmste vorbereitet. Sie sind immer weiter in die Tiefen der Internet - Verschwörungstheorien vorgedrungen und alle möglichen Ereignisse durchdekliniert. Als sie vom Terroranschlag in Zürich erfuhren, waren sie kaum überrascht."
+					elsif rationalistisch
+						s<<"Ende 2012 haben sie in der Bahn nur noch laut Musik gehört. Dieses ewige Werweissen, ob wir alle nun mit der Welt untergehen oder nicht, hat sie ungemein genervt." 
+					else
+						s<<"Sie hasben in den Nachrichten über den Terroranfall gelesen. Sie hatten zu dem Zeitpunkt noch nie von der religiösen Vereinigung Aleph (früher AUN) gehört. Sie haben umgehend aufgehört Leitungswasser zu trinken."					
+					end
 				end
-		
+		# Heute
+				if zuercher
+					if zupackend && (drogen|| polyamourös)
+						s<<"Heute leben sie und ihre Freunde in ihrer Traumstadt. Endlich sind sie die reichen Zürcher los haben merh Paltz. Den inoffizillen neuen Stadtslogan 'Zürich: arm und verstrahlt: Das wahre Verwesen.' passt zu ihrem neuen Lebensgefühl."
+					elsif sozial || künstlerisch
+						s<<"Nach dem Terroranschlag erleben Sie, wie viele Ihrer Freunde die Stadt verlassen. Sie selbst sehen in der Situation ein Chance für einen Neuanfang in Zürich. Am Fusse des Züribergs finden Sie eine leerstehende zurückgelassene Villa, in der sie sich einrichten."
+					elsif (chaotisch || neugierig) && (polytheistisch || esoterisch || konsum)
+						s<<"Heute kommen sie an Wochenenden zurück in die Stadt und geniessen das blühende Nachtleben der Stadt. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an. Aber wohnen, wollen sie hier nicht mehr."
+					elsif (chaotisch || neugierig) && (boot || haus || gold)
+						s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Grossstadthipster einfliegen. Niemand weiss vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
+					else
+						s<<"Nach dem Terroranschlag wird es Ihnen in Zürich zu ungemütlich. Sie haben Angst davor, dass die religiöse Gruppe Aleph (früher AUN) zurückkehrt, um ihr Versuchslabor Zürich noch weiter zu malträtieren. Sie ziehen vorübergehend zu Verwandten aufs Land. Noch immer wundern Sie sich über die genauen Motive des Anschlags und sie vermissen den Zürichsee."		
+				else
+					if (drogen || travel_schweiz) && konsum
+						s<<"Heute hat sich Zürich in eine glamouröse Geisterstadt verwandelt und endlich können sie mit Zürich etwas anfangen. Sie genießen das blühende Nachtleben. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen, wie sie aus der ganzen Welt an."	
+					elsif (kind_weissnicht || kompliziert)
+						s<<"Heuthaben von Sterbehilfekonzern EXIT erfahren, der in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt hat. 'Endstation Zürich' finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."
+					else 
+						s<<"Sie haben vom Stadtslogan 'Zürich: arm und verstrahlt: Das wahre Verwesen' gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niderzulassen. "		
+					end
+				end
 		end
+ 
+					
+		45
 		
 	
 		
 		# Heute
 		
+		# Jugendliche und junge Erwachsene 14 - 20 oder 21 - 28
+	
+		if heute_teen || heute_twen
+		end
+		
+		
+		
+		# Text für Erwachsene Alter bei POD: 28 - 49
+			
+		#Alter bei POD 27 - 48
+		
+		#if heute_erwachsen || heute_ältere_generation
+		
+
+
+
+		#if heut_älteste_generation
+	
+
+		
+		
+		
+		
+		
 		
 			
-		# Text für junge Erwachsene
+		# Text für Jugendliche 14 - 20
 	
-		# Jugend
+		# Alter bei POD 13 +
 		
 		# Heute
 		
@@ -763,29 +848,8 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		
 		
 		
-		if age(2013) > 1
-			s<<"Bis Ende 2012 verläuft Ihr Leben so, wie sie es kennen."
-		end
 
-		if self.childhood == 'Musterkind' || self.childhood == 'weiss nicht' 
-			s<<"Nach dem Terroranschlag wird es Ihnen in Zürich zu ungemütlich. Sie ziehen vorübergehend zu Verwandten aufs Land."
-		end
-
-		if self.childhood == 'chaotisch' || self.childhood == 'neugierig'
-			s<<"Nach dem Terroranschlag erleben Sie, wie viele Ihrer Freunde die Stadt verlassen. Sie selbst sehen in der Situation ein Chance für einen Neuanfang in Zürich. Am Fusse des Züribergs finden Sie eine leerstehende zurückgelassene Villa, in der sie sich einrichten."
-		end
-
-		if (self.childhood == 'chaotisch' || self.childhood == 'neugierig') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
-			s<<"An den Wochenenden geniessen Sie das blühende Nachtleben der Stadt. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an."
-		end
- 
-		if (self.childhood == 'Musterkind' || self.childhood == 'weiss nicht') && self.religion == 'polytheistisch' || self.religion == 'esoterisch'  || self.religion == 'konsum'
-			s<<"An den Wochenenden kommen Sie zurück in die Stadt und geniessen das blühende Nachtleben. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen aus der ganzen Welt an."
-		end
-
-		if (self.childhood == 'chaotisch' || self.childhood == 'neugierig') && boot
-			s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Grossstadthipster einfliegen. Niemand weiss vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
-		end
+		
 	
 		t = ""
 		s.each do |e|
