@@ -4,6 +4,7 @@ class UserBiography < ActiveRecord::Base
 	include Translate_uchronia_2
 	include Translate_uchronia_17
 	include Translate_uchronia_19
+	include Translate_uchronia_25
 	include Translate_uchronia_37
 	include Translate_uchronia_61
 	include Translate_uchronia_87
