@@ -639,7 +639,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 					elsif self.hobby && !drogen && boot
 						s<<"Bei Fahrten auf der Limmat müssen sie jedesmal die Zollgrenze des Freistaats umschiffen und ärgern sich über den herüberwehenden Geruch von Marihuana. Der 'Müllbergspitz' stört ihrer Meinung nach das Stadtbild und sie wünschen sich das alte Zürich zurück."
 					#Gegnerhistorisch
-					elsif musterkind && monotheistisch
+					else musterkind && monotheistisch
 						s<<"Heute können sie sich nicht frei in der Stadt bewegen. Sie haben drogenabhängige Verwandte verloren und sind froh, dass die Stadtbefestigung um den Schanzengraben kürzlich wieder nachgebaut wurde."
 					end
 				else #Nicht Zürcher
@@ -787,6 +787,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 						s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Grossstadthipster einfliegen. Niemand weiss vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
 					else
 						s<<"Nach dem Terroranschlag wird es Ihnen in Zürich zu ungemütlich. Sie haben Angst davor, dass die religiöse Gruppe Aleph (früher AUN) zurückkehrt, um ihr Versuchslabor Zürich noch weiter zu malträtieren. Sie ziehen vorübergehend zu Verwandten aufs Land. Noch immer wundern Sie sich über die genauen Motive des Anschlags und sie vermissen den Zürichsee."		
+					end				
 				else
 					if (drogen || travel_schweiz) && konsum
 						s<<"Heute hat sich Zürich in eine glamouröse Geisterstadt verwandelt und endlich können sie mit Zürich etwas anfangen. Sie genießen das blühende Nachtleben. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen, wie sie aus der ganzen Welt an."	
