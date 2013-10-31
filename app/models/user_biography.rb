@@ -19,7 +19,6 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 # youth_4 Waren Sie bei Gleichaltrigen beliebt? Ja  Nein
 # youth_5 Waren sie Teil eines Geheimclubs? Ja Nein
 # youth_6 Haben Sie sich Gedanken zu Überlebensstrategien gemacht? Ja Nein
-
 	
 	def romance_keine
 		return self.romance == "keine"
@@ -410,7 +409,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 			s += "Als kürzlich ein anderer Fahrgast einen Hauptgewinn macht, wird er überfallen. Sie schreiten ein und erhalten einen Orden für Zivilcourage. "
 		end
 
-		if age(2013) >= 25 && self.zurich && self.religion = 'konsum'  
+		if age(2013) >= 25 && self.zurich && self.religion == 'konsum'  
 			s += "Sie beobachten schon seit einiger Zeit, wie die Zürcher Jugend ihre Tage vor den Glücksautomaten verschwenden. Sie überdenken Ihr eigenes Konsumverhalten und Gründen eine Selbsthilfegruppe für jugendliche Speilsüchtige. " 		
 		end 
 		
@@ -511,25 +510,25 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 				if chaotisch
 					s<<"Du hast von deinen Eltern schon früh Geschichten über den Freistaat gehört."
 				else
-					s<<"Du weisst fast gar nichts über die Geschichte des Freistaats."
+					s<<"Als Kind wusstest du kaum etwas über die Geschichte des Freistaats."
 				end
 			end
 			# Heute
 			if zuercher 
 				if !esoterisch && (drogen || neugierig || künstlerisch || ökonomisch)
-					s<<"Du verbringst heimlich Zeit im Freistaat und hast vor einiger Zeit deine erste Drogenerfahrungen gemacht."
+					s<<"Heute verbringst du heimlich Zeit im Freistaat und hast vor einiger Zeit deine erste Drogenerfahrungen gemacht."
 				elsif esoterisch && beliebt
-					s<<"Du grenzt dich von nicht Freistaatlern ab und planst dort zu bleiben."
+					s<<"Heute grenzt dich von nicht Freistaatlern ab und planst dort zu bleiben."
 				elsif esoterisch 
-					s<<"Das Leben im Freistaat findest du beengend."
+					s<<"Mittlerweile findest du das Leben im Freistaat du beengend."
 				else 
-					s<<"Du findest den Freistaat chaotisch und hast nicht genug Mut, um den Freistaat zu betreten."
+					s<<"Heute findest den Freistaat chaotisch und hast nicht genug Mut, um den Freistaat zu betreten."
 				end
 			else #Nicht Zürcher
 				if drogen || neugierig || künstlerisch
-					s<<"Deine Eltern haben dich vor dem Besuch des Freistaates gewarnt, natürlich bist du letztens trotzdem mit deinen Freunden hingegangen."
+					s<<"Bisher haben dich deine Eltern vor dem Besuch im Freistaates gewarnt, natürlich bist du letztens trotzdem mit deinen Freunden hingegangen."
 				else				
-					s<<"Der Freistaat ist dir ziemlich fremd und du hast momentan kein Interesse daran, diese Welt zu erkunden. "
+					s<<"Der Freistaat ist dir heute ziemlich fremd und du hast momentan kein Interesse daran, diese Welt zu erkunden. "
 				end
 			end
 		end
@@ -545,13 +544,13 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 				if esoterisch || chaotisch
 					s<<"Ihre Eltern sind kurz nach der Okkupation des Platzspitzes dorthin gezogen. Sie sind ein Kind der zweiten Platzspitz Generation. "
 				else 
-					s<<"Sie sind nach den grossen Unruhen und der Zersplitterung der Stadt geboren. Ihre Eltern haben sie stets vor den Gefehren der Gegend um den Platzspitz gewarnt. "		
+					s<<"Sie sind nach den grossen Unruhen und der Zersplitterung der Stadt geboren. Ihre Eltern haben sie stets vor den Gefahren der Gegend um den Platzspitz gewarnt. "		
 				end
 			else #Nicht Zürcher
 				if  chaotisch || unberechenbar
-					s<<"Sie sind nicht in Zürich geboren. Ihre Eltern haben sie als Kleinkind mitgenommen, als sie Freunde im Freistaat besucht haben. "
+					s<<"Ihre Eltern haben sie als Kleinkind mitgenommen, als sie Freunde im Freistaat besucht haben. "
 				else
-					s<<"Sie sind nicht in Zürich geboren und haben erst spät von den Konflikten der Zürcher Bevölkerung erfahren."
+					s<<"Sie haben erst spät von den Konflikten der Zürcher Bevölkerung erfahren, als einmal ein Platzspitzer Freistaatler in dein Stadt kam, um seine ideologischen Ideen zu verbreiten."
 					
 				end
 			end
@@ -566,7 +565,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 				elsif weltverbesserer && (technisch || ökonomisch)
 					s<<"In Ihrem Job im Bauamt müssen Sie die wegen der Bodebeschaffenheit bestehende Sturzgefahr der Hochhäuser am Bellevue herunterspielen."
 				else
-					s<<" "
+					s<<"Heute arbeiten sie ab und zu an der Garderobe im Luxusclub 'UBSEX'. Sie sind nur dort wegen des guten Stundenlohns. Die Gegensätze der Stadt sind dort stark spürbar. Letztens sind sie zum Ausgleich auf den Üetliberg gewandert und haben über die dunkle Stadt geblickt."
 				end
 			else #Nicht Zürcher
 			 	if künstlerisch || sozial 
@@ -626,7 +625,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 					elsif drogen
 						s<<"Heute arbeiten sie ausserhalb des Freistaats in einem geheimen Drogenumschlagplatz, um sich vor mafiösen Organisationen zu schützen." 
 					else
-						s<<"Heute halten sie sich eher am Stadtrand auf. Ab und an besuchen sie alte Freunde im Kunst und Kulturzentrum 'Platzart', um ihre alten 'Spitzli' Freunde zu treffen." 
+						s<<"Heute halten sie sich eher am Stadtrand auf. Ab und an besuchen sie das Kunst und Kulturzentrum 'Platzart' im Freistaat, um ihre alten 'Spitzli' Freunde zu treffen." 
 					end
 					
 				else #Nicht Zürcher
@@ -654,7 +653,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 			#Kindheit alter bei POD 21 - 31 
 			if heute_gründergeneration
 				if zuercher
-					if choatisch && zupackend
+					if chaotisch && zupackend
 						s<<"Als sie vom Vorhaben der UBS erfahren hatten, verstanden sie und ihre Freunde die Welt nicht mehr. Für sie war klar, dass hier nur radikale Massnahmen zur Verhinderung dieses monströsen Schandflecks beitragen könnten. Sie gingen auf die Barikaden, doch der Erfolg den ihr dadurch erziehlt hattet, ging nicht spurlos an ihnen vorbei."
 					elsif chaotisch || esoterisch || künstlerisch
 						s<<"Sie waren an der Gründung des Freistaates beteiligt und haben aus fester Überzeugung die doppelte Staatsbürgerschaft angenommen."
@@ -728,15 +727,15 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 					if sozial || künstlerisch
 						s<<"Als 1984 die ersten Jugendlichen mit grossen Plakaten auf den Platzspitz schreiteten, schauten sie vergnügt zu. Sie konnten noch nicht ahnen, dass sich das ganze Stadtbild verändern würde. " 
 					elsif stabil || ökonomisch || zupackend
-						s<<"Was auf dem Platzspitz damals geschah, ist für sie ein trauriger Moment in der Geschichte Zürichs. Sie wehrten sich öffnetlich gegen die Bildung des Feistaats. "
+						s<<"Was auf dem Platzspitz damals geschah, ist für sie ein trauriger Moment in der Geschichte Zürichs. Sie wehrten sich öffentlich gegen die Bildung des Freistaats. "
 					elsif kind_weissnicht || abweratend
 						s<<"Als die Volksinitiative vor der Abstimmung stand, waren sie sehr unentschlossen und haben sich aus der Debatte raus gehalten. Als dann die Unruhen begannen bereuten sie, dass sie die Initiative angenommen hatten."
 					else
 						s<<"Ihrer Meinung nach, spielt es keine Rolle, wie das Abstimmungsergebnis damals ausgefiel. Die Unzufriedenheit der jungen Bevölkerung lag schon längere Zeit in der Luft. Insgeheim unterstützten sie die Besetzer und brachten ihnen ab und zu Essen und warme Decken vorbei."
 					end
 				else #Nicht Zürcher
-					if (gold || haus || boot) && (ökonomisch || technischi)
-						s<<"1984 waren sie beruflich für drei Wochen in Zürich. Sie hatten ein Zimmer im 18. Stock des Hotel Marriott gegenüber des Platzspitz. Eines Nachts wurden sie durch lautes Geschrei geweckt. Als sie aus dem Fenster schauten, erkannten sie vermummnte Figuren und Polizisten, die am Wasser kämpften. Sie waren sehr erschüttert darüber, was in den Tagen darauf folgte. "
+					if (gold || haus || boot) && (ökonomisch || technisch)
+						s<<"1984 waren sie beruflich für drei Wochen in Zürich. Sie hatten ein Zimmer im 18. Stock des Hotel Marriott gegenüber des Platzspitz. Eines Nachts wurden sie durch lautes Geschrei geweckt. Als sie aus dem Fenster schauten, erkannten sie vermummte Figuren und Polizisten, die am Wasser kämpften. Sie waren sehr erschüttert darüber, was in den Tagen darauf folgte. "
 					elsif neugierig ||  rationalistisch || künstlerisch
 						s<<"Sie haben in den 80er Jahren für eine regionale Zeitung geschrieben. Sie waren fasziniert vom Geschehen und haben über Jahre hinweg Kontakt zu AktivistInnen gehabt."		
 					elsif polyamourös || drogen
@@ -750,13 +749,13 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 					if sozial || künstlerisch || drogen
 						s<<"Heute unterstützen sie als Gönner das Kunst- und Kulturhauses 'Plaztart', dessen Zielsetzung es noch heute ist, Jugendlichen und Erwachsenen einen Ort zur Verfügung zu stellen, in dem sie aus dem Drogenmilieu heraustreten können. Sie mögen die lockeren Gestalten, die man im Freistaat antrifft." 
 					else
-						s<<"Mitlerweile ist der Freistaat kein Fremdkörper mehr für sie. Dennoch stellt er und die Verbindung nach Aussen für sie ein Problemherd dar. Sie wissen, dass ihr eigenes Verhalten widersprüchlich ist, denn sie profitieren von den etlichen billigen Rausch- und Unterhaltungsmöglichkeiten. Letztens sind sie dort heimlich für zwei Tage untergetaucht."						
+						s<<"Mittlerweile ist der Freistaat kein Fremdkörper mehr für sie. Dennoch stellt er und die Verbindung nach Aussen für sie ein Problemherd dar. Sie wissen, dass ihr eigenes Verhalten widersprüchlich ist, denn sie profitieren von den etlichen billigen Rausch- und Unterhaltungsmöglichkeiten. Letztens sind sie dort heimlich für zwei Tage untergetaucht."						
 					end
 				else #Nicht Zürcher
 					if sozial || künstlerisch
-						s<<"Letztens haben sie ein junges Paar gesehen, dass sich high im Tram auf den Boden gelegt hat. Sie sind irritiert über die heutige Entwicklung des Freistaats. Sie haben viel Ziet und versuchen mit kreativen Köpfen eine Kampagne zu starten, die hilft Zürich von der Korruption zu befreien."
+						s<<"Letztens haben sie ein junges Paar gesehen, dass sich high im Tram auf den Boden gelegt hat. Sie sind irritiert über die heutige Entwicklung des Freistaats. Sie haben viel Zeit und versuchen mit kreativen Köpfen eine Kampagne zu starten, die hilft Zürich von der Korruption zu befreien."
 					elsif	
-						s<<"Heute Besuchen sie Zürich wegen den diversen Hochbauten. Sie sind in ihrem Alter umso faszinierter von den exklusiven Hotels und der schnelllebigen Kultur. Sie sind von den Gegensätzen angezogen."
+						s<<"Heute besuchen sie Zürich wegen den diversen Hochbauten. Sie sind in ihrem Alter umso faszinierter von den exklusiven Hotels und der schnelllebigen Kultur. Sie sind von den Gegensätzen angezogen."
 					else
 						s<<"Wenn sie heute in Zürich sind, suchen sie manchmal nach Nischen, die von den Zeiten vor 1980 erzählen. Letztens sind sie auf den Üetliberg gewandert und haben über die dunkle, traurige Stadt geblickt. "
 					end
@@ -840,7 +839,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		# Heute
 				if zuercher
 					if zupackend && (drogen|| polyamourös)
-						s<<"Heute leben sie und ihre Freunde in ihrer Traumstadt. Endlich sind sie die reichen Zürcher los haben merh Paltz. Den inoffizillen neuen Stadtslogan 'Zürich: arm und verstrahlt: Das wahre Verwesen.' passt zu ihrem neuen Lebensgefühl."
+						s<<"Heute leben sie und ihre Freunde in ihrer Traumstadt. Endlich sind sie die reichen Zürcher los haben mehr Paltz. Den inoffizillen neuen Stadtslogan 'Zürich: arm und verstrahlt: Das wahre Verwesen.' passt zu ihrem neuen Lebensgefühl."
 					elsif sozial || künstlerisch
 						s<<"Nach dem Terroranschlag erleben Sie, wie viele Ihrer Freunde die Stadt verlassen. Sie selbst sehen in der Situation ein Chance für einen Neuanfang in Zürich. Am Fusse des Züribergs finden Sie eine leerstehende zurückgelassene Villa, in der sie sich einrichten."
 					elsif (chaotisch || neugierig) && (polytheistisch || esoterisch || konsum)
@@ -862,28 +861,37 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		end
  
 					
-		45
-		
 	
+		
+		
+		# Text für Erwachsene  alter 28 - 49 oder 50 - 60
+			
+		#Alter bei POD 27 - 48 oder 49 - 59 
+
+		if heute_erwachsen || heute_ältere_erwachsene
+			s<<"Bis Ende 2012 verläuft Ihr Leben so, wie sie es kennen."
+				if zuercher
+					if neugierig && esoterisch
+						s<<"Ende 2012 sind sie aus Neugierde kurzerhand Mitglied einer Sekte geworden. Das einzgie was auf der Agenda stand war Endzeithysterie. Sie waren in Kontakt mit verschiedenen reliogiösen Organisationen, die ihre Weltuntergangstheorie teilten. Kurz vor dem 21.10.12. erhielt ihre Führerin einen Brief von der Sekte 'Aleph' (früher AUN) mit der Aufforderung Zürich sofort zu verlassen und unterzutauchen. Sie taten dies auch und kamen in den Bergen unter. Dort warteten Vertreter der Sekte Aleph auf sie, um sie gefangen zu nehemn."	
+					elsif (ökonomisch || technisch) && rationalistisch
+						s<<"Ganz abgesehen davon, dass sie sowieso nie an den Weltuntergang geglaubt haben, finden sie es doch ganz perfide, dass die Aleph (früher AUN) Sekte sich genau das Ende des Maya Kalenders für ihr Attentat ausgesucht haben. Sie Gründen kurz nach dem Anschlag eine Selbsthilfegruppe, für paranoid gewordene Zürcher."
+					elsif esoterisch || weltverbesserer
+						s<<"Sie haben kurz vor dem Attentat einen alten Bauernhof am Stadtrand gekauft, um auf Selbstversogung umzustellen. Als sie erfuhren, dass nach dem Terroranschlag  "
+					end
+				end
 		
 		# Heute
-		
-		# Jugendliche und junge Erwachsene 14 - 20 oder 21 - 28
-	
-		if heute_teen || heute_twen
+				if zuercher
+					if neugierig && esoterisch
+						s<<"Heute Leben sie noch immer in der Aleph Zentrale und müssen täglich Untersuchungen anstellen, um Verseuchung Zürichs zu dosieren und analysieren. Zürich ist das Modell, mit dem Aleph Möglichkeiten austestet, wie sie weltweit Angriffe ausüben können. Ihre Sekte wurde zu deren Arbeitskräfte und sie müssen oftmals vor Ort in Zürich Proben des Wassers nehmen.  "
+					elsif technisch && (haus || boot || gold)
+						s<<"Neulich haben sie erfahren, dass auf dem Zürich ein riesiger Sarkophag gebaut werden. Sie wissen, dass sie verstrahlt sind und hatten sich eigentlich darauf gefreut, bis zu ihrem Lebensende auf dem Zürichsee herum zu fahren. Sie sezten alles daran, diese Pläne zu verhindern. "
+					els
+						s<<""
+					end
+				end
 		end
-		
-		
-		
-		# Text für Erwachsene Alter bei POD: 28 - 49
-			
-		#Alter bei POD 27 - 48
-		
-		#if heute_erwachsen || heute_ältere_generation
-		
-
-
-
+					
 		#if heut_älteste_generation
 	
 
@@ -893,10 +901,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		
 		
 		
-			
-		# Text für Jugendliche 14 - 20
 	
-		# Alter bei POD 13 +
 		
 		# Heute
 		
