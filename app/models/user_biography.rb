@@ -240,6 +240,27 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 			return false
 		end
 	end
+	
+	def aargauer
+		self.birthplace == 'im Aargau'
+			return true
+		else 
+			return false
+		end
+	end	
+
+	def einwohner
+		return self.zurich
+	end	
+
+	def concatenate_spacify(s)
+		t = ""
+		s.each do |e|
+			t += e + " "
+		end
+		return t
+	end
+
 
 	def translations
 		
@@ -248,10 +269,14 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 			t[uchronia.slug] = "Sie werden im Jahr " + self.birthday.year.to_s + " " + self.birthplace + " " + "geboren. "
 		end
 		
-		t['110'] += translate_uchronia_110
-		t['2'] += translate_uchronia_2
+		t['110']+= translate_uchronia_110
+		t['2']  += translate_uchronia_2
 		t['61'] += translate_uchronia_61
 		t['17'] += translate_uchronia_17
+		t['19'] += translate_uchronia_19
+		t['25'] += translate_uchronia_25
+		t['37'] += translate_uchronia_37
+		t['87'] += translate_uchronia_87
 
 		Uchronia.all.each do |uchronia|
 			t[uchronia.slug] += "Heute sind Sie " + age(2013).to_s + " Jahre alt."
@@ -262,43 +287,82 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 	
 	def translate_uchronia_2
 	
-		t = ""
-	
-		if self.birthday.year < 1978
-			crisis_age = "adult";
-		elsif self.birthday.year < 1978
-			crisis_age = "twen";
-		elsif self.birthday.year < 1988
-			crisis_age = "teen";
-		elsif self.birthday.year < 2008
-			crisis_age = "child";			
-		else
-			crisis_age = "baby";
-		end
+		# UBS-Pleite
+		# POD 2008
+		# https://docs.google.com/document/d/1n6h5DywYNIc6TAYwzQTH1htMWmY9DslKtJdqKgZo3_o/edit
+
+		# Verwendung:
+		# -
 		
-		if crisis_age == "child" 
-			if self.parents == "Reich"
-				t += "Der Niedergang Ihrer Familie hat Ihnen schwer zu schaffen gemacht. "
-			end
-		end
+		# Bemerkungen:
+		# - Rollen: Plünderer, Techniker, Nutznießer
+		
+		# Nötige Elemente
+		# -
+		
+		s = []
+		
+		if self.birthday.year < 1943		
+			heute_rentner = true			# heute über 70, damals über 65
+		elsif self.birthday.year < 1976		
+			heute_ältere_erwachsene = true	# heute 37-69, damals 31-64
+		elsif self.birthday.year < 1984		
+			heute_erwachsen = true			# heute 29-36, damals 24-31
+		elsif self.birthday.year < 1992		
+			heute_twen = true				# heute 21-28, damals 16-23
+		else								
+			heute_teen  = true				# heute 14-20, damals  9-15
+		end		
 		
 		# easter eggs
 		
 		good_countries = ['Russland', 'Brasilien', 'China', 'Indien']
 		if good_countries.any? { |w| self.travel[w] }
-			t += "Sie entschlossen sich schliesslich, in ein weniger chaotisches Land auszuwandern, nämlich nach " + self.travel + ". "
-			return t
+			s<<"Sie entschlossen sich schliesslich, in ein weniger chaotisches Land auszuwandern, nämlich nach " + self.travel + ". "
+			concatenate_spacify(s)
 		end
 		
 		# now
 
 		if owns_boat
-			t += "Glücklicherweise konnten Sie sich über Wasser halten. Dank Ihres Boots verdienen Sie als Drogenschmuggler über den Zürisee recht gut."
-			return t
+			s<<"Glücklicherweise konnten Sie sich über Wasser halten. Dank Ihres Boots verdienen Sie als Drogenschmuggler über den Zürisee recht gut."
+			concatenate_spacify(s)
 
 		end
 		
-		return t
+		# Texte für teens 14-20, damals 9-15
+		
+		if heute_teen
+			if self.parents == "Reich"
+				s<<"Der Niedergang Ihrer Familie hat Ihnen schwer zu schaffen gemacht. "
+			end
+		end
+		
+		# Texte für twens 21-28, damals 16-23
+		
+		if heute_twen
+
+		end
+
+		# Texte für erwachsene 29-36, damals 24-31
+		
+		if heute_erwachsen
+
+		end
+
+		# Texte für ältere erwachsene 37-69, damals 31-64
+		
+		if heute_ältere_erwachsene
+
+		end
+
+		# Texte für rentner über 70, damals über 65 (rentenalter)
+		
+		if heute_rentner
+
+		end
+		
+		return concatenate_spacify(s)
 
 	end
 
@@ -351,8 +415,6 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		end 
 		
 		return s
-	
-	
 	
 	end
 
@@ -936,9 +998,92 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 	end
 
 	
+	def translate_uchronia_19
 	
+		s = []
+		
+		# Gödel + Freud
+		# POD 1928
+		# https://docs.google.com/document/d/1nmDl--hqM_iXjp5zi91pNdpgxBqPl3tSqKm044229bs/edit?usp=drive_web
+		
+		# Verwendung:
+		# Im Decision Lab
+		
+		# Bemerkungen:
+		# - Alle sind schon in dieser Uchronie aufgewachsen
+		# - Zürich points etc. sind noch unklar
+		
+		# Nötige Elemente
+		# Evtl. was zu Argentinien, o.a.
+		
+		return concatenate_spacify(s)
 	
+	end
 	
+	def translate_uchronia_25
 	
+		s = []
+		
+		# Intelligente Maschinen
+		# POD 1951
+		# https://docs.google.com/document/d/11zV2JsWgOLCOP98exMhjj-c9dk-Awtr6qvA_EGs-j54/edit?usp=drive_web
+		
+		# Verwendung:
+		# -
+		
+		# Bemerkungen:
+		# - Im POD-Jahr geborene sind heute 62
+		# - 1952 Turing-Test wird bestanden
+		
+		# Nötige Elemente
+		# -
+		
+		return concatenate_spacify(s)
+	
+	end
+	
+	def translate_uchronia_37
+	
+		s = []
+		
+		# Zwingli
+		# POD 1522
+		# https://docs.google.com/document/d/15Cgcb8xjjvKwso1SskJvxJLQz8oP7hk_VERdSRep15w/edit?usp=drive_web
+		
+		# Verwendung:
+		# Weg zu Krishna
+		
+		# Bemerkungen:
+		# - Ndrangheta
+		
+		# Nötige Elemente
+		# ?
+		
+		return concatenate_spacify(s)
+	
+	end
+	
+	def translate_uchronia_87
+	
+		s = []
+		
+		# Alpen
+		# POD 27. Juni 1980
+		# https://docs.google.com/document/d/1VRRciBLvTs15LKPq23y_5ybm_ge7P_H3igfnA7Tp1Bc/edit?usp=drive_web
+		
+		# Verwendung:
+		# ?
+		
+		# Bemerkungen:
+		# - 2008 Abbau der Alpen beginnt 
+		# - 2010 Volksinitiative 
+		# - 2012 Berg rutscht
+		
+		# Nötige Elemente
+		# ?
+		
+		return concatenate_spacify(s)
+	
+	end
 	
 end
