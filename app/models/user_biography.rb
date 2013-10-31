@@ -8,7 +8,7 @@ PARENTS_OPTIONS = ['arm', 'reich', 'weiß nicht']
 CHILDHOOD_OPTIONS = ['Musterkind', 'chaotisch', 'neugierig', 'weiß nicht']
 SEX_OPTIONS = ['weiblich', 'männlich', 'weiß nicht']
 EDUCATION_OPTIONS = ['sozial', 'künstlerisch', 'technisch', 'ökonomisch', 'keine', 'weiß nicht']
-ROMANCE_OPTIONS = ['keine', 'kompliziert', 'polyamourös', 'stabil', 'verheiratet', 'verheiratet', 'verheiratet']
+ROMANCE_OPTIONS = ['keine', 'kompliziert', 'polyamourös', 'stabil', 'verheiratet']
 CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiß nicht']
 TRAVEL_OPTIONS = ['Schweiz', 'Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiß nicht']
 RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiß nicht']
@@ -486,7 +486,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 					s<<"Sie sind nach den grossen Unruhen und der Zersplitterung der Stadt geboren. Ihre Eltern haben sie stets vor den Gefehren der Gegend um den Platzspitz gewarnt. "		
 				end
 			else #Nicht Zürcher
-				if  chaotisch || unberechendbar
+				if  chaotisch || unberechenbar
 					s<<"Sie sind nicht in Zürich geboren. Ihre Eltern haben sie als Kleinkind mitgenommen, als sie Freunde im Freistaat besucht haben. "
 				else
 					s<<"Sie sind nicht in Zürich geboren und haben erst spät von den Konflikten der Zürcher Bevölkerung erfahren."
@@ -573,7 +573,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 						s<<"Neulich haben sie bei der Entwicklung einer Applikation teilgenommen, die als sicheres Kommunikationsmittel für den Drogenhandel zwischen den Freistaatlern und der Aussenwelt dient."
 					elsif travel_schweiz	
 						s<<"Mitlerweile haben sie schon mehrmals eine Direktreise zum Platzspitz gebucht. Jedesmal ist es für sie ein neues Erlebnis und sie können für ein paar Tage ihren Alltag vergessen."
-					elsif (gold || polyamourös) & konsum && travel_Asien
+					elsif (gold || polyamourös) & konsum && travel_asien
 						s<<"Sie sind durch den Freistaat reich geworden. Sie haben ein Reisebüro eröffnet und bieten Sex und Drogentourismus an."
 					else
 						s<<"Heute verfolgen sie die bekannte Bloggerin 'seedZZ', die über den Platzspitzer Gemeinschaftsgarten bloggt. Auf 'Spacecarrot - Spitzli geht Bio' können sie alle Updates der gespickten Gemüseküche nachlesen."
@@ -662,7 +662,7 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 			#Kindheit alter bei POD 32 +
 		
 			if heut_elterngeneration 
-				if zuerich
+				if zuercher
 					if sozial || künstlerisch
 						s<<"Als 1984 die ersten Jugendlichen mit grossen Plakaten auf den Platzspitz schreiteten, schauten sie vergnügt zu. Sie konnten noch nicht ahnen, dass sich das ganze Stadtbild verändern würde. " 
 					elsif stabil || ökonomisch || zupackend
@@ -846,11 +846,6 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		
 		# Heute
 		
-		
-		
-
-		
-	
 		t = ""
 		s.each do |e|
 			t += e + " "
