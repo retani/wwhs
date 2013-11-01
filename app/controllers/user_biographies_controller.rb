@@ -15,6 +15,10 @@ class UserBiographiesController < ApplicationController
   def all
     @user_biographies = UserBiography.all
     @uchronias = Uchronia.all
+    
+    require 'digest/md5'
+    
+    @hashes = []
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,6 +1,8 @@
 # encoding: utf-8
+require 'digest/md5'
 
 class UserBiography < ActiveRecord::Base
+
 	include Translate_uchronia_2
 	include Translate_uchronia_17
 	include Translate_uchronia_19
@@ -10,24 +12,24 @@ class UserBiography < ActiveRecord::Base
 	include Translate_uchronia_87
 	include Translate_uchronia_110
 	
-  attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour
+	attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour
 
-BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aargau', 'in der Schweiz', 'im Ausland']
-PARENTS_OPTIONS = ['arm', 'reich', 'weiss nicht']
-CHILDHOOD_OPTIONS = ['Musterkind', 'chaotisch', 'neugierig', 'weiss nicht']
-SEX_OPTIONS = ['weiblich', 'männlich', 'weiss nicht']
-EDUCATION_OPTIONS = ['sozial', 'künstlerisch', 'technisch', 'ökonomisch', 'keine', 'weiss nicht']
-ROMANCE_OPTIONS = ['keine', 'kompliziert', 'polyamourös', 'stabil', 'verheiratet']
-CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiss nicht']
-TRAVEL_OPTIONS = ['Schweiz', 'Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiss nicht']
-RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiss nicht']
-
-# youth_1 Haben Sie mal was gestohlen?  Ja Nein
-# youth_2 Drogenerfahrungen?  Ja  Nein
-# youth_3 Haben Sie geglaubt, dass Sie die Welt verändern können?  Ja  Nein
-# youth_4 Waren Sie bei Gleichaltrigen beliebt? Ja  Nein
-# youth_5 Waren sie Teil eines Geheimclubs? Ja Nein
-# youth_6 Haben Sie sich Gedanken zu Überlebensstrategien gemacht? Ja Nein
+	BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aargau', 'in der Schweiz', 'im Ausland']
+	PARENTS_OPTIONS = ['arm', 'reich', 'weiss nicht']
+	CHILDHOOD_OPTIONS = ['Musterkind', 'chaotisch', 'neugierig', 'weiss nicht']
+	SEX_OPTIONS = ['weiblich', 'männlich', 'weiss nicht']
+	EDUCATION_OPTIONS = ['sozial', 'künstlerisch', 'technisch', 'ökonomisch', 'keine', 'weiss nicht']
+	ROMANCE_OPTIONS = ['keine', 'kompliziert', 'polyamourös', 'stabil', 'verheiratet']
+	CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiss nicht']
+	TRAVEL_OPTIONS = ['Schweiz', 'Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiss nicht']
+	RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiss nicht']
+	
+	# youth_1 Haben Sie mal was gestohlen?  Ja Nein
+	# youth_2 Drogenerfahrungen?  Ja  Nein
+	# youth_3 Haben Sie geglaubt, dass Sie die Welt verändern können?  Ja  Nein
+	# youth_4 Waren Sie bei Gleichaltrigen beliebt? Ja  Nein
+	# youth_5 Waren sie Teil eines Geheimclubs? Ja Nein
+	# youth_6 Haben Sie sich Gedanken zu Überlebensstrategien gemacht? Ja Nein
 	
 	def jobchanges
 		return self.job_changes

@@ -5,14 +5,18 @@
 		<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
 		
 		<% @uchronias.each do |uchronia| %>
-		
+			
+			<% translation = bio.translations[uchronia.slug] %>
+			
+			<% if !@hashes.include?(Digest::MD5.hexdigest(translation.gsub(/[0123456789]{2,4}/, 'X'))) %>
+
+				<% @hashes << Digest::MD5.hexdigest(translation.gsub(/[0123456789]{2,4}/, 'X')) %>			
 				<h4>Uchronie <%= uchronia.title %></h3>
 				
 					<p>
-						<%= bio.translations[uchronia.slug] %>
+						<%= translation %>
 					</p>
-				
-			</div>
+			<% end %>
 			
 		<% end %>
 	
