@@ -99,7 +99,7 @@ class UserBiography
 						elsif (ökonomisch || technisch) && rationalistisch
 							s<<"Ganz abgesehen davon, dass sie sowieso nie an den Weltuntergang geglaubt haben, finden sie es doch ganz perfide, dass die Aleph (früher AUN) Sekte sich genau das Ende des Maya Kalenders für ihr Attentat ausgesucht haben. Sie Gründen kurz nach dem Anschlag eine Selbsthilfegruppe, für paranoid gewordene Zürcher."
 						elsif esoterisch || weltverbesserer
-							s<<"Sie haben kurz vor dem Attentat einen alten Bauernhof am Stadtrand gekauft, um auf Selbstversogung umzustellen. Als sie erfuhren, dass nach dem Terroranschlag  "
+							s<<"Sie haben kurz vor dem Attentat einen alten Bauernhof am Stadtrand gekauft, um auf Selbstversogung umzustellen."
 						end
 					end
 			
