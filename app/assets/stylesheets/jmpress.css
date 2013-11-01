@@ -262,8 +262,8 @@ dd,dt {
 	left:25%;
 }
 
-.step.uchronia .bio_translation {
-	
+.step.uchronia .bio_translation.hide-bio {
+	display:none;
 }
 
 .step.overview {

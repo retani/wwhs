@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class UserBiography
 	module Translate_uchronia_25
     extend ActiveSupport::Concern

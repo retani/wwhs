@@ -15,7 +15,7 @@
 		<% end %>	
 		<% if slide[:type] == "uchronia" %>
 			<% uchronia =  Uchronia.find(slide[:slug]) %>
-			<div id="<%= uchronia.slug %>" class="step uchronia editable" data-type="uchronia" data-slug="<%= uchronia.slug %>" data-x="<%= slide[:x] %>" data-y="<%= slide[:y] %>" data-rotate="<%= slide[:rotate] %>" data-scale="<%= slide[:scale] %>">
+			<div id="<%= uchronia.slug %>" class="step uchronia editable <%= "has-bio" if uchronia.show_bio %>" data-type="uchronia" data-slug="<%= uchronia.slug %>" data-x="<%= slide[:x] %>" data-y="<%= slide[:y] %>" data-rotate="<%= slide[:rotate] %>" data-scale="<%= slide[:scale] %>">
 				<%= render :partial => 'uchronias/show_public', :locals => { :uchronia => uchronia } %>
 			</div>
 		<% end %>	

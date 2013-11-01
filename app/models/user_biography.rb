@@ -13,14 +13,14 @@ class UserBiography < ActiveRecord::Base
   attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour
 
 BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aargau', 'in der Schweiz', 'im Ausland']
-PARENTS_OPTIONS = ['arm', 'reich', 'weiß nicht']
-CHILDHOOD_OPTIONS = ['Musterkind', 'chaotisch', 'neugierig', 'weiß nicht']
-SEX_OPTIONS = ['weiblich', 'männlich', 'weiß nicht']
-EDUCATION_OPTIONS = ['sozial', 'künstlerisch', 'technisch', 'ökonomisch', 'keine', 'weiß nicht']
+PARENTS_OPTIONS = ['arm', 'reich', 'weiss nicht']
+CHILDHOOD_OPTIONS = ['Musterkind', 'chaotisch', 'neugierig', 'weiss nicht']
+SEX_OPTIONS = ['weiblich', 'männlich', 'weiss nicht']
+EDUCATION_OPTIONS = ['sozial', 'künstlerisch', 'technisch', 'ökonomisch', 'keine', 'weiss nicht']
 ROMANCE_OPTIONS = ['keine', 'kompliziert', 'polyamourös', 'stabil', 'verheiratet']
-CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiß nicht']
-TRAVEL_OPTIONS = ['Schweiz', 'Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiß nicht']
-RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiß nicht']
+CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiss nicht']
+TRAVEL_OPTIONS = ['Schweiz', 'Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiss nicht']
+RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiss nicht']
 
 # youth _1 Haben Sie mal was gestohlen?  Ja Nein
 # youth_2 Drogenerfahrungen?  Ja  Nein
@@ -28,6 +28,10 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 # youth_4 Waren Sie bei Gleichaltrigen beliebt? Ja  Nein
 # youth_5 Waren sie Teil eines Geheimclubs? Ja Nein
 # youth_6 Haben Sie sich Gedanken zu Überlebensstrategien gemacht? Ja Nein
+	
+	def jobchanges
+		return self.job_changes
+	end	
 	
 	def romance_keine
 		return self.romance == "keine"
@@ -85,8 +89,8 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		return self.travel == "Antarktis"	
 	end
 	
-	def travel_weiß nicht
-		return self.travel == "weiß nicht"
+	def travel_weiss nicht
+		return self.travel == "weiss nicht"
 	end
 	
 	def	weiblich
@@ -97,8 +101,8 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		return self.sex == "männlich"
 	end
 	
-	def	sex_weißnicht
-		return self.sex == "sex_weißnicht"
+	def	sex_weissnicht
+		return self.sex == "sex_weissnicht"
 	end
 	
 	def arm
@@ -157,8 +161,8 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 		return self.religion == "konsum"
 	end
 	
-	def religion_weißnicht
-		return self.religion == "weiß nicht"
+	def religion_weissnicht
+		return self.religion == "weiss nicht"
 	end
 		
 	def gold 

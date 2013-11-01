@@ -30,7 +30,7 @@
 
 </article>
 
-<aside class="col-2 post-it bio_translation">
+<aside class="col-2 post-it bio_translation <%= "hide-bio" if !uchronia.show_bio %>">
 	<b>Ihre Biographie</b>
 	<div class="bio_translation_content"></div>
 	<%= link_to "Biographie ändern", "#/biographie-transformator", {:class=>"uchronia_link", :rel=>uchronia.slug} %>
