@@ -1,3 +1,5 @@
+<% counter = 0 %>
+
 <div>
 
 	<% @user_biographies.each do |bio| %>
@@ -9,7 +11,8 @@
 			<% translation = bio.translations[uchronia.slug] %>
 			
 			<% if !@hashes.include?(Digest::MD5.hexdigest(translation.gsub(/[0123456789]{2,4}/, 'X'))) %>
-
+			
+				<% counter += 1 %>
 				<% @hashes << Digest::MD5.hexdigest(translation.gsub(/[0123456789]{2,4}/, 'X')) %>			
 				<h4>Uchronie <%= uchronia.title %></h3>
 				
@@ -23,3 +26,5 @@
 	<%end%>
 
 </div>
+
+<h1>Summe = <%= counter %></h1>
