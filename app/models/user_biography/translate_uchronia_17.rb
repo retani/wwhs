@@ -52,7 +52,7 @@ class UserBiography
 					
 					else # nicht Zürcher
 						if neugierig
-							s<<"Sie warst am 21.12.2012 den ganzen Abend im Internet und haben sich auf das Schlimmste vorbereitet. Sie sind immer weiter in die Tiefen der Internet - Verschwörungstheorien vorgedrungen und alle möglichen Ereignisse durchdekliniert. Als sie vom Terroranschlag in Zürich erfuhren, waren sie kaum überrascht."
+							s<<"Sie waren am 21.12.2012 den ganzen Abend im Internet und haben sich auf das Schlimmste vorbereitet. Sie sind immer weiter in die Tiefen der Internet - Verschwörungstheorien vorgedrungen und alle möglichen Ereignisse durchdekliniert. Als sie vom Terroranschlag in Zürich erfuhren, waren sie kaum überrascht."
 						elsif rationalistisch
 							s<<"Ende 2012 haben sie in der Bahn nur noch laut Musik gehört. Dieses ewige Werweissen, ob wir alle nun mit der Welt untergehen oder nicht, hat sie ungemein genervt." 
 						else
@@ -62,7 +62,7 @@ class UserBiography
 			# Heute
 					if zuercher
 						if zupackend && (drogen|| polyamourös)
-							s<<"Heute leben sie und ihre Freunde in ihrer Traumstadt. Endlich sind sie die reichen Zürcher los haben mehr Paltz. Den inoffizillen neuen Stadtslogan 'Zürich: arm und verstrahlt: Das wahre Verwesen.' passt zu ihrem neuen Lebensgefühl."
+							s<<"Heute leben Sie und ihre Freunde in ihrer Traumstadt. Endlich sind sie die reichen Zürcher los haben mehr Platz. Den inoffiziellen neuen Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» passt zu ihrem neuen Lebensgefühl."
 						elsif sozial || künstlerisch
 							s<<"Nach dem Terroranschlag erleben Sie, wie viele Ihrer Freunde die Stadt verlassen. Sie selbst sehen in der Situation ein Chance für einen Neuanfang in Zürich. Am Fusse des Züribergs finden Sie eine leerstehende zurückgelassene Villa, in der sie sich einrichten."
 						elsif (chaotisch || neugierig) && (polytheistisch || esoterisch || konsum)
@@ -76,16 +76,13 @@ class UserBiography
 						if (drogen || travel_schweiz) && konsum
 							s<<"Heute hat sich Zürich in eine glamouröse Geisterstadt verwandelt und endlich können sie mit Zürich etwas anfangen. Sie genießen das blühende Nachtleben. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen, wie sie aus der ganzen Welt an."	
 						elsif (kind_weissnicht || kompliziert)
-							s<<"Heuthaben von Sterbehilfekonzern EXIT erfahren, der in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt hat. 'Endstation Zürich' finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."
+							s<<"Heute haben von Sterbehilfekonzern EXIT erfahren, der in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt hat. «Endstation Zürich» finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."
 						else 
-							s<<"Sie haben vom Stadtslogan 'Zürich: arm und verstrahlt: Das wahre Verwesen' gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niderzulassen. "		
+							s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niderzulassen. "		
 						end
 					end
 			end
-	 
-						
-		
-			
+	
 			
 			# Text für Erwachsene  alter 28 - 49 oder 50 - 60
 				
@@ -112,12 +109,17 @@ class UserBiography
 						else
 							s<<""
 						end
+					else
+						# Folgende Zeile mit Alpenbahnen nur zur Füllung, um leere Bios zu vermeiden!
+						s<<"So schockierend der Anschlag auch ist – sie nehmen's mit Humor und freuen sich über die sinkenden Preise der Alpenbahnen."
 					end
 			end
 						
-			#if heut_älteste_generation
-		
-	
+			if heut_älteste_generation
+				# Folgende Zeile mit Alpenbahnen nur zur Füllung, um leere Bios zu vermeiden!
+				s<<"So schockierend der Anschlag auch ist – sie nehmen's mit Humor und freuen sich über die sinkenden Preise der Alpenbahnen."
+			end
+			
 			
 			
 			
@@ -136,7 +138,7 @@ class UserBiography
 			# Kindheit
 			
 			# Heute
-		
+			
 			return concatenate_spacify(s)
 		
 		end

@@ -22,7 +22,7 @@ CRISIS_OPTIONS = ['unberechenbar', 'abwartend', 'zupackend', 'weiss nicht']
 TRAVEL_OPTIONS = ['Schweiz', 'Europa', 'Afrika', 'Australien', 'Südamerika', 'Nordamerika', 'Asien', 'Antarktis', 'weiss nicht']
 RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esoterisch', 'konsum', 'weiss nicht']
 
-# youth _1 Haben Sie mal was gestohlen?  Ja Nein
+# youth_1 Haben Sie mal was gestohlen?  Ja Nein
 # youth_2 Drogenerfahrungen?  Ja  Nein
 # youth_3 Haben Sie geglaubt, dass Sie die Welt verändern können?  Ja  Nein
 # youth_4 Waren Sie bei Gleichaltrigen beliebt? Ja  Nein
@@ -136,7 +136,11 @@ RELIGION_OPTIONS = ['rationalistisch', 'monotheistisch', 'polytheistisch', 'esot
 	def keine	
 		return self.education == "keine"
 	end
-	
+
+	def education_weissnicht	
+		return self.education == "keine"
+	end
+
 	def technisch	
 		return self.education == "technisch"
 	end
