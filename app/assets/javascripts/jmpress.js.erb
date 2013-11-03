@@ -65,6 +65,27 @@ $(document).ready(function() {
 	});
 	
 	
+	function swap_start_images() {
+		img1 = Math.floor(Math.random() * $('.start_image').length);
+		img2 = Math.floor(Math.random() * $('.start_image').length);	
+		
+		console.log(img1 + ' ' + img2);
+		
+		left_value1 = $($('.start_image').get(img1)).css('left');
+		top_value1 = $($('.start_image').get(img1)).css('top');
+		left_value2 = $($('.start_image').get(img2)).css('left');
+		top_value2 = $($('.start_image').get(img2)).css('top');
+
+		$($('.start_image').get(img2)).css('left', left_value1);
+		$($('.start_image').get(img2)).css('top', top_value1);
+		$($('.start_image').get(img1)).css('left', left_value2);
+		$($('.start_image').get(img1)).css('top', top_value2);
+	}
+	
+	for(i = 0; i < 4; i++) {
+		swap_start_images();
+	}
+		
 	//$(".step").fitVids();
 	
 	// init jmpress

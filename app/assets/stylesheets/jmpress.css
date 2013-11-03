@@ -20,7 +20,8 @@ body {
     background-size: cover;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size:15px;
-    color:black;
+    color:#333;
+    background-color: #f2f2f2;
     line-height:1.429;
 }
 
@@ -46,7 +47,9 @@ h1, h2, h3, h4, iframe {
 }
 
 #start h1 {
-	margin-bottom: 0em;
+	letter-spacing: 0.07em;
+	font-size: 2em;
+	margin-bottom: 0.5em;
 }
 
 div.video-container {
@@ -209,11 +212,27 @@ dd,dt {
 	float:right;
 }
 
+.start_image {
+	position:absolute;
+	top: 0px;
+	left: -100px;
+	z-index: -100;
+	display:none;
+	opacity: 0.95;
+	width:20%;
+}
+
 /* gesicht */
 .step.uchronia img[data-image-id="25"]{
 	top:-10px;
 	left:-110px;
 	width:20%;
+}
+
+img[data-start-image-id="25"]{
+	display:block;
+	top:-50px;
+	left:-200px;
 }
 
 /* kreuz */
@@ -223,6 +242,14 @@ dd,dt {
 	width:10%;
 }
 
+img[data-start-image-id="27"]{
+	display:block;
+	top:-50px;
+	left:600px;
+	widtH: 10%;
+}
+
+
 /* Schlüsselwappen */
 .step.uchronia img[data-image-id="24"]{
 	top:9%;
@@ -230,11 +257,26 @@ dd,dt {
 	width:13%;
 }
 
+img[data-start-image-id="24"]{
+	display:block;
+	top:250px;
+	left:-250px;
+	width: 10%;
+}
+
 /* Berg */
 .step.uchronia img[data-image-id="26"]{
 	top:66%;
 	left:70%;
 }
+
+img[data-start-image-id="26"]{
+	display:block;
+	top:200px;
+	left:700px;
+	width: 40%;
+}
+
 
 /* Berg */
 .step.uchronia img[data-image-id="30"]{
@@ -250,6 +292,12 @@ dd,dt {
 	width:20%;
 }
 
+img[data-start-image-id="21"]{
+	display:block;
+	top:400px;
+	left:600px;
+}
+
 /* Augententakel */
 .step.uchronia img[data-image-id="22"]{
 	top:-5%;
@@ -257,10 +305,34 @@ dd,dt {
 	width:20%;
 }
 
+img[data-start-image-id="22"]{
+	display:block;
+	top:400px;
+	left:-300px;
+	width: 30%;
+}
+
+
 /* See */
 .step.uchronia img[data-image-id="28"]{
 	left:25%;
 }
+
+img[data-start-image-id="28"]{
+	width: 50%;
+	display:block;
+	top:600px;
+	left:-200px;
+}
+
+/* tunnel */
+img[data-start-image-id="30"]{
+	display:block;
+	top:300px;
+	left:800px;
+}
+
+
 
 .step.uchronia .bio_translation.hide-bio {
 	display:none;
