@@ -5,6 +5,15 @@
 			<% page =  Page.find(slide[:slug]) %>
 			<div id="<%= page.slug %>" class="step page editable" data-type="page" data-slug="<%= page.slug %>" data-x="<%= slide[:x] %>" data-y="<%= slide[:y] %>" data-rotate="<%= slide[:rotate] %>" data-scale="<%= slide[:scale] %>">
 				<%= render :partial => 'pages/show_public', :locals => { :page => page } %>
+			
+				<% if page.slug == 'start' %>
+					<% Uchronia.all.each do |uchronia| %>
+							<% if uchronia.image %>
+								<%= image_tag uchronia.image.image.url, options = {:class => 'start_image not-supported-hide', :data => { :start_image_id => uchronia.image.id } } %>
+							<% end %> 
+					<% end %>
+				<% end %>
+			
 			</div>
 		<% end %>
 		<% if slide[:type] == "uchronistDISABLED" %>
