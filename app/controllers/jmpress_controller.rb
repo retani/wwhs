@@ -14,6 +14,7 @@ class JmpressController < ApplicationController
 {:type => "page", :slug => "society", :x => -1460, :y => 1480, :rotate => 0, :scale => 1.2999999999999994},
 {:type => "page", :slug => "uchronien", :x => 820, :y => 750, :rotate => 0, :scale => 1},
 {:type => "page", :slug => "credits", :x => -1450, :y => -950, :rotate => 90, :scale => 0.6},
+{:type => "page", :slug => "credits2", :x => -1558, :y => -1085, :rotate => 90, :scale => 0.4},
 {:type => "uchronia", :slug => "2", :x => 1200, :y => 500, :rotate => 192, :scale => 0.20000000000000004},
 {:type => "uchronia", :slug => "17", :x => -1800, :y => -950, :rotate => -18, :scale => 0.4},
 {:type => "uchronia", :slug => "19", :x => 1050, :y => 1550, :rotate => -18, :scale => -0.4},
