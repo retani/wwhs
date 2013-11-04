@@ -474,6 +474,7 @@ div.uchronia .row .col-2:first-child {
 div.uchronia .row .col-2:last-child {
 	width: 30%;
 	float: right;
+	position:relative;
 }
 
 .post-it {
@@ -497,6 +498,12 @@ box-shadow: 0px 2px 4px #666;
 -moz-box-shadow: 0px 2px 4px #666;
 -webkit-box-shadow: 0px 2px 4px #666;
 
+}
+
+div.uchronia .row .col-2:last-child .post-it {
+	position:absolute;
+	width:100%;
+	left:-20px;
 }
 
 .post-it-2 { 
