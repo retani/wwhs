@@ -36,27 +36,27 @@ class UserBiography
 			#Alter bei POD 13 - 19 oder 20 - 27
 			
 			if heute_teen || heute_twen
-				s<<"Bis Ende 2012 verläuft ihr Leben so, wie sie es kennen."	
+				s<<"Bis zum 21.12.2012 verläuft Ihr Leben so, wie sie es kennen."	
 					if zuercher
 						if neugierig && drogen
-							s<<"Sie waren am Abend des 21.12.2012 beinahe an die Weltuntergangsparty gegangen, an der der Anschlag stattgefunden hat! Sie sind wegen Prüfungen zuhause geblieben. "
+							s<<"Am 22.12.2012 erfuhren sie von Freunden, die an der Weltuntergangsparty waren, an der der Anschlag stattgefunden hat, dass sie nach Frankreich fliehen. Sie bleiben aber da."
 						elsif musterkind
-							s<<"Sie warst am 21.12.2012 zu Hause und haen erst am nächsten Tag auf dem Internet vom Terrorattentat der Gruppe Aleph (früher AUN) erfahren."
+							s<<"Sie haben erst einen Tag später auf dem Internet vom Terrorattentat der Gruppe Aleph (früher AUN) erfahren und waren erschüttert."
 						elsif reich || beliebt || ökonomisch
-							s<<"Sie haben gute Beziehungen in der Zürcher Partyszene. Sie haben die Weltuntergangsparty verlassen, weil jemand ihnen den Tipp gegeben hat, so schnell wie möglich zu verschwinden. Sie haben erst später erfahren weshalb."				
+							s<<"Ihr Freund hat gute Beziehungen in der Zürcher Partyszene. Er hatt die Weltuntergangsparty verlassen, weil jemand ihm den Tipp gegeben hat, so schnell wie möglich zu verschwinden. Er hat sie mit dem Auto abgeholt und ihr seid abgehauen. Weshalb, habt ihr erst später erfahren."				
 						elsif künstlerisch || sozial || anpackend
-							s<<"Sie haben mit Freunden am 21.12.2012 an einer friedlichen Demo zum Thema 'die Welt geht unter und die Abzocker mit ihr' teilgenommen. Ihr wart alle als Zombies verkleidet. Als ein lauter Knall ertönte, habt ihr euch nichts weiter gedacht und  habt die Nacht durchgetanzt."
+							s<<"Sie haben mit Freunden nach dem  21.12.2012 an einer friedlichen Demo zum Thema 'die Welt geht unter die Abzocker mit ihr' teilgenommen. Ihr wart als Zombies verkleidet und habt das anarchistische Leben in der verstrahlten Stadt eingeläutet."
 						else
-							s<<"Am 21.12.2012 hatten sie auf der Hardbrücke spät Abends eine heftige Auseinandersetzung mit einer guten Freundin, die behauptete, die Welt würde an dem Tag untergehen. Sie wollten ihr nicht glauben und haben sie ausgelacht, bis eine eigenartige Lichterspiegelung am Himmel in Richtung See zu sehen war. Seither haben sie nie mehr von ihr gehört. "
+							s<<"Eine Woche nach dem Anschlag waren die Fische ihres Nachbarn alle tot. Sie riefen ihre Nächsten an und warnten alle vor dem Ernstfall."
 						end
 					
 					else # nicht Zürcher
 						if neugierig
-							s<<"Sie waren am 21.12.2012 den ganzen Abend im Internet und haben sich auf das Schlimmste vorbereitet. Sie sind immer weiter in die Tiefen der Internet - Verschwörungstheorien vorgedrungen und alle möglichen Ereignisse durchdekliniert. Als sie vom Terroranschlag in Zürich erfuhren, waren sie kaum überrascht."
+							s<<"Seit dem Terroranfall in Zürich, wird ihr Mailaccount mit Verschwörungstheorien zugemüllt. Sie haben angefangen selber Recherchen über die Aleph (früher AUN), die Verantwortlich für den Anschlag sind  anzustellen und fühlen sich nicht mehr sicher."
 						elsif rationalistisch
-							s<<"Ende 2012 haben sie in der Bahn nur noch laut Musik gehört. Dieses ewige Werweissen, ob wir alle nun mit der Welt untergehen oder nicht, hat sie ungemein genervt." 
+							s<<"Sie nahmen den Terroranschlag mit Humor und dachten, dass wir früher oder später sowieso alle an irgendwelchen Strahlung sterben. Um diesem ewigen Werweissen, ob wir alle nun alle in Terroranschlägen sterben und die Welt mit uns untergeht, aus dem Weg zu gehen, trugen sie damals täglich Kopfhörer." 
 						else
-							s<<"Sie hasben in den Nachrichten über den Terroranfall gelesen. Sie hatten zu dem Zeitpunkt noch nie von der religiösen Vereinigung Aleph (früher AUN) gehört. Sie haben umgehend aufgehört Leitungswasser zu trinken."					
+							s<<"Sie haben in den Nachrichten über den Terroranfall gelesen. Sie haben umgehend aufgehört Leitungswasser zu trinken."					
 						end
 					end
 			# Heute
@@ -92,52 +92,105 @@ class UserBiography
 				s<<"Bis Ende 2012 verläuft Ihr Leben so, wie sie es kennen."
 					if zuercher
 						if neugierig && esoterisch
-							s<<"Ende 2012 sind sie aus Neugierde kurzerhand Mitglied einer Sekte geworden. Das einzgie was auf der Agenda stand war Endzeithysterie. Sie waren in Kontakt mit verschiedenen reliogiösen Organisationen, die ihre Weltuntergangstheorie teilten. Kurz vor dem 21.10.12. erhielt ihre Führerin einen Brief von der Sekte 'Aleph' (früher AUN) mit der Aufforderung Zürich sofort zu verlassen und unterzutauchen. Sie taten dies auch und kamen in den Bergen unter. Dort warteten Vertreter der Sekte Aleph auf sie, um sie gefangen zu nehemn."	
+							s<<"Nach dem Terroranschlag kamen sie bei einer Krisensitzung in ihrem Quartier in Kontakt mit einer religiösen Vereinigug die behauptete, dass die Endzeittheorie sich bestätigt hätte und die Welt langsam am untergehen sei. Bei ihrer letzten Sitzung, sind sie alle von der Sekte Aleph (früher AUN) entführt worden.
+							Heute Leben sie noch immer in der Aleph Zentrale und müssen täglich Untersuchungen anstellen, um die Verseuchung Zürichs zu dosieren und zu analysieren. Zürich ist das Modell, mit dem Aleph Möglichkeiten austestet, wie sie weltweit Angriffe ausüben können. Als deren Arbetiskraft müssen sie oftmals vor Ort in Zürich Wasserproben nehmen." 	
 						elsif (ökonomisch || technisch) && rationalistisch
-							s<<"Ganz abgesehen davon, dass sie sowieso nie an den Weltuntergang geglaubt haben, finden sie es doch ganz perfide, dass die Aleph (früher AUN) Sekte sich genau das Ende des Maya Kalenders für ihr Attentat ausgesucht haben. Sie Gründen kurz nach dem Anschlag eine Selbsthilfegruppe, für paranoid gewordene Zürcher."
-						elsif esoterisch || weltverbesserer
-							s<<"Sie haben kurz vor dem Attentat einen alten Bauernhof am Stadtrand gekauft, um auf Selbstversogung umzustellen."
-						end
-					end
-			
-			# Heute
-					if zuercher
-						if neugierig && esoterisch
-							s<<"Heute Leben sie noch immer in der Aleph Zentrale und müssen täglich Untersuchungen anstellen, um Verseuchung Zürichs zu dosieren und analysieren. Zürich ist das Modell, mit dem Aleph Möglichkeiten austestet, wie sie weltweit Angriffe ausüben können. Ihre Sekte wurde zu deren Arbeitskräfte und sie müssen oftmals vor Ort in Zürich Proben des Wassers nehmen.  "
-						elsif technisch && (haus || boot || gold)
-							s<<"Neulich haben sie erfahren, dass auf dem Zürich ein riesiger Sarkophag gebaut werden. Sie wissen, dass sie verstrahlt sind und hatten sich eigentlich darauf gefreut, bis zu ihrem Lebensende auf dem Zürichsee herum zu fahren. Sie sezten alles daran, diese Pläne zu verhindern. "
+							s<<"Sie Gründeten kurz nach dem Terroranschlag eine Selbsthilfegruppe für paranoid gewordene Zürcher, die den Anschlag in Verbindung mit dem Ende des Maya Kalenders nicht verarbeiten konnten. "	
+						elsif stabil || monotheistisch 
+							s<<"Nach dem Terroranschlag wurde es Ihnen in Zürich zu ungemütlich. Sie hatten Angst davor, dass die religiöse Gruppe Aleph (früher AUN) zurückkehrt, um ihr Versuchslabor Zürich noch weiter zu malträtieren. Sie zogen vorübergehend zu Verwandten aufs Land."		
+						elsif (esoterisch || weltverbesserer) && haus
+							s<<"Sie haben kurz nach dem Attentat einen alten Bauernhof auf dem Land gekauft, um auf Selbstversogung umzustellen."
 						else
-							s<<""
+							s<<"Sie haben nach dem Attentat ihre ganze Wohnung mit Wasserflaschen gefüllt und Anweisungen der Behörden abgewartet."
 						end
 					else
-						# Folgende Zeile mit Alpenbahnen nur zur Füllung, um leere Bios zu vermeiden!
-						s<<"So schockierend der Anschlag auch ist – sie nehmen's mit Humor und freuen sich über die sinkenden Preise der Alpenbahnen."
+						if  sozial && weltverbesserer
+							s<<"Als sie von dem Attentat in Zürich erfahren haben, haben sie Hilfepakete zusammengestellt und an Zürcher Schulen geschickt. Darin befanden sich Beutel mit Trinkwasser und Aufkleber mit der Beschriftung 'shine on!'."
+						elsif ökonomisch weltverbesserer
+							s<<"Nach dem Anschlag in Zürich haben sie öffentlich die Behörden aufgerufen Zürich anzuklagen und die die Schweiz zu boykottieren."
+						elsif
+							s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niderzulassen. "
+						elsif (neugierig || konsum) && beliebt
+							s<<"Als sie vom Terroranschlag in Zürich erfahren haben, haben sie beim nationalen Fernsehsender angerufen, um vorzuschlagen eine neue Realityshow in Zürich zu konzipieren mit dem Titel: 'Zürich verstrahlt - Liebe und Leid nach der atomaren Katastrophe."
+						else
+							s<<"So schockierend der Anschlag auch ist – sie nehmen es mit Humor und freuen sich über die sinkenden Preise der Alpenbahnen."
+						end	
+					end
+			
+			#(Heute)
+					if zuercher
+						if (esoterisch || weltverbesserer) && haus
+							s<<"Heute Leben sie abseits von Zürich und ihr Hof ist zu einer Art Mekka für verstrahlte ex Junkies geworden, die von ihrem Lebenselexir (sauberes Wasser aus eigenem Brunnen) ein letztes mal trinken wollen. Sie bieten dieses Erlebnis im Tauschhandel an."
+						elsif reich || boot || gold
+							s<<"Neulich haben sie erfahren, dass auf dem Zürich ein riesiger Sarkophag gebaut werden. Sie wissen, dass sie verstrahlt sind und hatten sich eigentlich darauf gefreut, bis zu ihrem Lebensende auf dem Zürichsee herum zu fahren. Sie sezten alles daran, diese Pläne zu verhindern. "
+						elsif stabil || monotheistisch 
+							s<<"Heute betreten sie Zürich nur noch mit den neusten hightech Atomschutzanzügen und werden im Niderdorf als Snobs betitelt. Sie meiden deshalb die Innenstadt."
+						elsif konsum
+							s<<"Heute leben sie als selbsternannter Immobilienmakler und König von 'Atomzürich' ein einsames und gleichzeitig theatralisches Leben. Sie haben etliche Villen ersteigert und führen imaginäre Kundschaft durch ihr Anwesen."
+						elsif zupackend 
+							s<<"Sie haben seit neustem einen Job als Guide für den Sterbehilfekonzern EXIT. Sie führen suizidale Touristen durch die morbidesten und gleichzeitig historisch interessantesten Stadtteile Zürich. Sie sind zum Experte in Sachen luxuriös - urbane Sterbebetten geworden."
+						elsif zupackend && (drogen|| polyamourös)
+							s<<"Heute leben Sie und ihre Freunde in ihrer Traumstadt. Endlich sind sie die reichen Zürcher los haben mehr Platz. Den inoffiziellen neuen Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» passt zu ihrem neuen Lebensgefühl."
+						elsif
+							s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Grossstadthipster einfliegen. Niemand weiss vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
+						else
+							s<<"So schockierend der Anschlag auch ist – sie nehmen es mit Humor und freuen sich über die sinkenden Preise der Alpenbahnen."
+						end
+					else
+						if (drogen || travel_schweiz) && konsum && (gold || haus || boot)
+							s<<"Heute hat sich Zürich in eine glamouröse Geisterstadt verwandelt und endlich können sie mit Zürich etwas anfangen. Sie genießen das blühende Nachtleben. Unzählige Restuarants und Cabarets haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die hedonistische Gourmetkultur ist hier einzigartig."	
+						elsif (kind_weissnicht || kompliziert)
+							s<<"Sie haben neulich von Sterbehilfekonzern EXIT erfahren, der in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt hat. «Endstation Zürich» finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."
+						else 
+							s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» gehört. Sie finden das witzig und begeben sich nun auf eine Reise dorthin, um sich endlich mal im Dolder Grand niderzulassen. "		
+						end
 					end
 			end
 						
-			if heut_älteste_generation
-				# Folgende Zeile mit Alpenbahnen nur zur Füllung, um leere Bios zu vermeiden!
-				s<<"So schockierend der Anschlag auch ist – sie nehmen's mit Humor und freuen sich über die sinkenden Preise der Alpenbahnen."
+						
+						
+						
+			
+			# Text für älteste Generation alter 61+  
+			
+			#Alter bei POD 60+
+			if zuercher
+				if sozial && weltverbesserer
+					s<<"Als sie von dem Attentat in Zürich erfahren haben, haben sie Hilfepakete zusammengestellt und an Zürcher Schulen geschickt. Darin befanden sich Beutel mit Trinkwasser und Aufkleber mit der Beschriftung 'shine on!'."
+				elsif stabil || monotheistisch 
+					s<<"Nach dem Terroranschlag wurde es Ihnen in Zürich zu ungemütlich. Sie hatten Angst davor, dass die religiöse Gruppe Aleph (früher AUN) zurückkehrt, um ihr Versuchslabor Zürich noch weiter zu malträtieren. Sie zogen aufs Land."		
+				else	
+				s<<"Sie haben nach dem Attentat ihre ganze Wohnung mit Wasserflaschen gefüllt und Anweisungen der Behörden abgewartet. Sie wollten Zürich nicht verlassen und liessen sich nicht einschüchtern von diesen modernen Terroristen!"
+				end
+			else
+				if neugierig && sozial
+					s<<"Als sie von dem Attentat in Zürich erfahren haben, haben sie Hilfepakete zusammengestellt, um"
+				elsif travel_schweiz 
+					s<<"So schockierend der Anschlag auch ist – sie nehmen's mit Humor und freuen sich über die sinkenden Preise der Alpenbahnen."	
+					
+				end
 			end
-			
-			
-			
-			
-			
-			
-			
-		
-			
 			# Heute
-			
-			
-			
-			
-			# Text für Erwachsene
-		
-			# Kindheit
-			
-			# Heute
+			if zuercher 
+				if reich || boot || gold
+					s<<"Neulich haben sie erfahren, dass auf dem Zürich ein riesiger Sarkophag gebaut werden. Sie wissen, dass sie verstrahlt sind und hatten sich eigentlich darauf gefreut, bis zu ihrem Lebensende auf dem Zürichsee herum zu fahren. Sie sezten alles daran, diese Pläne zu verhindern. "
+				
+				elsif künstlerisch
+					s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Grossstadthipster einfliegen. Niemand weiss vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
+				else
+					s<<"Heute wandern sie oft durch Zürich und geniessen die Natur. Sie ahnen, dass bald alle Pflanzen verwelken werden. Solange bleiben sie noch hier."	
+				end
+			else
+				if ökonomisch weltverbesserer
+					s<<"Nach dem Anschlag in Zürich haben sie öffentlich die Behörden aufgerufen Zürich anzuklagen und die die Schweiz zu boykottieren."
+				elsif !populär		
+					s<<"Heute haben sie einen Brief mit einem Hilferuf der Stiftung 'Atomahilfe Zürich' erhalten, mit der Bitte verstrahlten Kindern anhand von Spenden ein neues Zuhause zu geben."		
+				else
+					s<<"Sie haben neulich vom Sterbehilfekonzern EXIT erfahren, dass in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt wurde. «Endstation Zürich» finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."
+				end
+			end
+	
+
 			
 			return concatenate_spacify(s)
 		
