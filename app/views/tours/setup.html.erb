@@ -18,11 +18,15 @@
 	</p>
 <% end %>
 
-
-
-<button onclick="window.location=window.location"> Reload </button>
-
 <%= render "user_biographies/form" %>
+
+<% Uchronia.all.each do |uchronia| %>
+	<div id="<%= uchronia.slug %>">
+		Uchronie <%= uchronia.title %> (Point of divergence: <%= uchronia.pod %>)<br/>		
+		<%= @last_translations[uchronia.slug] %>
+	</div>
+<br/>
+<% end %>
 
 <h2>Tour Bios</h2>
 
