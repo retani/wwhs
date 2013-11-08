@@ -283,6 +283,18 @@ class UserBiography < ActiveRecord::Base
 		return t
 	end
 
+	def place_in_tour
+		if self.tour
+			index = 0
+			self.tour.user_biographies.order('id asc').each do |b|
+				if b.id == self.id
+					return index
+				else 
+					index = index + 1
+				end
+			end
+		end
+	end
 
 	def translations
 		

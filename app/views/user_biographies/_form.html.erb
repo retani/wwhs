@@ -1,4 +1,4 @@
-<%= form_for(@user_biography, :remote=>true, :format => :json) do |f| %>
+<%= form_for(@user_biography) do |f| %>
   <% if @user_biography.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user_biography.errors.count, "error") %> prohibited this user_biography from being saved:</h2>
@@ -124,10 +124,4 @@
   </div>
 <% end %>
 <br/>
-<% Uchronia.all.each do |uchronia| %>
-	<div id="<%= uchronia.slug %>">
-		Uchronie <%= uchronia.title %> (Point of divergence: <%= uchronia.pod %>)<br/> <span class="bio_translation"></span>
-	</div>
-<br/>
-<% end %>
 

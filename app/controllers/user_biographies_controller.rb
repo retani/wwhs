@@ -61,13 +61,19 @@ class UserBiographiesController < ApplicationController
     respond_to do |format|
       unless params[:nosave]
       	if @user_biography.save
-	        format.html { redirect_to @user_biography, notice: 'User biography was successfully created.' }
-  	      format.json { render json: {:original => @user_biography, :translations => @user_biography.translations }, status: :created, location: @user_biography }
+      		if @user_biography.tour 
+		        format.html { redirect_to controller: 'tours', action: 'setup', id: @user_biography.tour.id, bio_id: @user_biography.id, notice: 'User biography was successfully created.' }
+  		      format.json { render json: {:original => @user_biography, :translations => @user_biography.translations }, status: :created, location: @user_biography }
+  		    else 
+  		      format.html { redirect_to @user_biography, notice: 'User biography was successfully created.' }
+  		      format.json { render json: {:original => @user_biography, :translations => @user_biography.translations }, status: :created, location: @user_biography }
+  				end    
   	    else 	
 	        format.html { render action: "new" }
   	      format.json { render json: @user_biography.errors, status: :unprocessable_entity }
   	    end
   	  else
+	  	  format.html { render json: {:original => @user_biography, :translations => @user_biography.translations }, status: :created, location: @user_biography }
 	  	  format.json { render json: {:original => @user_biography, :translations => @user_biography.translations }, status: :created, location: @user_biography }
       end
     end
