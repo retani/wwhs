@@ -106,7 +106,7 @@ class UserBiography
 					else
 						if  sozial && weltverbesserer
 							s<<"Als sie von dem Attentat in Zürich erfahren haben, haben sie Hilfepakete zusammengestellt und an Zürcher Schulen geschickt. Darin befanden sich Beutel mit Trinkwasser und Aufkleber mit der Beschriftung 'shine on!'."
-						elsif ökonomisch weltverbesserer
+						elsif ökonomisch && weltverbesserer
 							s<<"Nach dem Anschlag in Zürich haben sie öffentlich die Behörden aufgerufen Zürich anzuklagen und die die Schweiz zu boykottieren."
 						elsif
 							s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niderzulassen. "
@@ -181,9 +181,9 @@ class UserBiography
 					s<<"Heute wandern sie oft durch Zürich und geniessen die Natur. Sie ahnen, dass bald alle Pflanzen verwelken werden. Solange bleiben sie noch hier."	
 				end
 			else
-				if ökonomisch weltverbesserer
+				if ökonomisch && weltverbesserer
 					s<<"Nach dem Anschlag in Zürich haben sie öffentlich die Behörden aufgerufen Zürich anzuklagen und die die Schweiz zu boykottieren."
-				elsif !populär		
+				elsif !beliebt		
 					s<<"Heute haben sie einen Brief mit einem Hilferuf der Stiftung 'Atomahilfe Zürich' erhalten, mit der Bitte verstrahlten Kindern anhand von Spenden ein neues Zuhause zu geben."		
 				else
 					s<<"Sie haben neulich vom Sterbehilfekonzern EXIT erfahren, dass in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt wurde. «Endstation Zürich» finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <b>Tour 
+  <%= @tour.number %>
+	</b>
+  <%= @tour.desc %>
+</h1>
+
+<% if @tour.finalized %>
+	<p class="alert alert-danger">
+	  	Closed 
+	</p>
+<% else %>
+	<p class="alert alert-success">
+	  Open
+	  <% link_to edit_tour_path(@tour), "Finalize"%>
+	</p>
+<% end %>
+
+
+
+<button onclick="window.location=window.location"> Reload </button>
+
+<%= render "user_biographies/form" %>
+
+<h2>Tour Bios</h2>
+
+<table>
+
+	<% @tour_bios.each do |bio| %>
+		<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+	<% end %>
+
+</table>
+
+<h2>Unassigned Bios</h2>
+
+<table>
+
+<% @named_bios.each do |bio| %>
+	<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+<% end %>
+
+</table>

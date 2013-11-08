@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: 1
+  desc: MyString
+  user_biography_id: 1
+  finalized: 
+
+two:
+  number: 1
+  desc: MyString
+  user_biography_id: 1
+  finalized: 

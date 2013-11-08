@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <h4>Name</h4>
+  <div class="field">
+	<%= f.label :name, "Name" %> <%= f.text_field :name %>
+  </div>
+
   <h4>Kindheit</h4>
   <div class="field">
     <%= f.label :birthday, "Geburtsjahr" %>
@@ -108,10 +113,12 @@
     <%= f.radio_button :zurich, 'false' %> 
     <%= f.label :zurich, 'Nein', :value => 'false' %>
   </div>
-
-	nosave? <%= check_box_tag :nosave, 1, true %>
-
-  <br/>
+  <div>
+	nosave? <%= check_box_tag :nosave, 1,(true if !@tour) %>
+  </div>
+  <div>
+  	<%= f.hidden_field :tour_id, :value => @tour.id if @tour %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

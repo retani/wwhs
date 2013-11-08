@@ -2,13 +2,15 @@ Wwhs::Application.routes.draw do
 
 	scope "admin" do
 		get "/", :controller => :admin, :action => :index
+		match 'tour/:id/setup' => 'tours#setup'		
+		resources :tours
 		resources :images
 		resources :users
 		resources :pages
 	  resources :uchronists
 	  resources :uchronias
 	  resources :user_biographies
-		match 'allbios' => 'user_biographies#all'		  
+		match 'allbios' => 'user_biographies#all'
 	end
 
 	resources :pages, :only => ['show']
