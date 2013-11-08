@@ -1,7 +1,17 @@
 class ToursController < ApplicationController
 
-	before_filter :authenticate
-  layout 'admin' 
+  before_filter :authenticate
+  
+  layout :set_layout
+  
+  def set_layout
+  	if action_name == "print"
+  		return 'print' 
+  	else
+		return 'admin'   
+	end
+  end
+
 
   # GET /tours
   # GET /tours.json
@@ -28,7 +38,7 @@ class ToursController < ApplicationController
   # GET /tours/1/setup
   def setup
     @tour = Tour.find(params[:id])
-    @last_translations = UserBiography.find(params[:bio_id]).translations
+    @last_translations = UserBiography.find(params[:bio_id]).translations if params[:bio_id]
         
     @tour_bios = @tour.user_biographies.order("updated_at DESC")
     @named_bios = UserBiography.where("name != ? AND tour_id != ?", '', @tour.id).order("updated_at DESC")
@@ -39,6 +49,18 @@ class ToursController < ApplicationController
       format.json { render json: @tour }
     end
   end
+  
+  # GET /tours/1/print
+  def print
+  	
+    @tour = Tour.find(params[:id])
+    @tour_bios = @tour.user_biographies.order("updated_at DESC")
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @tour }
+    end
+  end  
 
   # GET /tours/new
   # GET /tours/new.json

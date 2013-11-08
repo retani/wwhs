@@ -4,8 +4,10 @@ require 'digest/md5'
 class UserBiography < ActiveRecord::Base
 
 	include Translate_uchronia_2
+	include Translate_uchronia_11
 	include Translate_uchronia_17
 	include Translate_uchronia_19
+	include Translate_uchronia_23
 	include Translate_uchronia_25
 	include Translate_uchronia_37
 	include Translate_uchronia_61
@@ -302,8 +304,10 @@ class UserBiography < ActiveRecord::Base
 		end
 
 		t['2']  += translate_uchronia_2
+		t['11'] += translate_uchronia_11
 		t['17'] += translate_uchronia_17
 		t['19'] += translate_uchronia_19
+		t['23'] += translate_uchronia_23
 		t['25'] += translate_uchronia_25
 		t['37'] += translate_uchronia_37
 		t['61'] += translate_uchronia_61

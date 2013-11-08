@@ -16,16 +16,14 @@
 	  Open
 	  <% link_to edit_tour_path(@tour), "Finalize"%>
 	</p>
-<% end %>
-
-<%= render "user_biographies/form" %>
-
-<% Uchronia.all.each do |uchronia| %>
-	<div id="<%= uchronia.slug %>">
-		Uchronie <%= uchronia.title %> (Point of divergence: <%= uchronia.pod %>)<br/>		
-		<%= @last_translations[uchronia.slug] %>
-	</div>
-<br/>
+	<button onclick="window.location=window.location"> Reload </button>
+	<%= render "user_biographies/form" %>	
+	<% Uchronia.all.each do |uchronia| %>
+		<div id="<%= uchronia.slug %>">
+			<h4>Uchronie <%= uchronia.title %> (Point of divergence: <%= uchronia.pod %>)</h4>
+			<p><%= @last_translations[uchronia.slug] if @last_translations %></p>
+		</div>
+	<% end %>	
 <% end %>
 
 <h2>Tour Bios</h2>
@@ -38,12 +36,14 @@
 
 </table>
 
-<h2>Unassigned Bios</h2>
-
-<table>
-
-<% @named_bios.each do |bio| %>
-	<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+<% if !@tour.finalized %>
+	<h2>Unassigned Bios</h2>
+	
+	<table>
+	
+	<% @named_bios.each do |bio| %>
+		<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+	<% end %>
+	
+	</table>
 <% end %>
-
-</table>
