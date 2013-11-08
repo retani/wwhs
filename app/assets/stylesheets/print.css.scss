@@ -1,0 +1,14 @@
+// Place all the styles related to the Uchronists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media screen {
+	.page { margin:20px; width:200px; float:left; border:black 1px solid;}
+}
+
+@media print {
+	.not-print { display:none; }
+}
+
+
+.page	{ display: block; page-break-before: always; padding: 5%;}

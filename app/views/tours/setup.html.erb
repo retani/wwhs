@@ -16,13 +16,9 @@
 	  Open
 	  <% link_to edit_tour_path(@tour), "Finalize"%>
 	</p>
+	<button onclick="window.location=window.location"> Reload </button>
+	<%= render "user_biographies/form" %>	
 <% end %>
-
-
-
-<button onclick="window.location=window.location"> Reload </button>
-
-<%= render "user_biographies/form" %>
 
 <h2>Tour Bios</h2>
 
@@ -34,12 +30,14 @@
 
 </table>
 
-<h2>Unassigned Bios</h2>
-
-<table>
-
-<% @named_bios.each do |bio| %>
-	<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+<% if !@tour.finalized %>
+	<h2>Unassigned Bios</h2>
+	
+	<table>
+	
+	<% @named_bios.each do |bio| %>
+		<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+	<% end %>
+	
+	</table>
 <% end %>
-
-</table>
