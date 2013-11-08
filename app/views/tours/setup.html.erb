@@ -16,11 +16,11 @@
 	  Open
 	  <% link_to edit_tour_path(@tour), "Finalize"%>
 	</p>
-	<button onclick="window.location=window.location"> Reload </button>
+	<!--button onclick="window.location=window.location"> Reload </button-->
 	<%= render "user_biographies/form" %>	
 	<% Uchronia.all.each do |uchronia| %>
 		<div id="<%= uchronia.slug %>">
-			<h4>Uchronie <%= uchronia.title %> (Point of divergence: <%= uchronia.pod %>)</h4>
+			<h4>Uchronie <%= uchronia.title %>  <small>(<%= uchronia.pod %>)</small></h4>
 			<p><%= @last_translations[uchronia.slug] if @last_translations %></p>
 		</div>
 	<% end %>	

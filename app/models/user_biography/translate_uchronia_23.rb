@@ -8,6 +8,8 @@ class UserBiography
 		
 			s = []
 			
+			s<<""
+			
 			# HUB, schwarzer Dienstag
 			# POD 
 			# https://docs.google.com/document/d/11zV2JsWgOLCOP98exMhjj-c9dk-Awtr6qvA_EGs-j54/edit?usp=drive_web

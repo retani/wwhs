@@ -311,8 +311,8 @@ class UserBiography < ActiveRecord::Base
 		t['25'] += translate_uchronia_25
 		t['37'] += translate_uchronia_37
 		t['87'] += translate_uchronia_87
-		t['23'] += translate_uchronia_23
-		t['11'] += translate_uchronia_11
+		t['23'] = translate_uchronia_23
+		t['11'] = translate_uchronia_11
 
 		Uchronia.all.each do |uchronia|
 			t[uchronia.slug] += "Heute sind Sie " + age(2013).to_s + " Jahre alt."
