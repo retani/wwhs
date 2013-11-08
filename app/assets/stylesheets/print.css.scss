@@ -4,11 +4,12 @@
 
 @media screen {
 	.page { margin:20px; width:200px; float:left; border:black 1px solid;}
+	
+	.alert-danger { font-weight:bold; font-size:30px; border:4px red solid;}
 }
 
 @media print {
 	.not-print { display:none; }
 }
-
 
 .page	{ display: block; page-break-before: always; padding: 5%;}

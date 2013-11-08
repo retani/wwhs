@@ -21,6 +21,7 @@ class UserBiography
 			
 			# Nötige Elemente
 			# Evtl. was zu Argentinien, o.a.
+
 			
 			return concatenate_spacify(s)
 		
