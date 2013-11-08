@@ -283,10 +283,10 @@ class UserBiography < ActiveRecord::Base
 		return t
 	end
 
-	def place_in_tour
+	def place_in_tour(sort_string = 'id ASC')
 		if self.tour
 			index = 0
-			self.tour.user_biographies.order('id asc').each do |b|
+			self.tour.user_biographies.order(sort_string).each do |b|
 				if b.id == self.id
 					return index
 				else 
@@ -304,10 +304,10 @@ class UserBiography < ActiveRecord::Base
 		end
 
 		t['2']  += translate_uchronia_2
-		t['11'] += translate_uchronia_11
+		t['11'] = translate_uchronia_11
 		t['17'] += translate_uchronia_17
 		t['19'] += translate_uchronia_19
-		t['23'] += translate_uchronia_23
+		t['23'] = translate_uchronia_23
 		t['25'] += translate_uchronia_25
 		t['37'] += translate_uchronia_37
 		t['61'] += translate_uchronia_61

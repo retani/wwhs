@@ -20,6 +20,14 @@ class UserBiography
 			# Nötige Elemente
 			# Spion
 			
+			s << "Sie werden im Jahr " + self.birthday.year.to_s + " geboren und kennen nichts weiter als Wachstum, Wachstum, Wachstum. 
+"			
+			if place_in_tour.odd? 
+				s << "Doch irgendwann sind Sie ins zweifeln gekommen und haben sich der Untergrundorganisation IMPACT HUB Zürich angeschlossen. Sie sind ein integres Mitglied."
+			else 
+				s << "Seit 2010 arbeiten Sie bei Kraft-Nestlé. Als Ihnen ihr Arbeitgeber von den Plänen des IMPACT HUB gegen das Unternehmen berichtet, sind Sie schockiert. Sie stimmen sofort zu, sich als Agent in die Untergrundorganisation einschleusen zu lassen."
+			end
+			
 			return concatenate_spacify(s)
 		
 		end
