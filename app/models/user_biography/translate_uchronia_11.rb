@@ -21,6 +21,7 @@ class UserBiography
 			
 			# Nötige Elemente
 			# ?
+			s << ""
 			
 			return concatenate_spacify(s)
 		
