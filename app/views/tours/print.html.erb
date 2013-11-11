@@ -11,17 +11,35 @@
   <%= @tour.user_biographies.count %> Teilnehmer
 </h2>
 
-<% if !@tour.finalized %>
+<p class="not-print">
+	Nur anzeigen/drucken bis
+	<% @tour_bios.each do |bio| %>
+		<a href="javascript:print_until(<%= bio.id %>)" class="print_until" data-print-until="<%= bio.id %>"><%= bio.name %></a> 
+	<% end %>
+</p>
+
+<% if @tour_bios.count < 10 %>
 	<p class="alert alert-danger not-print">
-	  	Not finalized !
+	  	Weniger als 10 bios -> sitzverteilung im decision lab prüfen, wenn nach ausdruck dieser 10 noch weitere hinzukommen. falls 10 oder mehr besucher zu erwarten sind, dann warten bis mindestens 10 bios eingegeben sind. danach können weitere problemlos hinzugefügt und sukzessive ausgedruckt werden.
 	</p>
 <% end %>
 
-
-<% @tour_bios.each do |bio| %>
-	<div class="page"><h3>Biografie von <%= bio.name %> für Uchronie #23</h3><%= bio.translate_uchronia_23 %></div>
-	<div class="page"><h3>Biografie von <%= bio.name %> für Uchronie #11</h3><%= bio.translate_uchronia_11 %></div>
-	<div class="page"><h3>Biografie von <%= bio.name %> für Uchronie #19</h3><%= bio.translate_uchronia_19 %></div>
-	<div class="page"><h3>Biografie von <%= bio.name %> für Uchronie #17</h3><%= bio.translate_uchronia_17 %></div>
+<% if !@tour.finalized %>
+	<!--p class="alert alert-danger not-print">
+	  	Not finalized !
+	</p-->
 <% end %>
+
+<div class="pages">
+	<% @tour_bios.each do |bio| %>
+		<div class="bio" data-bio-id="<%= bio.id %>">
+			<div class="page" data-scale-height="440"><h3><%= bio.name %>s Biografie für Uchronie #11</h3><%= bio.translate_uchronia_11 %></div>
+			<div class="page" data-scale-height="440"><h3><%= bio.name %>s Biografie für Uchronie #17</h3><%= bio.translate_uchronia_17 %></div>
+			<div class="page" data-scale-height="440"><h3><%= bio.name %>s Biografie für Uchronie #19</h3><%= bio.translate_uchronia_19 %></div>	
+			<div class="page" data-scale-height="440"><h3><%= bio.name %>s Biografie für Uchronie #23</h3><%= bio.translate_uchronia_23 %></div>	
+			<div class="page" data-scale-height="440"><h3><%= bio.name %>s Biografie für Uchronie #44</h3><%= bio.translate_uchronia_44 %></div>		
+			<hr class="not-print" style="clear:both;">
+		</div>
+	<% end %>
+</div>
 

@@ -10,6 +10,7 @@ class UserBiography < ActiveRecord::Base
 	include Translate_uchronia_23
 	include Translate_uchronia_25
 	include Translate_uchronia_37
+	include Translate_uchronia_44
 	include Translate_uchronia_61
 	include Translate_uchronia_87
 	include Translate_uchronia_110
@@ -95,7 +96,7 @@ class UserBiography < ActiveRecord::Base
 		return self.travel == "Antarktis"	
 	end
 	
-	def travel_weiss nicht
+	def travel_weissnicht
 		return self.travel == "weiss nicht"
 	end
 	
@@ -283,6 +284,16 @@ class UserBiography < ActiveRecord::Base
 		return t
 	end
 
+	def for_tour
+	 return self.tour
+	end
+
+	def total_in_tour
+		if self.tour
+			return self.tour.user_biographies.count
+		end
+	end
+
 	def place_in_tour(sort_string = 'id ASC')
 		if self.tour
 			index = 0
@@ -310,6 +321,7 @@ class UserBiography < ActiveRecord::Base
 		t['23'] = translate_uchronia_23
 		t['25'] += translate_uchronia_25
 		t['37'] += translate_uchronia_37
+		t['44'] = translate_uchronia_44
 		t['61'] += translate_uchronia_61
 		t['87'] += translate_uchronia_87		
 		t['110']+= translate_uchronia_110 

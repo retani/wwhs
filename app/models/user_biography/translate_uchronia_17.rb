@@ -62,7 +62,7 @@ class UserBiography
 			# Heute
 					if zuercher
 						if zupackend && (drogen|| polyamourös)
-							s<<"Heute leben Sie und ihre Freunde in ihrer Traumstadt. Endlich sind sie die reichen Zürcher los haben mehr Platz. Den inoffiziellen neuen Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» passt zu ihrem neuen Lebensgefühl."
+							s<<"Heute leben Sie und ihre Freunde in ihrer Traumstadt. Endlich sind sie die reichen Zürcher los haben mehr Platz. Den inoffiziellen neuen Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» passt zu ihrem neuen Lebensgefühl."
 						elsif sozial || künstlerisch
 							s<<"Nach dem Terroranschlag erleben Sie, wie viele Ihrer Freunde die Stadt verlassen. Sie selbst sehen in der Situation ein Chance für einen Neuanfang in Zürich. Am Fusse des Züribergs finden Sie eine leerstehende zurückgelassene Villa, in der sie sich einrichten."
 						elsif (chaotisch || neugierig) && (polytheistisch || esoterisch || konsum)
@@ -77,8 +77,12 @@ class UserBiography
 							s<<"Heute hat sich Zürich in eine glamouröse Geisterstadt verwandelt und endlich können sie mit Zürich etwas anfangen. Sie genießen das blühende Nachtleben. Unzählige neue Clubs haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die Partyszene in Zürich erlebt einen Boom und zieht Partytouristen, wie sie aus der ganzen Welt an."	
 						elsif (kind_weissnicht || kompliziert)
 							s<<"Heute haben von Sterbehilfekonzern EXIT erfahren, der in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt hat. «Endstation Zürich» finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."
-						else 
-							s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niderzulassen. "		
+						else
+							if for_tour
+								s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» gehört und sind nach Zürich gereist, um sich im Dolder Grand niederzulassen."
+							else
+								s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niederzulassen."		
+							end
 						end
 					end
 			end
@@ -109,7 +113,11 @@ class UserBiography
 						elsif ökonomisch && weltverbesserer
 							s<<"Nach dem Anschlag in Zürich haben sie öffentlich die Behörden aufgerufen Zürich anzuklagen und die die Schweiz zu boykottieren."
 						elsif
-							s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niderzulassen. "
+							if for_tour
+								s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» gehört und sind nach Zürich gereist, um sich im Dolder Grand niederzulassen."
+							else
+								s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niederzulassen."		
+							end
 						elsif (neugierig || konsum) && beliebt
 							s<<"Als sie vom Terroranschlag in Zürich erfahren haben, haben sie beim nationalen Fernsehsender angerufen, um vorzuschlagen eine neue Realityshow in Zürich zu konzipieren mit dem Titel: 'Zürich verstrahlt - Liebe und Leid nach der atomaren Katastrophe."
 						else
@@ -130,7 +138,7 @@ class UserBiography
 						elsif zupackend 
 							s<<"Sie haben seit neustem einen Job als Guide für den Sterbehilfekonzern EXIT. Sie führen suizidale Touristen durch die morbidesten und gleichzeitig historisch interessantesten Stadtteile Zürich. Sie sind zum Experte in Sachen luxuriös - urbane Sterbebetten geworden."
 						elsif zupackend && (drogen|| polyamourös)
-							s<<"Heute leben Sie und ihre Freunde in ihrer Traumstadt. Endlich sind sie die reichen Zürcher los haben mehr Platz. Den inoffiziellen neuen Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» passt zu ihrem neuen Lebensgefühl."
+							s<<"Heute leben Sie und ihre Freunde in ihrer Traumstadt. Endlich sind sie die reichen Zürcher los haben mehr Platz. Den inoffiziellen neuen Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» passt zu ihrem neuen Lebensgefühl."
 						elsif
 							s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Grossstadthipster einfliegen. Niemand weiss vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
 						else
@@ -140,9 +148,13 @@ class UserBiography
 						if (drogen || travel_schweiz) && konsum && (gold || haus || boot)
 							s<<"Heute hat sich Zürich in eine glamouröse Geisterstadt verwandelt und endlich können sie mit Zürich etwas anfangen. Sie genießen das blühende Nachtleben. Unzählige Restuarants und Cabarets haben in der letzten Zeit in den Ruinen des Niederdorfs eröffnet. Die hedonistische Gourmetkultur ist hier einzigartig."	
 						elsif (kind_weissnicht || kompliziert)
-							s<<"Sie haben neulich von Sterbehilfekonzern EXIT erfahren, der in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt hat. «Endstation Zürich» finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."
+							s<<"Sie haben neulich vom Sterbehilfekonzern EXIT erfahren, der in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt hat. «Endstation Zürich» finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."
 						else 
-							s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt > Das wahre Verwesen» gehört. Sie finden das witzig und begeben sich nun auf eine Reise dorthin, um sich endlich mal im Dolder Grand niderzulassen. "		
+							if for_tour
+								s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» gehört und sind nach Zürich gereist, um sich im Dolder Grand niederzulassen."
+							else
+								s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niederzulassen."		
+							end
 						end
 					end
 			end
@@ -154,42 +166,43 @@ class UserBiography
 			# Text für älteste Generation alter 61+  
 			
 			#Alter bei POD 60+
-			if zuercher
-				if sozial && weltverbesserer
-					s<<"Als sie von dem Attentat in Zürich erfahren haben, haben sie Hilfepakete zusammengestellt und an Zürcher Schulen geschickt. Darin befanden sich Beutel mit Trinkwasser und Aufkleber mit der Beschriftung 'shine on!'."
-				elsif stabil || monotheistisch 
-					s<<"Nach dem Terroranschlag wurde es Ihnen in Zürich zu ungemütlich. Sie hatten Angst davor, dass die religiöse Gruppe Aleph (früher AUN) zurückkehrt, um ihr Versuchslabor Zürich noch weiter zu malträtieren. Sie zogen aufs Land."		
-				else	
-				s<<"Sie haben nach dem Attentat ihre ganze Wohnung mit Wasserflaschen gefüllt und Anweisungen der Behörden abgewartet. Sie wollten Zürich nicht verlassen und liessen sich nicht einschüchtern von diesen modernen Terroristen!"
+			if heut_älteste_generation
+				if zuercher
+					if sozial && weltverbesserer
+						s<<"Als sie von dem Attentat in Zürich erfahren haben, haben sie Hilfepakete zusammengestellt und an Zürcher Schulen geschickt. Darin befanden sich Beutel mit Trinkwasser und Aufkleber mit der Beschriftung 'shine on!'."
+					elsif stabil || monotheistisch 
+						s<<"Nach dem Terroranschlag wurde es Ihnen in Zürich zu ungemütlich. Sie hatten Angst davor, dass die religiöse Gruppe Aleph (früher AUN) zurückkehrt, um ihr Versuchslabor Zürich noch weiter zu malträtieren. Sie zogen aufs Land."		
+					else	
+					s<<"Sie haben nach dem Attentat ihre ganze Wohnung mit Wasserflaschen gefüllt und Anweisungen der Behörden abgewartet. Sie wollten Zürich nicht verlassen und liessen sich nicht einschüchtern von diesen modernen Terroristen!"
+					end
+				else
+					if neugierig && sozial
+						s<<"Als sie von dem Attentat in Zürich erfahren haben, haben sie Hilfepakete zusammengestellt, um"
+					elsif travel_schweiz 
+						s<<"So schockierend der Anschlag auch ist – sie nehmen's mit Humor und freuen sich über die sinkenden Preise der Alpenbahnen."	
+						
+					end
 				end
-			else
-				if neugierig && sozial
-					s<<"Als sie von dem Attentat in Zürich erfahren haben, haben sie Hilfepakete zusammengestellt, um"
-				elsif travel_schweiz 
-					s<<"So schockierend der Anschlag auch ist – sie nehmen's mit Humor und freuen sich über die sinkenden Preise der Alpenbahnen."	
+				# Heute
+				if zuercher 
+					if reich || boot || gold
+						s<<"Neulich haben sie erfahren, dass auf dem Zürich ein riesiger Sarkophag gebaut werden. Sie wissen, dass sie verstrahlt sind und hatten sich eigentlich darauf gefreut, bis zu ihrem Lebensende auf dem Zürichsee herum zu fahren. Sie sezten alles daran, diese Pläne zu verhindern. "
 					
+					elsif künstlerisch
+						s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Grossstadthipster einfliegen. Niemand weiss vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
+					else
+						s<<"Heute wandern sie oft durch Zürich und geniessen die Natur. Sie ahnen, dass bald alle Pflanzen verwelken werden. Solange bleiben sie noch hier."	
+					end
+				else
+					if ökonomisch && weltverbesserer
+						s<<"Nach dem Anschlag in Zürich haben sie öffentlich die Behörden aufgerufen Zürich anzuklagen und die die Schweiz zu boykottieren."
+					elsif !beliebt		
+						s<<"Heute haben sie einen Brief mit einem Hilferuf der Stiftung 'Atomahilfe Zürich' erhalten, mit der Bitte verstrahlten Kindern anhand von Spenden ein neues Zuhause zu geben."		
+					else
+						s<<"Sie haben neulich vom Sterbehilfekonzern EXIT erfahren, dass in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt wurde. «Endstation Zürich» finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."
+					end
 				end
 			end
-			# Heute
-			if zuercher 
-				if reich || boot || gold
-					s<<"Neulich haben sie erfahren, dass auf dem Zürich ein riesiger Sarkophag gebaut werden. Sie wissen, dass sie verstrahlt sind und hatten sich eigentlich darauf gefreut, bis zu ihrem Lebensende auf dem Zürichsee herum zu fahren. Sie sezten alles daran, diese Pläne zu verhindern. "
-				
-				elsif künstlerisch
-					s<<"Da Sie eine schönere Bleibe in einer verlassenen Villa finden, vermieten Sie Ihr Haus unter an EXIT. Dort finden nun täglich Sterbe-Parties statt, zu denen vor allen Dingen suizidale Grossstadthipster einfliegen. Niemand weiss vorher, wer die Party überlebt oder wem eine tödliche Dosis im Cocktail verabreicht wird."
-				else
-					s<<"Heute wandern sie oft durch Zürich und geniessen die Natur. Sie ahnen, dass bald alle Pflanzen verwelken werden. Solange bleiben sie noch hier."	
-				end
-			else
-				if ökonomisch && weltverbesserer
-					s<<"Nach dem Anschlag in Zürich haben sie öffentlich die Behörden aufgerufen Zürich anzuklagen und die die Schweiz zu boykottieren."
-				elsif !beliebt		
-					s<<"Heute haben sie einen Brief mit einem Hilferuf der Stiftung 'Atomahilfe Zürich' erhalten, mit der Bitte verstrahlten Kindern anhand von Spenden ein neues Zuhause zu geben."		
-				else
-					s<<"Sie haben neulich vom Sterbehilfekonzern EXIT erfahren, dass in der verstrahlten Stadt das Konzept der legalen Sterbehilfe mithilfe von Umwelteinflüssen entwickelt wurde. «Endstation Zürich» finden sie ein sinnvolles Projekt und ermutigen ihren suizidalen Nachbarn dazu, seine letzten Tage wenigstens im Primtower, wo ein neues EXIT Hotel eröffnet wurde, zu verbringen."
-				end
-			end
-	
 
 			
 			return concatenate_spacify(s)

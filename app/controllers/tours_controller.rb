@@ -16,7 +16,7 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all
+    @tours = Tour.order("number ASC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -54,8 +54,9 @@ class ToursController < ApplicationController
   def print
   	
     @tour = Tour.find(params[:id])
-    @tour_bios = @tour.user_biographies.order("updated_at DESC")
-
+    @tour_bios = @tour.user_biographies.order("id DESC")
+    @blocks = (@tour.user_biographies.count % 10).ceil
+    	
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @tour }

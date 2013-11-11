@@ -34,6 +34,10 @@
     <%= f.select :childhood, UserBiography::CHILDHOOD_OPTIONS %>
   </div>
   <h4>Jugend</h4>
+	<div class="field">
+	<%= f.label "Geschlecht" %>
+	<%= f.select :sex, UserBiography::SEX_OPTIONS %>
+	</div>  
   <div class="field">    
     Haben Sie mal was gestohlen?
     <%= f.radio_button :youth_1, 'true', :checked => true %> 
