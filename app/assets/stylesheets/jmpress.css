@@ -33,12 +33,24 @@ a {
 	text-decoration: underline;
 }
 
+a:visited {
+	color: red;
+}
+
+a.visited {
+	color:red;
+}
+
+a.visited-timeout {
+	color:black;
+}
+
 a:hover {
 	color: #aaa;
 	text-decoration: none;
 }
 
-a:visited {
+a.visited-timeout:hover {
 	color: red;
 }
 

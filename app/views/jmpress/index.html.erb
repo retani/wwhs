@@ -1,4 +1,4 @@
-<div id="canvas" class="not-supported">
+<div id="canvas" class="not-supported<%= " kiosk" if @kiosk %>">
 
 	<% @slides.each do |slide| %>
 		<% if slide[:type] == "page" %>
