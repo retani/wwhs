@@ -37,9 +37,22 @@ class ToursController < ApplicationController
 
   # GET /tours/1/setup
   def setup
+  
     @tour = Tour.find(params[:id])
     @last_translations = UserBiography.find(params[:bio_id]).translations if params[:bio_id]
-        
+
+	if params[:bio_action] == "add"
+		bio = UserBiography.find(params[:bio_id])
+		bio.tour = @tour
+		bio.save
+	end
+
+	if params[:bio_action] == "remove"
+		bio = UserBiography.find(params[:bio_id])
+		bio.tour = nil
+		bio.save
+	end
+
     @tour_bios = @tour.user_biographies.order("updated_at DESC")
     @named_bios = UserBiography.where("name != ?", '').order("created_at DESC")
     @user_biography = UserBiography.new
@@ -54,7 +67,7 @@ class ToursController < ApplicationController
   def print
   	
     @tour = Tour.find(params[:id])
-    @tour_bios = @tour.user_biographies.order("id DESC")
+    @tour_bios = @tour.user_biographies.order("updated_at DESC")
     @blocks = (@tour.user_biographies.count % 10).ceil
     	
     respond_to do |format|

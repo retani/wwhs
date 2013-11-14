@@ -13,6 +13,7 @@ class UserBiographiesController < ApplicationController
   end
   
   def sync
+  	#UserBiography.where("id_live >= 0").destroy_all
   	return false if !Rails.env.development?
     ActiveRecord::Base.establish_connection :productionremote
     	@live_bios = UserBiography.find(:all, :conditions => "on_tour = true")
@@ -21,7 +22,7 @@ class UserBiographiesController < ApplicationController
 	@live_bios.each do |live_bio| 
 		live_bio['id_live'] = live_bio['id']
 		#logger.info UserBiography.all.select {|bio| bio.attributes.except("id_live", "on_tour", "tour_id","id").should == live_bio.attributes.except("id_live", "on_tour", "tour_id","id") }.count
-		if UserBiography.where(name: live_bio.name, created_at: live_bio.created_at).count == 0
+		if UserBiography.where(id_live: live_bio.id_live).count == 0
 			logger.info "copying user_biography '" +  live_bio['name'] + "' from live to local db"
 			logger.info live_bio.attributes.except('id')
 			UserBiography.create live_bio.attributes.except('id')
