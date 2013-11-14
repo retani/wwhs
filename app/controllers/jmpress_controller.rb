@@ -2,6 +2,7 @@ class JmpressController < ApplicationController
 
   def index  
 		@user_biography = UserBiography.new
+		@kiosk = true if params[:kiosk]
 
 		@slides = [
 

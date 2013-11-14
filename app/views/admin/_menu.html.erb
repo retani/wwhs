@@ -1,7 +1,7 @@
-<%= link_to "Tours", tours_url %><br/>
+<%= link_to "Tours", tours_url if Rails.env.development? %><br/>
 <%= link_to "Pages", pages_url %><br/>
 <%= link_to "Images", images_url %><br/>
 <%= link_to "Users", users_url %><br/>
-<%= link_to "User Biographies", user_biographies_url %> (<%= link_to "Generated Biographies", allbios_url %>)<br/>
+<%= link_to "User Biographies", user_biographies_url %> (<%= link_to "View all generated Biographies", allbios_url %>) <%= link_to "(Sync with live)", sync_url if Rails.env.development? %><br/>
 <%= link_to "Uchronists", uchronists_url %><br/>
 <%= link_to "Uchronias", uchronias_url %><br/>

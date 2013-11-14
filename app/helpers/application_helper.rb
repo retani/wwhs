@@ -34,6 +34,20 @@ module ApplicationHelper
 				""    
 			}
 	end
+	
+	
+	 if @kiosk
+	 	text = text.gsub(/<div[^<]*?id="video-trailer"[^<]*?>.*?<\/div>/m,
+	 		'<video controls="controls" preload="auto">
+  				<source src="/assets/trailer.mp4" />
+			</video>')
+
+	 	text = text.gsub(/<div[^<]*?id="video-urs"[^<]*?>.*?<\/div>/m,
+	 		'<video controls="controls" preload="auto">
+  				<source src="/assets/urs.mp4" />
+			</video>')
+	 end
+	 
 
     text.html_safe
   end

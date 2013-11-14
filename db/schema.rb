@@ -11,7 +11,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131108115101) do
+ActiveRecord::Schema.define(:version => 20131114165648) do
+
+  create_table "challenges", :force => true do |t|
+    t.string   "name"
+    t.datetime "time"
+    t.text     "description"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "hidden",           :default => true
+    t.integer  "main_image_id"
+    t.integer  "winner_design_id"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.text     "content"
+    t.integer  "design_id"
+    t.string   "username"
+    t.string   "ip"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.integer  "challenge_id"
+    t.boolean  "hidden",       :default => false
+  end
+
+  create_table "designs", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "challenge_id"
+    t.datetime "created_at",                                                     :null => false
+    t.datetime "updated_at",                                                     :null => false
+    t.string   "username"
+    t.boolean  "hidden",                                      :default => false
+    t.integer  "main_image_id"
+    t.decimal  "score",         :precision => 5, :scale => 1
+    t.integer  "vote_count"
+  end
 
   create_table "images", :force => true do |t|
     t.string   "title"
@@ -21,6 +56,16 @@ ActiveRecord::Schema.define(:version => 20131108115101) do
     t.datetime "image_updated_at"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "media_links", :force => true do |t|
+    t.integer  "challenge_id"
+    t.integer  "design_id"
+    t.string   "url"
+    t.string   "ip"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.boolean  "hidden",       :default => false
   end
 
   create_table "pages", :force => true do |t|
@@ -33,12 +78,23 @@ ActiveRecord::Schema.define(:version => 20131108115101) do
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
 
+  create_table "reward_codes", :force => true do |t|
+    t.string   "code"
+    t.integer  "type"
+    t.integer  "points"
+    t.integer  "achievement_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "status",         :default => 0
+  end
+
   create_table "tours", :force => true do |t|
     t.integer  "number"
     t.string   "desc"
     t.boolean  "finalized"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "expected_audience"
   end
 
   create_table "uchronias", :force => true do |t|
@@ -98,11 +154,35 @@ ActiveRecord::Schema.define(:version => 20131108115101) do
     t.boolean  "on_tour",     :default => false
     t.boolean  "printed"
     t.integer  "tour_id"
+    t.integer  "id_live"
+  end
+
+  create_table "username_cookies", :force => true do |t|
+    t.string   "cookiehash"
+    t.string   "username"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "username_scores", :force => true do |t|
+    t.string   "username"
+    t.integer  "score"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "vote_cookies", :force => true do |t|
+    t.string   "cookiehash"
+    t.integer  "design_id"
+    t.integer  "vote"
+    t.string   "ip"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

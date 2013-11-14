@@ -10,39 +10,48 @@
 <% if @tour.finalized %>
 	<p class="alert alert-danger">
 	  	Closed 
+	  	<%=  link_to "Print", :controller => 'tours', :action => 'print', :id => @tour %> 
 	</p>
 <% else %>
 	<p class="alert alert-success">
 	  Open
-	  <% link_to edit_tour_path(@tour), "Finalize"%>
+	  <%= link_to "Finalize", edit_tour_path(@tour)%> 
+	  <%=  link_to "Print", :controller => 'tours', :action => 'print', :id => @tour %> 
 	</p>
-	<button onclick="window.location=window.location"> Reload </button>
+	<!--button onclick="window.location=window.location"> Reload </button-->
 	<%= render "user_biographies/form" %>	
 	<% Uchronia.all.each do |uchronia| %>
 		<div id="<%= uchronia.slug %>">
-			<h4>Uchronie <%= uchronia.title %> (Point of divergence: <%= uchronia.pod %>)</h4>
+			<h4>Uchronie <%= uchronia.title %>  <small>(<%= uchronia.pod %>)</small></h4>
 			<p><%= @last_translations[uchronia.slug] if @last_translations %></p>
 		</div>
 	<% end %>	
 <% end %>
 
-<h2>Tour Bios</h2>
+<h2>Tour Bios <small><%= @tour_bios.count %> Teilnehmer</small></h2>
 
 <table>
 
 	<% @tour_bios.each do |bio| %>
-		<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+		<h3>
+		<button onclick="window.location='<%=  url_for :controller => 'tours', :action => 'setup', :id => @tour, :bio_action => "remove", :bio_id => bio.id %>'" class="button">remove</button>
+		<%= link_to(bio.name, bio) %> 
+		<span class="label label-default"><%= "website" if bio.id_live %></span>
+		</h3>
 	<% end %>
+	
 
 </table>
 
+<div style="height:150px"></div>
+
 <% if !@tour.finalized %>
-	<h2>Unassigned Bios</h2>
+	<h3>Unassigned Bios</h3>
 	
 	<table>
 	
 	<% @named_bios.each do |bio| %>
-		<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+		<h4><button onclick="window.location='<%=  url_for :controller => 'tours', :action => 'setup', :id => @tour, :bio_action => "add", :bio_id => bio.id %>'" class="button">add</button> <%= link_to(bio.name, bio) %> <%= bio.birthday.strftime("%Y") %> <span class="label label-default"><%= "website" if bio.id_live %></span> <small><%= "Tour " + bio.tour.number.to_s + "" if bio.tour %></small> <small><%= bio.created_at %></small></h4>
 	<% end %>
 	
 	</table>

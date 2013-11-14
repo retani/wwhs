@@ -11,6 +11,25 @@ class UserBiographiesController < ApplicationController
       format.json { render json: @user_biographies }
     end
   end
+  
+  def sync
+  	#UserBiography.where("id_live >= 0").destroy_all
+  	return false if !Rails.env.development?
+    ActiveRecord::Base.establish_connection :productionremote
+    	@live_bios = UserBiography.find(:all, :conditions => "on_tour = true")
+    ActiveRecord::Base.establish_connection :development
+	@sync_counter = 0
+	@live_bios.each do |live_bio| 
+		live_bio['id_live'] = live_bio['id']
+		#logger.info UserBiography.all.select {|bio| bio.attributes.except("id_live", "on_tour", "tour_id","id").should == live_bio.attributes.except("id_live", "on_tour", "tour_id","id") }.count
+		if UserBiography.where(id_live: live_bio.id_live).count == 0
+			logger.info "copying user_biography '" +  live_bio['name'] + "' from live to local db"
+			logger.info live_bio.attributes.except('id')
+			UserBiography.create live_bio.attributes.except('id')
+			@sync_counter = @sync_counter + 1
+		end
+	end
+  end
 
   def all
     @user_biographies = UserBiography.all

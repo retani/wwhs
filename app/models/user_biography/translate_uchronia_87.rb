@@ -5,10 +5,10 @@ class UserBiography
     extend ActiveSupport::Concern
 
 		def translate_uchronia_87
-		
-			s = ["Alpen"]
 			
 			s = []
+			
+			s<<""
 			
 			if self.birthday.year < 1943		
 				heute_rentner = true			# heute über 70, damals über 65

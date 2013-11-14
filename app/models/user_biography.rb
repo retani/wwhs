@@ -10,13 +10,14 @@ class UserBiography < ActiveRecord::Base
 	include Translate_uchronia_23
 	include Translate_uchronia_25
 	include Translate_uchronia_37
+	include Translate_uchronia_44
 	include Translate_uchronia_61
 	include Translate_uchronia_87
 	include Translate_uchronia_110
 	
 	belongs_to :tour
 	
-	attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour, :tour_id
+	attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour, :tour_id, :created_at, :updated_at, :id_live, :printed
 
 	BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aargau', 'in der Schweiz', 'im Ausland']
 	PARENTS_OPTIONS = ['arm', 'reich', 'weiss nicht']
@@ -95,7 +96,7 @@ class UserBiography < ActiveRecord::Base
 		return self.travel == "Antarktis"	
 	end
 	
-	def travel_weiss nicht
+	def travel_weissnicht
 		return self.travel == "weiss nicht"
 	end
 	
@@ -283,6 +284,21 @@ class UserBiography < ActiveRecord::Base
 		return t
 	end
 
+	def for_tour
+	 return self.tour
+	end
+
+	def total_in_tour
+		if self.tour
+			
+			if self.tour.expected_audience.nil? || self.tour.finalized
+				return self.tour.user_biographies.count
+			else
+				return self.tour.expected_audience
+			end
+		end
+	end
+
 	def place_in_tour(sort_string = 'id ASC')
 		if self.tour
 			index = 0
@@ -310,6 +326,7 @@ class UserBiography < ActiveRecord::Base
 		t['23'] += translate_uchronia_23
 		t['25'] += translate_uchronia_25
 		t['37'] += translate_uchronia_37
+		t['44'] = translate_uchronia_44
 		t['61'] += translate_uchronia_61
 		t['87'] += translate_uchronia_87		
 		t['110']+= translate_uchronia_110 

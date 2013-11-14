@@ -16,7 +16,7 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all
+    @tours = Tour.order("number ASC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -37,11 +37,24 @@ class ToursController < ApplicationController
 
   # GET /tours/1/setup
   def setup
+  
     @tour = Tour.find(params[:id])
     @last_translations = UserBiography.find(params[:bio_id]).translations if params[:bio_id]
-        
+
+	if params[:bio_action] == "add"
+		bio = UserBiography.find(params[:bio_id])
+		bio.tour = @tour
+		bio.save
+	end
+
+	if params[:bio_action] == "remove"
+		bio = UserBiography.find(params[:bio_id])
+		bio.tour = nil
+		bio.save
+	end
+
     @tour_bios = @tour.user_biographies.order("updated_at DESC")
-    @named_bios = UserBiography.where("name != ? AND tour_id != ?", '', @tour.id).order("updated_at DESC")
+    @named_bios = UserBiography.where("name != ?", '').order("created_at DESC")
     @user_biography = UserBiography.new
 
     respond_to do |format|
@@ -55,7 +68,8 @@ class ToursController < ApplicationController
   	
     @tour = Tour.find(params[:id])
     @tour_bios = @tour.user_biographies.order("updated_at DESC")
-
+    @blocks = (@tour.user_biographies.count % 10).ceil
+    	
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @tour }

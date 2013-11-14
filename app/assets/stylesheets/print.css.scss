@@ -3,12 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @media screen {
-	.page { margin:20px; width:200px; float:left; border:black 1px solid;}
+
+	.page { margin:20px; width:260px; padding:30px; float:left; border:black 1px solid;}
+	.alert-danger { font-weight:bold; font-size:30px; border:4px red solid;}
+
 }
 
 @media print {
-	.not-print { display:none; }
+
+	.not-print { display:none; }	
+	.page	{ display: block; page-break-before: always; padding: 5%; }
+
 }
 
-
-.page	{ display: block; page-break-before: always; padding: 5%;}
+.page		{ white-space:pre-line; overflow:auto; font-size:16px; }
+.page h3	{ white-space:pre-line; overflow:auto; font-size:20px; font-family:"Helvetica"; letter-spacing:0.05em; text-transform:uppercase;}

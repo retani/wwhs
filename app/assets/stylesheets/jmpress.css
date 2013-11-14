@@ -33,16 +33,28 @@ a {
 	text-decoration: underline;
 }
 
+a:visited {
+	color: red;
+}
+
+a.visited {
+	color:red;
+}
+
+a.visited-timeout {
+	color:black;
+}
+
 a:hover {
 	color: #aaa;
 	text-decoration: none;
 }
 
-a:visited {
+a.visited-timeout:hover {
 	color: red;
 }
 
-h1, h2, h3, h4, iframe {
+h1, h2, h3, h4, iframe, video {
 	margin-bottom: 0.3em;
 }
 
@@ -363,7 +375,7 @@ img[data-start-image-id="30"]{
 	width:33%;
 }
 
-iframe {
+iframe, video {
 	width:100%;
 }
 
