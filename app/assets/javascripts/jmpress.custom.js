@@ -2597,7 +2597,7 @@
 		notesUrl: false,
 		transferredValues: ["userZoom", "userTranslateX", "userTranslateY"]
 	};
-	$jmpress("defaults").keyboard.keys[80] = "presentationPopup"; // p key
+	//$jmpress("defaults").keyboard.keys[80] = "presentationPopup"; // p key  // removed by retani
 
 	/* HOOKS */
 	$jmpress("afterInit", function( nil, eventData) {

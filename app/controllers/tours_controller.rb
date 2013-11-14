@@ -41,7 +41,7 @@ class ToursController < ApplicationController
     @last_translations = UserBiography.find(params[:bio_id]).translations if params[:bio_id]
         
     @tour_bios = @tour.user_biographies.order("updated_at DESC")
-    @named_bios = UserBiography.where("name != ? AND tour_id != ?", '', @tour.id).order("updated_at DESC")
+    @named_bios = UserBiography.where("name != ?", '').order("created_at DESC")
     @user_biography = UserBiography.new
 
     respond_to do |format|

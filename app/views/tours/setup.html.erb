@@ -26,23 +26,24 @@
 	<% end %>	
 <% end %>
 
-<h2>Tour Bios</h2>
+<h2>Tour Bios <small><%= @tour_bios.count %> Teilnehmer</small></h2>
 
 <table>
 
 	<% @tour_bios.each do |bio| %>
-		<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+		<h3><%= link_to(bio.name, bio) %> <%= "<span class='label'>website</span>" if bio.id_live %></h3>
 	<% end %>
+	
 
 </table>
 
 <% if !@tour.finalized %>
-	<h2>Unassigned Bios</h2>
+	<h3>Unassigned Bios</h3>
 	
 	<table>
 	
 	<% @named_bios.each do |bio| %>
-		<h2><%= link_to(bio.id, bio) %> <%= bio.name %> <small><%= bio.created_at %></small></h2>
+		<h4><%= link_to(bio.name, bio) %> <%= bio.birthday.strftime("%Y") %> <%= "<span class='label'>website</span>" if bio.id_live %> <small><%= "Tour " + bio.tour.number.to_s + "" if bio.tour %></small> <small><%= bio.created_at %></small></h4>
 	<% end %>
 	
 	</table>

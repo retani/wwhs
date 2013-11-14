@@ -20,9 +20,11 @@ class UserBiographiesController < ApplicationController
 	@sync_counter = 0
 	@live_bios.each do |live_bio| 
 		live_bio['id_live'] = live_bio['id']
-		logger.info live_bio.attributes.except('id')
-		if UserBiography.where("id_live = " + live_bio['id'].to_s).count == 0
-			#UserBiography.create live_bio.attributes.except('id')
+		#logger.info UserBiography.all.select {|bio| bio.attributes.except("id_live", "on_tour", "tour_id","id").should == live_bio.attributes.except("id_live", "on_tour", "tour_id","id") }.count
+		if UserBiography.where(name: live_bio.name, created_at: live_bio.created_at).count == 0
+			logger.info "copying user_biography '" +  live_bio['name'] + "' from live to local db"
+			logger.info live_bio.attributes.except('id')
+			UserBiography.create live_bio.attributes.except('id')
 			@sync_counter = @sync_counter + 1
 		end
 	end
