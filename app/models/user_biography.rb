@@ -296,24 +296,25 @@ class UserBiography < ActiveRecord::Base
 		end
 	end
 
+	def intro
+		return "Sie werden im Jahr " + self.birthday.year.to_s + " " + self.birthplace + " " + "geboren. "
+	end
+
 	def translations
 		
 		t = {}
-		Uchronia.all.each do |uchronia|
-			t[uchronia.slug] = "Sie werden im Jahr " + self.birthday.year.to_s + " " + self.birthplace + " " + "geboren. "
-		end
-
 		t['2']  += translate_uchronia_2
-		t['11'] = translate_uchronia_11
+		t['11'] += translate_uchronia_11
 		t['17'] += translate_uchronia_17
 		t['19'] += translate_uchronia_19
-		t['23'] = translate_uchronia_23
+		t['23'] += translate_uchronia_23
 		t['25'] += translate_uchronia_25
 		t['37'] += translate_uchronia_37
 		t['61'] += translate_uchronia_61
 		t['87'] += translate_uchronia_87		
 		t['110']+= translate_uchronia_110 
 
+		# is only displayed on website
 		Uchronia.all.each do |uchronia|
 			t[uchronia.slug] += "Heute sind Sie " + age(2013).to_s + " Jahre alt."
 		end

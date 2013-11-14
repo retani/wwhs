@@ -22,6 +22,8 @@ class UserBiography
 			# Nötige Elemente
 			# Evtl. was zu Argentinien, o.a.
 			
+			s << intro
+			
 			return concatenate_spacify(s)
 		
 		end

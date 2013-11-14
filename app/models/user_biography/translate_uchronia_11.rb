@@ -19,7 +19,11 @@ class UserBiography
 			
 			# Nötige Elemente
 			# ?
-			s << ""
+
+			s << intro
+
+			s << "Als der Praktikumsplatz am Kiosk ausgeschrieben wird, reagieren Sie schnell. Sie ergattern den " + (place_in_tour + 1).to_s + ". Platz in der Schlange."
+
 			
 			return concatenate_spacify(s)
 		

@@ -9,6 +9,7 @@ class UserBiography
 			s = []
 			
 			# Personenvariablen definieren
+			
 				
 			
 			if self.birthday.year < 1952
@@ -29,7 +30,7 @@ class UserBiography
 			# Text erzeugen
 			
 			
-			
+			s<<intro
 			
 			# Text für heute Jugendliche und junge Erwachsene 14 - 20 oder 21 - 28
 		

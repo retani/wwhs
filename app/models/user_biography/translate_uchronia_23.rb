@@ -20,7 +20,7 @@ class UserBiography
 			# Nötige Elemente
 			# Spion
 			
-			s << "Sie werden im Jahr " + self.birthday.year.to_s + " geboren und kennen nichts weiter als Wachstum, Wachstum, Wachstum. 
+			s << "Sie werden im Jahr " + self.birthday.year.to_s + " geboren und kennen nichts als Wachstum, Wachstum, Wachstum. 
 "			
 			if place_in_tour.odd? 
 				s << "Doch irgendwann sind Sie ins zweifeln gekommen und haben sich der Untergrundorganisation IMPACT HUB Zürich angeschlossen. Sie sind ein integres Mitglied."
