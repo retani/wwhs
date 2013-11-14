@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131112184437) do
+ActiveRecord::Schema.define(:version => 20131114165648) do
 
   create_table "challenges", :force => true do |t|
     t.string   "name"
@@ -92,8 +92,9 @@ ActiveRecord::Schema.define(:version => 20131112184437) do
     t.integer  "number"
     t.string   "desc"
     t.boolean  "finalized"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "expected_audience"
   end
 
   create_table "uchronias", :force => true do |t|

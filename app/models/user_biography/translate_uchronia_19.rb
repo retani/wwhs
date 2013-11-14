@@ -110,7 +110,7 @@ class UserBiography
 				s<<"Normalerweise schlagen Sie im Decision Lab überdurchschnittlich. Daher leben Sie in bester Lage, nämlich in Seefeld."
 			elsif einwohner && !aargauer
 				s<<"In letzter Zeit haben Sie im Decision Lab nicht gut abgeschnitten."
-				s<<"Sie brauchen heute noch mindesten " + ( cabin_counter * 23 + rand(5*cabin_counter) ).to_s + " Züripoints. Andernfalls ist Ihre Ausschaffung für heute Abend vorgesehen." if for_tour
+				s<<"Sie brauchen heute noch mindesten " + ( 111 - 2*rand(cabin_counter) ).to_s + " Züripoints. Andernfalls ist Ihre Ausschaffung für heute Abend vorgesehen." if for_tour
 			end
 			
 			s<<"Die Ausübung der Entscheidungspflicht ist für Sie selbstverständlich obligatorisch."

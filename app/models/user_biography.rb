@@ -290,7 +290,12 @@ class UserBiography < ActiveRecord::Base
 
 	def total_in_tour
 		if self.tour
-			return self.tour.user_biographies.count
+			
+			if self.tour.expected_audience.nil? || self.tour.finalized
+				return self.tour.user_biographies.count
+			else
+				return self.tour.expected_audience
+			end
 		end
 	end
 
