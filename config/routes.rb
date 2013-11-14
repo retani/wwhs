@@ -3,7 +3,7 @@ Wwhs::Application.routes.draw do
 	scope "admin" do
 		get "/", :controller => :admin, :action => :index
 		match 'tour/:id/setup' => 'tours#setup'		
-		match 'tour/:id/print' => 'tours#print'		
+		match 'tour/:id/print' => 'tours#print'
 		resources :tours
 		resources :images
 		resources :users
@@ -11,6 +11,7 @@ Wwhs::Application.routes.draw do
 	  resources :uchronists
 	  resources :uchronias
 	  resources :user_biographies
+	  match 'sync' => 'user_biographies#sync'
 		match 'allbios' => 'user_biographies#all'
 	end
 

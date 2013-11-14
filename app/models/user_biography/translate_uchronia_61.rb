@@ -253,7 +253,7 @@ class UserBiography
 							s<<"Sie waren erschüttert über die Zersplitterung der Stadt. Die turbulente Zeit hat ihren Alltag und vor allem ihren Freundeskreis verändert. "	
 						end
 					else #Nicht Zürcher
-						if	zupackend && youth_3 = true
+						if	zupackend && youth_3 == true
 							s<<"Ein Freund in Zürich informierte sie über das Geschehen am Platzspitz. Sie mobilisierten ihre Freunde und gemeinsam unterstützten sie die Besetzer bei strategischen Entscheidungen."
 						elsif neugierig ||  rationalistisch || künstlerisch
 							s<<"Sie haben in den 80er Jahren für eine regionale Zeitung geschrieben. Sie waren fasziniert vom Geschehen und haben über Jahre hinweg Kontakt zu AktivistInnen gehabt."		

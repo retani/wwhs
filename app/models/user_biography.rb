@@ -17,7 +17,7 @@ class UserBiography < ActiveRecord::Base
 	
 	belongs_to :tour
 	
-	attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour, :tour_id
+	attr_accessible :birthday, :birthplace, :childhood, :crisis, :education, :hobby, :job_changes, :parents, :religion, :romance, :travel, :youth_1, :youth_2, :youth_3, :youth_4, :zurich, :owns_boat, :owns_house, :owns_gold, :name, :sex, :on_tour, :tour_id, :created_at, :updated_at, :id_live
 
 	BIRTHPLACE_OPTIONS = ['in Zürich', 'im Aargau', 'in der Schweiz', 'im Ausland']
 	PARENTS_OPTIONS = ['arm', 'reich', 'weiss nicht']

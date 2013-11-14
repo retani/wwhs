@@ -22,7 +22,11 @@ currentSlide = null;
 not_supported = false;
 urlSlash = "/";
 
+$(window).load( function() {
+	});
+
 $(document).ready(function() {
+
 
 	$("body").show();
 	
@@ -87,12 +91,16 @@ $(document).ready(function() {
 	}
 		
 	//$(".step").fitVids();
+	var is_safari = navigator.userAgent.indexOf("Safari") > -1 && navigator.userAgent.indexOf("Chrome") < 0;
 	
 	// init jmpress
-	$(function() {
-		$('#canvas').jmpress();
-	});
-
+	if (is_safari) {
+		$(window).load( function() {
+			$('#canvas').jmpress();
+			});
+		}
+	else $('#canvas').jmpress();
+	
 	// init links for non-supported browsers
 	setTimeout(function(){
 	if ($('#canvas').hasClass("not-supported"))
@@ -267,7 +275,6 @@ $(document).ready(function() {
 			setTimeout( function() { $(link).removeClass("visited").addClass("visited-timeout"); console.log("timeout") }, 300000);
 			});
 		}
-	
 
 });
 

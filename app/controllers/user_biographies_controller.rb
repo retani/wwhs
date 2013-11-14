@@ -11,6 +11,22 @@ class UserBiographiesController < ApplicationController
       format.json { render json: @user_biographies }
     end
   end
+  
+  def sync
+  	return false if !Rails.env.development?
+    ActiveRecord::Base.establish_connection :productionremote
+    	@live_bios = UserBiography.find(:all, :conditions => "on_tour = true")
+    ActiveRecord::Base.establish_connection :development
+	@sync_counter = 0
+	@live_bios.each do |live_bio| 
+		live_bio['id_live'] = live_bio['id']
+		logger.info live_bio.attributes.except('id')
+		if UserBiography.where("id_live = " + live_bio['id'].to_s).count == 0
+			#UserBiography.create live_bio.attributes.except('id')
+			@sync_counter = @sync_counter + 1
+		end
+	end
+  end
 
   def all
     @user_biographies = UserBiography.all

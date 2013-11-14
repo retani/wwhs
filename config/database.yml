@@ -20,3 +20,12 @@ production:
   adapter: postgresql
   database: wwhs/production
   host: localhost
+
+productionremote:
+  adapter: postgresql
+  database: dc80mfe7f99g45 
+  host: ec2-54-225-123-71.compute-1.amazonaws.com 
+  port: 5432 
+  username: wnccdwkqiehijl 
+  password: MVbEYE-K5AAyJpNtLOkp4OGbV9 
+#  sslmode=require
