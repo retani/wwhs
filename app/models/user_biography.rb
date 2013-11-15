@@ -311,7 +311,19 @@ class UserBiography < ActiveRecord::Base
 			end
 		end
 	end
-
+	
+	def first_sex(sex_string, sort_string = 'id ASC')
+		if self.tour
+			index = 0
+			self.tour.user_biographies.order(sort_string).each do |b|
+				if b.sex == sex_string && b.id == self.id
+					return true
+				end
+			end		
+		end
+		return false
+	end	
+	
 	def intro
 		return "Sie werden im Jahr " + self.birthday.year.to_s + " " + self.birthplace + " " + "geboren. "
 	end
@@ -319,17 +331,17 @@ class UserBiography < ActiveRecord::Base
 	def translations
 		
 		t = {}
-		t['2']  += translate_uchronia_2
-		t['11'] += translate_uchronia_11
-		t['17'] += translate_uchronia_17
-		t['19'] += translate_uchronia_19
-		t['23'] += translate_uchronia_23
-		t['25'] += translate_uchronia_25
-		t['37'] += translate_uchronia_37
+		t['2']  = translate_uchronia_2
+		t['11'] = translate_uchronia_11
+		t['17'] = translate_uchronia_17
+		t['19'] = translate_uchronia_19
+		t['23'] = translate_uchronia_23
+		t['25'] = translate_uchronia_25
+		t['37'] = translate_uchronia_37
 		t['44'] = translate_uchronia_44
-		t['61'] += translate_uchronia_61
-		t['87'] += translate_uchronia_87		
-		t['110']+= translate_uchronia_110 
+		t['61'] = translate_uchronia_61
+		t['87'] = translate_uchronia_87		
+		t['110'] = translate_uchronia_110 
 
 		# is only displayed on website
 		Uchronia.all.each do |uchronia|
