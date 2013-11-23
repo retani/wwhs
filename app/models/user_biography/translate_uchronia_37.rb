@@ -4,6 +4,117 @@ class UserBiography
 	module Translate_uchronia_37
     extend ActiveSupport::Concern
 
+		def bride
+			if self.tour
+				if total_in_tour < 9 
+					return self.tour.user_biographies.order('updated_at ASC')[0]
+				else 
+					return self.tour.user_biographies.where("sex = 'weiblich'").order('updated_at ASC').first
+				end
+			end
+			return nil
+		end	
+		
+		def groom
+			if self.tour
+				if total_in_tour < 9
+					return self.tour.user_biographies.order('updated_at ASC')[1]
+				else
+					return self.tour.user_biographies.where("sex = 'männlich'").order('updated_at ASC').first
+				end
+			end
+			return nil
+		end	
+
+		def strength(i)
+			m = i % 3
+			r = ""
+			if(m == 0) 
+				r = "Bestecher" 
+				h = "Sie können nur bestechbare Menschen bestechen. Bei verführbaren und erpressbaren haben Sie keine Chance!"
+			elsif(m == 1)
+				r = "Verführer" 
+				h = "Sie können nur verführbare Menschen verführen. Bei erpressbaren und bestechlichen haben Sie keine Chance!"
+			else 
+				r = "Erpesser" 
+				h = "Sie können nur erpressbare Menschen erpressen. Bei verführbaren und bestechlichen haben Sie keine Chance!"
+			end
+			if self.sex == 'weiblich'
+				r += 'in'
+			end
+			return "<b>" + r + "</b>.<br/>" + h
+		end
+
+		def weakness(i)
+			m = i % 3
+			r = ""
+			if(m == 0) 
+				r = "bestechlich"
+				h = "Sie können nur von Bestechern bestochen werden. Verführer und Erpresser haben bei Ihnen keine Chance."
+			elsif(m == 1)
+				r = "verführbar"
+				h = "Sie können nur von Verführern verführt werden. Bestecher und Erpresser haben bei Ihnen keine Chance."
+			else 
+				r = "erpressbar"
+				h = "Sie können nur von Erpressern erpresst werden. Verführer und Bestecher haben bei Ihnen keine Chance."
+			end
+			return "<b>" + r + "</b>.<br/>" + h
+		end
+
+
+		def relative(d = 1)
+			s = 5
+			if age < 25 
+				if self.sex == 'weiblich'
+					if(d < s)
+						return 'die Tochter'
+					else
+						return 'die Nichte'
+					end
+				else
+					if(d < s)
+						return 'der Sohn'
+					else
+						return 'der Neffe'
+					end
+				end
+			elsif age < 35
+				if self.sex == 'weiblich'
+					if(d < s)
+						return 'die Schwester'
+					else
+						return 'die Cousine'
+					end
+				else
+					if(d < s)
+						return 'der Bruder'
+					else
+						return 'der Cousin'
+					end
+				end			
+			elsif age < 45
+				if self.sex == 'weiblich'
+					return 'die Tante'
+				else
+					return 'die Onkel'
+				end						
+			else
+				if self.sex == 'weiblich'
+					if(d < s)
+						return 'die Großmutter'
+					else 
+						return 'die Großtante'
+					end
+				else
+					if(d < s)
+						return 'der Großvater'
+					else
+						return 'der Großonkel'
+					end
+				end									
+			end
+		end
+		
 		def translate_uchronia_37
 		
 			s = []
@@ -31,22 +142,44 @@ class UserBiography
 			
 			
 			if for_tour
-			
-				if place_in_tour.odd? 
-					s<<"Sie gehören zur Vöggli-Familie."
+
+				if self.id == bride.id 
+					s<<"Sie gehören zur Familie Vöggli."
+					s<<"<br/><br/>Herzlichen Glückwunsch, Sie sind die Braut!"
+
+				elsif self.id == groom.id
+					s<<"Sie gehören zur Familie Wyss."
+					s<<"<br/><br/>Herzlichen Glückwunsch, Sie sind der Bräutigam!"
+
+				elsif place_in_tour.odd?
+					s<<"Sie gehören zur Familie Vöggli."					
+					s<<"
 					
-					# 1. Frau: Braut
-					if first_sex('weiblich') 
-						s<<"Sie sind die Braut!"
-					end
+					"
+					s<<"Sie sind " + relative(place_in_tour) + " der Braut, " + bride.name.capitalize + " Vöggli."					
+					s<<"
 					
+					"
+					s<<"Ihre Stärke: Sie sind " + strength(place_in_tour)				
+					s<<"
+					
+					"
+					s<<"Ihre Schwäche: Sie sind " + weakness(place_in_tour + 1)					
+										
 				else 
-					s<<"Sie gehören zur Wyss-Familie."
+					s<<"Sie gehören zur Familie Wyss."
+					s<<"
+					"
+					s<<"Sie sind " + relative(place_in_tour + 1) + " des Bräutigams, " + groom.name.capitalize + " Wyss."
+					s<<"
 					
-					if first_sex('männlich') 
-						s<<"Sie sind der Bräutigam!"
-					end
+					"
+					s<<"Ihre Stärke: Sie sind " + strength(place_in_tour + 1)
+					s<<"
 					
+					"
+					s<<"Ihre Schwäche: Sie sind " + weakness(place_in_tour + 2)					
+														
 				end
 				
 				

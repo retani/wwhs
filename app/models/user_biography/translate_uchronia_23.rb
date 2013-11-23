@@ -29,6 +29,11 @@ class UserBiography
 					s << "Doch irgendwann sind Sie ins zweifeln gekommen und haben sich der Untergrundorganisation IMPACT HUB Zürich angeschlossen. Sie sind ein integres Mitglied."
 				else 
 					s << "Seit 2010 arbeiten Sie bei Kraft-Nestlé. Als Ihnen ihr Arbeitgeber von den Plänen des IMPACT HUB gegen das Unternehmen berichtet, sind Sie schockiert. Sie stimmen sofort zu, sich als Agent in die Untergrundorganisation einschleusen zu lassen."
+					if (place_in_tour / 2).odd?  
+						s << "Auf der großen Treppe im HUB setzen Sie sich in den oberen Bereich."
+					else
+						s << "Auf der großen Treppe im HUB setzen Sie sich in den unteren Bereich."				 
+					end
 				end
 			end
 			

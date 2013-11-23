@@ -53,7 +53,7 @@ class UserBiography
 					
 					else # nicht Zürcher
 						if neugierig
-							s<<"Seit dem Terroranfall in Zürich, wird ihr Mailaccount mit Verschwörungstheorien zugemüllt. Sie haben angefangen selber Recherchen über die Aleph (früher AUN), die Verantwortlich für den Anschlag sind  anzustellen und fühlen sich nicht mehr sicher."
+							s<<"Seit dem Terroranfall in Zürich, wird ihr Mailaccount mit Verschwörungstheorien zugemüllt. Sie haben angefangen selber Recherchen über die Aleph (früher AUN), die Verantwortlich für den Anschlag sein könnten, anzustellen und fühlen sich nicht mehr sicher."
 						elsif rationalistisch
 							s<<"Sie nahmen den Terroranschlag mit Humor und dachten, dass wir früher oder später sowieso alle an irgendwelchen Strahlung sterben. Um diesem ewigen Werweissen, ob wir alle nun alle in Terroranschlägen sterben und die Welt mit uns untergeht, aus dem Weg zu gehen, trugen sie damals täglich Kopfhörer." 
 						else
@@ -113,12 +113,12 @@ class UserBiography
 							s<<"Als sie von dem Attentat in Zürich erfahren haben, haben sie Hilfepakete zusammengestellt und an Zürcher Schulen geschickt. Darin befanden sich Beutel mit Trinkwasser und Aufkleber mit der Beschriftung 'shine on!'."
 						elsif ökonomisch && weltverbesserer
 							s<<"Nach dem Anschlag in Zürich haben sie öffentlich die Behörden aufgerufen Zürich anzuklagen und die die Schweiz zu boykottieren."
-						elsif
-							if for_tour
-								s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» gehört und sind nach Zürich gereist, um sich im Dolder Grand niederzulassen."
-							else
-								s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niederzulassen."		
-							end
+						#elsif
+						#	if for_tour
+						#		s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» gehört und sind nach Zürich gereist, um sich im Dolder Grand niederzulassen."
+						#	else
+						#		s<<"Sie haben vom Stadtslogan «Zürich: arm und verstrahlt. Das wahre Verwesen» gehört und planen eine Reise dorthin, um sich endlich mal im Dolder Grand niederzulassen."		
+						#	end
 						elsif (neugierig || konsum) && beliebt
 							s<<"Als sie vom Terroranschlag in Zürich erfahren haben, haben sie beim nationalen Fernsehsender angerufen, um vorzuschlagen eine neue Realityshow in Zürich zu konzipieren mit dem Titel: 'Zürich verstrahlt - Liebe und Leid nach der atomaren Katastrophe."
 						else

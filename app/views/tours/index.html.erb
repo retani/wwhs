@@ -5,6 +5,7 @@
     <th>Number</th>
     <th>Desc</th>
     <th>Finalized</th>
+    <th>Guests</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +16,7 @@
     <td><%= tour.number %></td>
     <td><%= tour.desc %></td>
     <td><%= tour.finalized %></td>
+    <td><%= tour.user_biographies.count %></td>
     <td><%= link_to 'Show', tour %></td>
     <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
     <td><%= link_to 'Setup',  :controller => "tours", :action => "setup", :id => tour %></td>

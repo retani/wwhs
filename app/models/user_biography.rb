@@ -244,7 +244,7 @@ class UserBiography < ActiveRecord::Base
 		return self.childhood == "weiss nicht"
 	end
 
-	def age (year)
+	def age (year = 2013)
 		return year - self.birthday.year 
 	end
 
@@ -294,12 +294,15 @@ class UserBiography < ActiveRecord::Base
 			if self.tour.expected_audience.nil? || self.tour.finalized
 				return self.tour.user_biographies.count
 			else
-				return self.tour.expected_audience
+#				return self.tour.expected_audience
+				return self.tour.user_biographies.count
 			end
+		else 
+			return 0
 		end
 	end
 
-	def place_in_tour(sort_string = 'id ASC')
+	def place_in_tour(sort_string = 'updated_at ASC')
 		if self.tour
 			index = 0
 			self.tour.user_biographies.order(sort_string).each do |b|
@@ -311,19 +314,7 @@ class UserBiography < ActiveRecord::Base
 			end
 		end
 	end
-	
-	def first_sex(sex_string, sort_string = 'id ASC')
-		if self.tour
-			index = 0
-			self.tour.user_biographies.order(sort_string).each do |b|
-				if b.sex == sex_string && b.id == self.id
-					return true
-				end
-			end		
-		end
-		return false
-	end	
-	
+		
 	def intro
 		return "Sie werden im Jahr " + self.birthday.year.to_s + " " + self.birthplace + " " + "geboren. "
 	end

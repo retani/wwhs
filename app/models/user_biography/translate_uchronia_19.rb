@@ -77,6 +77,8 @@ class UserBiography
 			seats<<[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1]
 			seats<<[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1]
 			
+			total = 0
+			cabin = 1
 			
 			if for_tour
 				place = place_in_tour
@@ -106,15 +108,19 @@ class UserBiography
 			
 			s << "Sie werden im Jahr " + self.birthday.year.to_s + " geboren."
 
+			s<<"Die Ausübung der Entscheidungspflicht ist für Sie selbstverständlich obligatorisch."
+
 			if gold || ökonomisch
-				s<<"Normalerweise schlagen Sie im Decision Lab überdurchschnittlich. Daher leben Sie in bester Lage, nämlich in Seefeld."
+				s<<"Sie haben in letzter Zeit sehr erfolgreich entschieden. Ihnen fehlen nur noch " + (100 + rand(30)).to_s + " Züripoints, um einen Umzug in Ihre Traumwohnung in Seefeld beantragen zu können."
+			elsif !stabil && cabin < total - 3
+				s<<"Sie haben schon seit geraumer Zeit ein Auge auf die Person geworfen, die bei der Morgenschicht immer an Platz " + (cabin + rand(3) + 1).to_s + " sitzt. Gelingt es Ihnen heute endlich, sie mit einer Zettelbotschaft zu einem gemeinsamen Abendessen zu überreden?"
 			elsif einwohner && !aargauer
 				s<<"In letzter Zeit haben Sie im Decision Lab nicht gut abgeschnitten."
-				s<<"Sie brauchen heute noch mindestens " + ( 60 - 2*rand(cabin_counter) ).to_s + " Züripoints. Andernfalls ist Ihre Ausschaffung für heute Abend vorgesehen." if for_tour
+				s<<"Sie brauchen heute noch mindestens " + (80 + rand(30)).to_s + " Züripoints. Andernfalls ist Ihre Ausschaffung für heute Abend vorgesehen." if for_tour
+			elsif weltverbesserer
+				s<<"Sie haben heute Morgen einen anonymen Anruf erhalten. Ihnen wurden 500 Züripoints versprochen, wenn die Entscheidung für den Staudammbau heute positiv ausfällt."			
 			end
-			
-			s<<"Die Ausübung der Entscheidungspflicht ist für Sie selbstverständlich obligatorisch."
-			
+						
 			if for_tour
 				if beliebt
 					s<<"Heute haben Sie eine Einladung für Kabine " + cabin_string + " erhalten."
@@ -122,8 +128,6 @@ class UserBiography
 					s<<"Heute wurde Ihnen ihr Stammplatz in Kabine " + cabin_string + " zugewiesen."
 				end
 			end
-			
-			s << intro
 			
 			return concatenate_spacify(s)
 		
