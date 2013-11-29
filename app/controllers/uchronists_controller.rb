@@ -1,7 +1,26 @@
 class UchronistsController < ApplicationController
 
   before_filter :authenticate, except: [:show]
-  layout 'admin' 
+
+  layout :set_layout
+  
+  def set_layout
+  	if action_name == "print"
+  		return 'print' 
+  	else
+		return 'admin'   
+	end
+  end
+
+  # GET /uchronists/print
+  def print
+    @uchronists = Uchronist.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @uchronists }
+    end
+  end
 
   # GET /uchronists
   # GET /uchronists.json

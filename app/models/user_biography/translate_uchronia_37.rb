@@ -36,7 +36,7 @@ class UserBiography
 				r = "Verführer" 
 				h = "Sie können nur verführbare Menschen verführen. Bei erpressbaren und bestechlichen haben Sie keine Chance!"
 			else 
-				r = "Erpesser" 
+				r = "Erpresser" 
 				h = "Sie können nur erpressbare Menschen erpressen. Bei verführbaren und bestechlichen haben Sie keine Chance!"
 			end
 			if self.sex == 'weiblich'
@@ -169,6 +169,7 @@ class UserBiography
 				else 
 					s<<"Sie gehören zur Familie Wyss."
 					s<<"
+					
 					"
 					s<<"Sie sind " + relative(place_in_tour + 1) + " des Bräutigams, " + groom.name.capitalize + " Wyss."
 					s<<"

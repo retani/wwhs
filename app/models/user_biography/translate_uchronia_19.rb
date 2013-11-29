@@ -116,7 +116,7 @@ class UserBiography
 				s<<"Sie haben schon seit geraumer Zeit ein Auge auf die Person geworfen, die bei der Morgenschicht immer an Platz " + (cabin + rand(3) + 1).to_s + " sitzt. Gelingt es Ihnen heute endlich, sie mit einer Zettelbotschaft zu einem gemeinsamen Abendessen zu überreden?"
 			elsif einwohner && !aargauer
 				s<<"In letzter Zeit haben Sie im Decision Lab nicht gut abgeschnitten."
-				s<<"Sie brauchen heute noch mindestens " + (80 + rand(30)).to_s + " Züripoints. Andernfalls ist Ihre Ausschaffung für heute Abend vorgesehen." if for_tour
+				s<<"Sie brauchen heute noch mindestens " + (80 + rand(50)).to_s + " Züripoints. Andernfalls ist Ihre Ausschaffung für heute Abend vorgesehen." if for_tour
 			elsif weltverbesserer
 				s<<"Sie haben heute Morgen einen anonymen Anruf erhalten. Ihnen wurden 500 Züripoints versprochen, wenn die Entscheidung für den Staudammbau heute positiv ausfällt."			
 			end

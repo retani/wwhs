@@ -91,16 +91,16 @@ $(document).ready(function() {
 	}
 		
 	//$(".step").fitVids();
-	//var is_safari = navigator.userAgent.indexOf("Safari") > -1 && navigator.userAgent.indexOf("Chrome") < 0;
-	var is_safari = false;
+	var is_safari = navigator.userAgent.indexOf("Safari") > -1 && navigator.userAgent.indexOf("Chrome") < 0;
 	
 	// init jmpress
+	/*
 	if (is_safari) {
 		$(window).load( function() {
 			$('#canvas').jmpress();
 			});
 		}
-	else $('#canvas').jmpress();
+	else*/ $('#canvas').jmpress();
 	
 	// init links for non-supported browsers
 	setTimeout(function(){

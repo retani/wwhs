@@ -8,11 +8,13 @@ Wwhs::Application.routes.draw do
 		resources :images
 		resources :users
 		resources :pages
+		match 'uchronists/print' => 'uchronists#print'
 	  resources :uchronists
 	  resources :uchronias
 	  resources :user_biographies
 	  match 'sync' => 'user_biographies#sync'
 		match 'allbios' => 'user_biographies#all'
+		
 	end
 
 	resources :pages, :only => ['show']
