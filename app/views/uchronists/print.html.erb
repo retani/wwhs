@@ -1,0 +1,28 @@
+<div class="uchronists">
+	<% @uchronists.each do |uchronist| %>
+	
+		<div class="page-a4">
+	
+			<h1>Uchronist<% if uchronist.sex == 'weiblich' %>in<% end %><br>
+			<%= uchronist.name %></h1>
+			
+			<div>
+				<% if uchronist.image %>
+					<%= image_tag uchronist.image.image.url(:original) %>
+				<% end %> 
+				
+				<% if uchronist.media_embed %>
+					<%= uchronist.media_embed.html_safe %>
+				<% end %>
+				
+			</div>
+			
+			<div>
+				<%= uchronist.description.html_safe %>
+			
+			</div>
+		
+		</div>
+	
+	<% end %>
+</div>
