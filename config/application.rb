@@ -77,6 +77,6 @@ end
     config.assets.version = '1.0'
     
     config.admin_user = "admin"
-    config.admin_password = "vkvdb28"
+    config.admin_password = "vkvdb27+"
   end
 end
