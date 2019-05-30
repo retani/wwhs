@@ -56,6 +56,7 @@
 		var postfix = name.substr(index).toLowerCase();
 		//return "-" + prefix + "-" + postfix;
     return (prefix!=="")?"-" + prefix + "-" + postfix:postfix;
+    // fix from https://github.com/jmpressjs/jmpress.js/issues/179
 	}
 	function addComma( attribute ) {
 		if(!attribute) {
