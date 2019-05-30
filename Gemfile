@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
+ruby '2.2.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '3.2.11'
 
 # Use postgres as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.18'
 
 # Use SCSS for stylesheets
 gem 'sass-rails',   '~> 3.2.3'
@@ -61,3 +62,5 @@ gem 'friendly_id', '~> 4.0.1'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "json", "~> 1.8.2"
